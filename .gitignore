@@ -1,0 +1,9 @@
+/.gradle/
+/local.properties
+/.idea/
+/build/
+/captures/
+/zh_CN/
+**/build/
+/.trae/
+/AGENTS.md/
