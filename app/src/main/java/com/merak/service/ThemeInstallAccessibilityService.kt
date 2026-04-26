@@ -192,6 +192,17 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
             }
         }
 
+        val cancelENode = root.findAccessibilityNodeInfosByText("Cancel")
+        if (cancelENode.isNotEmpty()) {
+            for (node in cancelENode) {
+                if (node.isEnabled) {
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                    node.recycle()
+                    return true
+                }
+            }
+        }
+
         val closeNode = root.findAccessibilityNodeInfosByText("关闭")
         if (closeNode.isNotEmpty()) {
             for (node in closeNode) {
