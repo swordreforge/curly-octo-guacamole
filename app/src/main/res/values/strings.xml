@@ -154,4 +154,10 @@
     <string name="log_disable_blocked">已拦截停用操作</string>
     <string name="log_force_stop_blocked">已拦截强制停止操作</string>
     <string name="accessibility_not_enabled">请先开启无障碍权限</string>
+    <string name="device_admin_title">设备管理器</string>
+    <string name="device_admin_summary">通过 Sizuku 激活设备管理器以增强应用保护</string>
+    <string name="device_admin_enabled">设备管理器已激活</string>
+    <string name="device_admin_disabled">设备管理器已禁用</string>
+    <string name="device_admin_activate">激活设备管理器</string>
+    <string name="device_admin_sizuku_not_found">请先安装 Sizuku 应用</string>
 </resources>

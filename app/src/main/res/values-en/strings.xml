@@ -154,4 +154,10 @@
     <string name="log_disable_blocked">Disable blocked</string>
     <string name="log_force_stop_blocked">Force stop blocked</string>
     <string name="accessibility_not_enabled">Please enable accessibility permission first</string>
+    <string name="device_admin_title">Device Manager</string>
+    <string name="device_admin_summary">Activate device manager via Sizuku for enhanced app protection</string>
+    <string name="device_admin_enabled">Device manager enabled</string>
+    <string name="device_admin_disabled">Device manager disabled</string>
+    <string name="device_admin_activate">Activate Device Manager</string>
+    <string name="device_admin_sizuku_not_found">Please install Sizuku first</string>
 </resources>
