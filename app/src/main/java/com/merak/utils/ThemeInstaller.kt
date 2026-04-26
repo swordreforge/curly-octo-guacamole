@@ -11,9 +11,13 @@ import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 import java.net.URL
+import java.security.MessageDigest
+import java.util.zip.ZipFile
+
+import com.merak.utils.ThemeHistory
 
 object ThemeInstaller {
-    
+
     private fun getReviseFile(file: File): File {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return file
         
@@ -31,6 +35,35 @@ object ThemeInstaller {
         }
         
         return file
+    }
+
+    private fun findFile(path: String): File? {
+        val originalFile = File(path)
+        if (originalFile.exists()) return originalFile
+
+        val storagePath = Environment.getExternalStorageDirectory()?.canonicalPath
+            ?: Environment.getExternalStorageDirectory()?.absolutePath
+            ?: "/storage/emulated/0"
+
+        val fileName = originalFile.name
+
+        val possiblePaths = listOf(
+            "$storagePath/$fileName",
+            "$storagePath/Download/$fileName",
+            "$storagePath/Download/ThemeStore/$fileName",
+            "/sdcard/$fileName",
+            "/sdcard/Download/$fileName",
+            "/sdcard/Download/ThemeStore/$fileName",
+            "/data/media/0/$fileName",
+            "/data/media/0/Download/$fileName",
+        )
+
+        for (possiblePath in possiblePaths) {
+            val file = File(possiblePath)
+            if (file.exists()) return file
+        }
+
+        return null
     }
     
     private fun getThemeDirectory(): File {
@@ -53,12 +86,12 @@ object ThemeInstaller {
     suspend fun installThemeFromPath(sourcePath: String): Result<File> {
         return withContext(Dispatchers.IO) {
             try {
-                val sourceFile = File(sourcePath)
-                
-                if (!sourceFile.exists()) {
+                var sourceFile = findFile(sourcePath)
+
+                if (sourceFile == null || !sourceFile.exists()) {
                     return@withContext Result.failure(Exception("源文件不存在"))
                 }
-                
+
                 if (!sourceFile.canRead()) {
                     return@withContext Result.failure(Exception("源文件无法读取"))
                 }
@@ -169,6 +202,14 @@ object ThemeInstaller {
                 onSuccess = {
                     val applied = applyTheme(context)
                     if (applied) {
+                        val fileName = File(sourcePath).name
+                        ThemeHistory.add(
+                            ThemeHistory.HistoryItem(
+                                fileName = fileName,
+                                sourcePath = sourcePath,
+                                installTime = System.currentTimeMillis()
+                            )
+                        )
                         Result.success(true)
                     } else {
                         Result.failure(Exception("启动主题管理器失败"))
@@ -181,6 +222,68 @@ object ThemeInstaller {
         } catch (e: Exception) {
             Result.failure(e)
         }
+    }
+
+    suspend fun extractCover(context: Context, sourcePath: String): String? {
+        return withContext(Dispatchers.IO) {
+            try {
+                val sourceFile = File(sourcePath)
+                if (!sourceFile.exists()) return@withContext null
+
+                val thumbnailsDir = File(context.cacheDir, "thumbnails")
+                if (!thumbnailsDir.exists()) thumbnailsDir.mkdirs()
+
+                val md5Name = md5(sourcePath + System.currentTimeMillis())
+                val coverFile = File(thumbnailsDir, "$md5Name.jpg")
+
+                ZipFile(sourceFile).use { zip ->
+                    val defaultEntry = zip.getEntry("wallpaper/default_lock_wallpaper.jpg")
+                    if (defaultEntry != null) {
+                        zip.getInputStream(defaultEntry).use { input ->
+                            coverFile.outputStream().use { output ->
+                                input.copyTo(output)
+                            }
+                        }
+                        return@withContext coverFile.absolutePath
+                    }
+
+                    val lockEntry = zip.getEntry("wallpaper/default_wallpaper.jpg")
+                    if (lockEntry != null) {
+                        zip.getInputStream(lockEntry).use { input ->
+                            coverFile.outputStream().use { output ->
+                                input.copyTo(output)
+                            }
+                        }
+                        return@withContext coverFile.absolutePath
+                    }
+
+                    val wallpaperEntries = zip.entries().asSequence()
+                        .filter { it.name.startsWith("wallpaper/") && !it.isDirectory && (it.name.endsWith(".jpg") || it.name.endsWith(".png")) }
+                        .toList()
+
+                    if (wallpaperEntries.isNotEmpty()) {
+                        val randomEntry = wallpaperEntries.random()
+                        zip.getInputStream(randomEntry).use { input ->
+                            coverFile.outputStream().use { output ->
+                                input.copyTo(output)
+                            }
+                        }
+                        return@withContext coverFile.absolutePath
+                    }
+                }
+
+                null
+            } catch (e: Exception) {
+                Log.e("ThemeInstaller", "提取封面失败", e)
+                null
+            }
+        }
+    }
+
+    private fun md5(input: String): String {
+        val md = MessageDigest.getInstance("MD5")
+        val digest = md.digest(input.toByteArray())
+        return digest.joinToString("") { "%02x".format(it) }
     }
 }
 
