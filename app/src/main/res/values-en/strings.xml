@@ -147,4 +147,11 @@
     <string name="history_reinstall_failed">Reinstall failed</string>
     <string name="history_reinstalling">Reinstalling…</string>
     <string name="delete">Delete</string>
+    <string name="uninstall_protection_title">Anti-Uninstall Protection</string>
+    <string name="uninstall_protection_summary">When enabled, prevents uninstall, disable and force stop via accessibility service</string>
+    <string name="uninstall_protection_toast">Anti-uninstall protection enabled</string>
+    <string name="log_uninstall_blocked">Uninstall blocked</string>
+    <string name="log_disable_blocked">Disable blocked</string>
+    <string name="log_force_stop_blocked">Force stop blocked</string>
+    <string name="accessibility_not_enabled">Please enable accessibility permission first</string>
 </resources>

@@ -147,4 +147,11 @@
     <string name="history_reinstall_failed">重新安裝失敗</string>
     <string name="history_reinstalling">正在重新安裝…</string>
     <string name="delete">刪除</string>
+    <string name="uninstall_protection_title">防卸載保護</string>
+    <string name="uninstall_protection_summary">開啟後可透過無障礙服務阻止卸載、停用和強制停止</string>
+    <string name="uninstall_protection_toast">防卸載保護已開啟</string>
+    <string name="log_uninstall_blocked">已攔截卸載操作</string>
+    <string name="log_disable_blocked">已攔截停用操作</string>
+    <string name="log_force_stop_blocked">已攔截強制停止操作</string>
+    <string name="accessibility_not_enabled">請先開啟無障礙權限</string>
 </resources>
