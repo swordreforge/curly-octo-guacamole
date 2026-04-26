@@ -2,6 +2,9 @@ package com.merak.ui.page
 
 import android.Manifest
 import android.app.Activity
+import android.app.admin.DevicePolicyManager
+import android.content.ComponentName
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.widget.Toast
@@ -22,6 +25,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import android.content.Context
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.app.NotificationManagerCompat
@@ -294,6 +298,39 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                     context.getString(R.string.uninstall_protection_toast),
                                     Toast.LENGTH_SHORT
                                 ).show()
+                            }
+                        }
+                    )
+                }
+            }
+            item {
+                Card(
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                ) {
+                    val devicePolicyManager = context.getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
+                    val deviceAdminComponent = ComponentName(context, com.merak.service.DeviceAdminReceiver::class.java)
+                    var deviceAdminEnabled by remember { mutableStateOf(devicePolicyManager.isAdminActive(deviceAdminComponent)) }
+
+                    SuperSwitch(
+                        title = stringResource(R.string.device_admin_title),
+                        summary = stringResource(R.string.device_admin_summary),
+                        checked = deviceAdminEnabled,
+                        onCheckedChange = { checked ->
+                            if (checked) {
+                                try {
+                                    val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN)
+                                    intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, deviceAdminComponent)
+                                    intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,
+                                        context.getString(R.string.device_admin_summary))
+                                    activity.startActivity(intent)
+                                } catch (e: Exception) {
+                                    Toast.makeText(context,
+                                        context.getString(R.string.device_admin_sizuku_not_found),
+                                        Toast.LENGTH_SHORT).show()
+                                }
+                            } else {
+                                devicePolicyManager.removeActiveAdmin(deviceAdminComponent)
+                                deviceAdminEnabled = false
                             }
                         }
                     )
