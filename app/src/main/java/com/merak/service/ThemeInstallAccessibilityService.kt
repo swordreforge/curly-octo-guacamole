@@ -10,9 +10,11 @@ import android.os.Build
 import android.util.Base64
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityManager
 import com.merak.R
 import com.merak.utils.LogManager
+import com.merak.utils.PreferenceUtil
 import com.merak.service.KeepAliveService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -75,6 +77,15 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         // 触发通知更新的 Action
         const val ACTION_UPDATE_NOTIFICATION = "com.merak.ACTION_UPDATE_NOTIFICATION"
         const val ACTION_REFRESH_NOTIFICATION = "com.merak.ACTION_REFRESH_NOTIFICATION"
+
+        @JvmStatic
+        fun isUninstallProtectionEnabled(context: Context): Boolean {
+            return try {
+                PreferenceUtil.getBoolean(PreferenceUtil.KEY_UNINSTALL_PROTECTION, false)
+            } catch (e: Exception) {
+                false
+            }
+        }
     }
 
     private val dateFormat = SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒", Locale.getDefault())
@@ -124,7 +135,102 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         }
     }
 
-    override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
+    override fun onAccessibilityEvent(event: AccessibilityEvent?) {
+        if (!isUninstallProtectionEnabled(applicationContext)) {
+            return
+        }
+
+        val eventType = event?.eventType ?: return
+        if (eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED &&
+            eventType != AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) {
+            return
+        }
+
+        val text = event.text?.joinToString("") ?: return
+        val packageName = event.packageName?.toString() ?: return
+
+        if (!packageName.contains("com.merak") && !text.contains("com.merak")) {
+            return
+        }
+
+        val actionType = detectDangerousAction(text)
+        if (actionType == null) return
+
+        val clicked = findAndClickCancelButton(rootInActiveWindow)
+        if (clicked) {
+            Log.d("AntiUninstall", "Successfully blocked: $actionType")
+            logProtection(actionType)
+        }
+    }
+
+    private fun detectDangerousAction(text: String): String? {
+        val dangerousKeywords = listOf("卸载", "卸载应用", "强制停止", "移除", "取消激活")
+        for (keyword in dangerousKeywords) {
+            if (text.contains(keyword)) {
+                return keyword
+            }
+        }
+        return null
+    }
+
+    private fun findAndClickCancelButton(root: AccessibilityNodeInfo?): Boolean {
+        if (root == null) return false
+
+        val foundNode = root.findAccessibilityNodeInfosByText("取消")
+        if (foundNode.isNotEmpty()) {
+            for (node in foundNode) {
+                if (node.isEnabled) {
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                    node.recycle()
+                    return true
+                }
+            }
+        }
+
+        val closeNode = root.findAccessibilityNodeInfosByText("关闭")
+        if (closeNode.isNotEmpty()) {
+            for (node in closeNode) {
+                if (node.isEnabled) {
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                    node.recycle()
+                    return true
+                }
+            }
+        }
+
+        val backNode = root.findAccessibilityNodeInfosByText("返回")
+        if (backNode.isNotEmpty()) {
+            for (node in backNode) {
+                if (node.isEnabled) {
+                    node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                    node.recycle()
+                    return true
+                }
+            }
+        }
+
+        root.recycle()
+        return false
+    }
+
+    private fun logProtection(actionType: String) {
+        serviceScope.launch(Dispatchers.IO) {
+            try {
+                LogManager.log(
+                    applicationContext,
+                    LogManager.LogType.INFO,
+                    applicationContext.getString(R.string.uninstall_protection_title),
+                    buildString {
+                        append(actionType)
+                        append(" - ")
+                        append(dateFormat_u.format(Date(System.currentTimeMillis())))
+                    }
+                )
+            } catch (e: Exception) {
+                Log.e("AntiUninstall", "记录日志失败", e)
+            }
+        }
+    }
 
     override fun onInterrupt() {}
 
