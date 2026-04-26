@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 
 object PreferenceUtil {
     private const val PREFS_NAME = "themestore_prefs"
+    const val KEY_UNINSTALL_PROTECTION = "enable_uninstall_protection"
     private lateinit var prefs: SharedPreferences
 
     fun init(context: Context) {
