@@ -149,7 +149,7 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         val text = event.text?.joinToString("") ?: return
         val packageName = event.packageName?.toString() ?: return
 
-        if (!packageName.contains("com.merak") && !text.contains("com.merak")) {
+        if (!packageName.contains("com.merak") && !text.contains("ThemeStore") && !text.contains("com.merak")) {
             return
         }
 
@@ -164,7 +164,12 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
     }
 
     private fun detectDangerousAction(text: String): String? {
-        val dangerousKeywords = listOf("卸载", "卸载应用", "强制停止", "移除", "取消激活")
+        val dangerousKeywords = listOf(
+            // 中文
+            "卸载", "卸载应用", "强制停止", "移除", "取消激活",
+            // 英文
+            "uninstall", "uninstall app", "force stop", "remove", "disable", "uninstalling"
+        )
         for (keyword in dangerousKeywords) {
             if (text.contains(keyword)) {
                 return keyword
