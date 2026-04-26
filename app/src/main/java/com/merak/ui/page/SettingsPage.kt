@@ -266,6 +266,40 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                 }
             }
             item {
+                Card(
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                ) {
+                    SuperSwitch(
+                        title = stringResource(R.string.uninstall_protection_title),
+                        summary = stringResource(R.string.uninstall_protection_summary),
+                        checked = PreferenceUtil.getBoolean(PreferenceUtil.KEY_UNINSTALL_PROTECTION, false),
+                        onCheckedChange = { checked ->
+                            val accessibilityEnabled = ThemeInstallAccessibilityService
+                                .isAccessibilityServiceEnabled(
+                                    context,
+                                    ThemeInstallAccessibilityService::class.java
+                                )
+                            if (!accessibilityEnabled) {
+                                Toast.makeText(
+                                    context,
+                                    context.getString(R.string.accessibility_not_enabled),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                return@SuperSwitch
+                            }
+                            PreferenceUtil.setBoolean(PreferenceUtil.KEY_UNINSTALL_PROTECTION, checked)
+                            if (checked) {
+                                Toast.makeText(
+                                    context,
+                                    context.getString(R.string.uninstall_protection_toast),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    )
+                }
+            }
+            item {
                 SmallTitle(stringResource(R.string.about_others))
             }
             item {
