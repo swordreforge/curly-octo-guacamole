@@ -22,6 +22,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!-- 设备管理器权限 -->
+    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
+
     <application
         android:name=".ThemeStoreApplication"
         android:allowBackup="true"
@@ -101,6 +104,20 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="com.merak.ACTION_EXIT_OPTIMIZATION" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 设备管理器接收器 -->
+        <receiver
+            android:name=".service.DeviceAdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
             </intent-filter>
         </receiver>
 
