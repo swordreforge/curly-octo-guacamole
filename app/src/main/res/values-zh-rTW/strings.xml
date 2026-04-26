@@ -139,4 +139,12 @@
     <string name="optimization_mode_enabled_toast">優化模式已啟用，APP 將在 2 秒後自動退出</string>
     <string name="optimization_mode_disabled_toast">優化模式已關閉</string>
     <string name="optimization_mode_require_accessibility">優化模式需要先開啟無障礙權限</string>
+    <string name="history_title">歷史記錄</string>
+    <string name="history_empty">暫無歷史記錄</string>
+    <string name="history_reinstall_title">重新安裝</string>
+    <string name="history_reinstall_message">確定要重新安裝「%1$s」嗎？</string>
+    <string name="history_reinstall_success">重新安裝成功</string>
+    <string name="history_reinstall_failed">重新安裝失敗</string>
+    <string name="history_reinstalling">正在重新安裝…</string>
+    <string name="delete">刪除</string>
 </resources>

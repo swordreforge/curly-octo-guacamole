@@ -139,4 +139,12 @@
     <string name="optimization_mode_enabled_toast">Optimization mode enabled, APP will exit in 2 seconds</string>
     <string name="optimization_mode_disabled_toast">Optimization mode disabled</string>
     <string name="optimization_mode_require_accessibility">Optimization mode requires accessibility permission first</string>
+    <string name="history_title">History</string>
+    <string name="history_empty">No history</string>
+    <string name="history_reinstall_title">Reinstall</string>
+    <string name="history_reinstall_message">Reinstall \"%1$s\"?</string>
+    <string name="history_reinstall_success">Reinstall success</string>
+    <string name="history_reinstall_failed">Reinstall failed</string>
+    <string name="history_reinstalling">Reinstalling…</string>
+    <string name="delete">Delete</string>
 </resources>

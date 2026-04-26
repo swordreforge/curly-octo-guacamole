@@ -17,10 +17,11 @@ import top.yukonga.miuix.kmp.icon.icons.useful.Settings
 
 @Composable
 fun MainPage(navController: NavController) {
-    val pagerState = rememberPagerState(initialPage = 0, pageCount = { 2 })
+    val pagerState = rememberPagerState(initialPage = 0, pageCount = { 3 })
     val coroutineScope = rememberCoroutineScope()
     val items = listOf(
         NavigationItem(stringResource(R.string.title_home), MiuixIcons.Useful.NavigatorSwitch),
+        NavigationItem(stringResource(R.string.history_title), MiuixIcons.Useful.NavigatorSwitch),
         NavigationItem(stringResource(R.string.title_settings), MiuixIcons.Useful.Settings)
     )
 
@@ -42,7 +43,8 @@ fun MainPage(navController: NavController) {
             pageContent = { page ->
                 when (page) {
                     0 -> HomePage(navController)
-                    1 -> SettingsPage(
+                    1 -> HistoryPage()
+                    2 -> SettingsPage(
                         onNavigateToAbout = {
                             navController.navigate(com.merak.ui.Route.ABOUT)
                         }
