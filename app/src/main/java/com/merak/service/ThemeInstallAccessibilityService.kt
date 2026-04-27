@@ -15,6 +15,7 @@ import android.view.accessibility.AccessibilityManager
 import com.merak.R
 import com.merak.utils.LogManager
 import com.merak.utils.PreferenceUtil
+import com.merak.utils.ThemeRotationManager
 import com.merak.service.KeepAliveService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -126,6 +127,9 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
                             KeepAliveService.requestRefresh(applicationContext)
                         }
                     }
+                }
+                Intent.ACTION_SCREEN_OFF -> {
+                    ThemeRotationManager.checkAndPerformPendingRotation(context)
                 }
                 ACTION_UPDATE_NOTIFICATION, ACTION_REFRESH_NOTIFICATION -> {
                     Log.d("HyperThemeService", "收到通知更新广播: ${intent.action}")
