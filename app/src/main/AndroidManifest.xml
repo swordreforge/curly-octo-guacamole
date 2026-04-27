@@ -22,6 +22,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!-- 精确闹钟权限（Android 12+） -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <!-- 设备管理器权限 -->
     <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
 
@@ -96,6 +99,16 @@
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="main_keep_alive" />
         </service>
+
+        <!-- 主题轮换闹钟接收器 -->
+        <receiver
+            android:name=".service.ThemeRotationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.merak.action.ROTATION_ALARM" />
+            </intent-filter>
+        </receiver>
 
         <!-- 优化模式广播接收器 -->
         <receiver
