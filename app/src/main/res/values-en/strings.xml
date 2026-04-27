@@ -160,4 +160,28 @@
     <string name="device_admin_disabled">Device manager disabled</string>
     <string name="device_admin_activate">Activate Device Manager</string>
     <string name="device_admin_sizuku_not_found">Please install Sizuku first</string>
+
+    <!-- Auto Theme Rotation -->
+    <string name="rotation_title">Auto Rotate Theme</string>
+    <string name="rotation_summary">Auto-switch installed themes when screen off</string>
+    <string name="rotation_summary_empty">No history themes, please install first</string>
+    <string name="rotation_interval_title">Rotation Interval</string>
+    <string name="rotation_interval_summary">Switch theme every %1$s</string>
+    <string name="rotation_order_title">Rotation Order</string>
+    <string name="rotation_order_chronological">Chronological</string>
+    <string name="rotation_order_random">Random</string>
+    <string name="rotation_time_minutes">%1$d minutes</string>
+    <string name="rotation_time_1hour">1 hour</string>
+    <string name="rotation_time_hours">%1$d hours</string>
+    <string name="rotation_time_hours_minutes">%1$d hours %2$d minutes</string>
+    <string name="rotation_notification_title">Theme Auto-Switched</string>
+    <string name="rotation_notification_content">Switched to "%1$s", next rotation: in %2$s</string>
+    <string name="rotation_channel_name">Theme Rotation</string>
+    <string name="rotation_channel_desc">Notifications for successful theme rotation</string>
+    <string name="log_rotation_success">Theme auto-rotation succeeded</string>
+    <string name="log_rotation_failed">Theme rotation failed</string>
+    <string name="log_rotation_empty_history">History is empty</string>
+    <string name="log_rotation_copy_failed">Copy failed: %1$s</string>
+    <string name="log_rotation_apply_failed">applyTheme returned false</string>
+    <string name="rotation_interval_input_hint">minutes (≥3)</string>
 </resources>

@@ -160,4 +160,28 @@
     <string name="device_admin_disabled">設備管理器已停用</string>
     <string name="device_admin_activate">啟用設備管理器</string>
     <string name="device_admin_sizuku_not_found">請先安裝 Sizuku 應用</string>
+
+    <!-- 自動輪換主題 -->
+    <string name="rotation_title">自動輪換主題</string>
+    <string name="rotation_summary">滅屏時自動切換已安裝的歷史主題</string>
+    <string name="rotation_summary_empty">暫無歷史主題，請先安裝主題</string>
+    <string name="rotation_interval_title">輪換間隔</string>
+    <string name="rotation_interval_summary">每 %1$s 自動切換一次主題</string>
+    <string name="rotation_order_title">輪換順序</string>
+    <string name="rotation_order_chronological">按時間順序</string>
+    <string name="rotation_order_random">隨機抽取</string>
+    <string name="rotation_time_minutes">%1$d 分鐘</string>
+    <string name="rotation_time_1hour">1 小時</string>
+    <string name="rotation_time_hours">%1$d 小時</string>
+    <string name="rotation_time_hours_minutes">%1$d 小時 %2$d 分鐘</string>
+    <string name="rotation_notification_title">主題已自動切換</string>
+    <string name="rotation_notification_content">已切換至「%1$s」，下次輪換：%2$s後</string>
+    <string name="rotation_channel_name">主題輪換</string>
+    <string name="rotation_channel_desc">自動輪換主題成功時的通知</string>
+    <string name="log_rotation_success">主題自動輪換成功</string>
+    <string name="log_rotation_failed">主題輪換失敗</string>
+    <string name="log_rotation_empty_history">歷史記錄為空</string>
+    <string name="log_rotation_copy_failed">複製檔案失敗: %1$s</string>
+    <string name="log_rotation_apply_failed">applyTheme 返回 false</string>
+    <string name="rotation_interval_input_hint">分鐘 (≥3)</string>
 </resources>
