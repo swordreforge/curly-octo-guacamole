@@ -69,11 +69,35 @@ object ThemeRotationManager {
         )
 
         val triggerAt = System.currentTimeMillis() + intervalMs
-        alarmManager.setExactAndAllowWhileIdle(
-            AlarmManager.RTC_WAKEUP,
-            triggerAt,
-            pendingIntent
-        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (!alarmManager.canScheduleExactAlarms()) {
+                CoroutineScope(Dispatchers.IO).launch {
+                    LogManager.log(
+                        context,
+                        LogManager.LogType.WARNING,
+                        "Exact alarm permission denied",
+                        "Cannot schedule exact alarms; skipping rotation schedule."
+                    )
+                }
+                return
+            }
+        }
+        try {
+            alarmManager.setExactAndAllowWhileIdle(
+                AlarmManager.RTC_WAKEUP,
+                triggerAt,
+                pendingIntent
+            )
+        } catch (e: SecurityException) {
+            CoroutineScope(Dispatchers.IO).launch {
+                LogManager.log(
+                    context,
+                    LogManager.LogType.ERROR,
+                    context.getString(R.string.log_rotation_failed),
+                    e.message ?: e.toString()
+                )
+            }
+        }
     }
 
     /**
@@ -163,7 +187,7 @@ object ThemeRotationManager {
                     context,
                     LogManager.LogType.ERROR,
                     context.getString(R.string.log_rotation_failed),
-                    e.message
+                    e.message ?: e.toString()
                 )
                 false
             }
@@ -178,29 +202,37 @@ object ThemeRotationManager {
         if (!isPending()) return
         setPending(false)
         CoroutineScope(Dispatchers.IO).launch {
-            performRotation(context)
-            // 无论本次轮换成功与否，都调度下一次闹钟，避免功能卡住
-            scheduleNextRotation(context)
+            try {
+                performRotation(context)
+            } finally {
+                // 无论本次轮换成功与否，都调度下一次闹钟，避免功能卡住
+                scheduleNextRotation(context)
+            }
         }
     }
 
-    private fun sendRotationNotification(context: Context, fileName: String) {
+    private fun ensureNotificationChannel(context: Context) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
         val notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                CHANNEL_ID,
-                context.getString(R.string.rotation_channel_name),
-                NotificationManager.IMPORTANCE_LOW
-            ).apply {
-                description = context.getString(R.string.rotation_channel_desc)
-                setShowBadge(false)
-                enableLights(false)
-                enableVibration(false)
-            }
-            notificationManager.createNotificationChannel(channel)
+        if (notificationManager.getNotificationChannel(CHANNEL_ID) != null) return
+        val channel = NotificationChannel(
+            CHANNEL_ID,
+            context.getString(R.string.rotation_channel_name),
+            NotificationManager.IMPORTANCE_LOW
+        ).apply {
+            description = context.getString(R.string.rotation_channel_desc)
+            setShowBadge(false)
+            enableLights(false)
+            enableVibration(false)
         }
+        notificationManager.createNotificationChannel(channel)
+    }
+
+    private fun sendRotationNotification(context: Context, fileName: String) {
+        ensureNotificationChannel(context)
+        val notificationManager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         val contentIntent = PendingIntent.getActivity(
             context,
