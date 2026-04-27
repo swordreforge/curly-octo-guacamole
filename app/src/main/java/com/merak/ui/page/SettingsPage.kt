@@ -35,6 +35,17 @@ import com.merak.service.KeepAliveService
 import com.merak.service.ThemeInstallAccessibilityService
 import com.merak.state.AppSettingsState
 import com.merak.utils.PreferenceUtil
+import com.merak.utils.ThemeHistory
+import com.merak.utils.ThemeRotationManager
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Slider
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import top.yukonga.miuix.kmp.basic.ButtonDefaults
@@ -72,6 +83,18 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
         mutableStateOf(PreferenceUtil.getBoolean("optimization_mode_enabled", false))
     }
     val showOptimizationDialog = remember { mutableStateOf(false) }
+    
+    // 自动轮换主题状态
+    var rotationEnabled by remember {
+        mutableStateOf(ThemeRotationManager.isEnabled())
+    }
+    var rotationInterval by remember {
+        mutableStateOf(ThemeRotationManager.getIntervalMinutes())
+    }
+    var rotationOrderMode by remember {
+        mutableStateOf(ThemeRotationManager.getOrderMode())
+    }
+    val historyEmpty = remember { ThemeHistory.getAll().isEmpty() }
     
     fun hasNotificationPermission(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -113,6 +136,12 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
     fun disableKeepAlive() {
         keepAliveEnabled = false
         PreferenceUtil.setBoolean("keep_alive_enabled", false)
+        // 关闭保活时，同时关闭自动轮换主题
+        if (rotationEnabled) {
+            rotationEnabled = false
+            ThemeRotationManager.setEnabled(false)
+            ThemeRotationManager.cancelRotation(appContext)
+        }
         KeepAliveService.requestRefresh(
             appContext,
             keepAliveState = false,
@@ -216,6 +245,124 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
             }
             // 优化模式（仅在常驻通知保活开启时显示）
             if (keepAliveEnabled) {
+                item {
+                    Card(
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                    ) {
+                        SuperSwitch(
+                            title = stringResource(R.string.rotation_title),
+                            summary = stringResource(
+                                if (historyEmpty) R.string.rotation_summary_empty else R.string.rotation_summary
+                            ),
+                            checked = rotationEnabled,
+                            enabled = !historyEmpty,
+                            onCheckedChange = { checked ->
+                                if (checked) {
+                                    if (historyEmpty) {
+                                        Toast.makeText(
+                                            context,
+                                            context.getString(R.string.rotation_summary_empty),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    } else {
+                                        rotationEnabled = true
+                                        ThemeRotationManager.setEnabled(true)
+                                        ThemeRotationManager.scheduleNextRotation(appContext)
+                                        Toast.makeText(
+                                            context,
+                                            "已开启",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                } else {
+                                    rotationEnabled = false
+                                    ThemeRotationManager.setEnabled(false)
+                                    ThemeRotationManager.cancelRotation(appContext)
+                                    Toast.makeText(
+                                        context,
+                                        "已关闭",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+                        )
+                    }
+                }
+                if (rotationEnabled) {
+                    item {
+                        Card(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(16.dp)
+                            ) {
+                                Text(
+                                    text = stringResource(R.string.rotation_interval_title),
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = 16.sp
+                                )
+                                Text(
+                                    text = stringResource(
+                                        R.string.rotation_interval_summary,
+                                        formatIntervalText(context, rotationInterval)
+                                    )
+                                )
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.fillMaxWidth()
+                                ) {
+                                    Slider(
+                                        value = rotationInterval.toFloat(),
+                                        onValueChange = { rotationInterval = it.toInt() },
+                                        valueRange = 3f..2880f,
+                                        onValueChangeFinished = {
+                                            ThemeRotationManager.setIntervalMinutes(rotationInterval)
+                                            ThemeRotationManager.scheduleNextRotation(appContext)
+                                        },
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                    Spacer(modifier = Modifier.width(8.dp))
+                                    TextField(
+                                        value = rotationInterval.toString(),
+                                        onValueChange = { newValue ->
+                                            val parsed = newValue.toIntOrNull()
+                                            if (parsed != null) {
+                                                val coerced = parsed.coerceIn(3, 2880)
+                                                rotationInterval = coerced
+                                                ThemeRotationManager.setIntervalMinutes(coerced)
+                                                ThemeRotationManager.scheduleNextRotation(appContext)
+                                            }
+                                        },
+                                        keyboardOptions = KeyboardOptions(
+                                            keyboardType = KeyboardType.Number
+                                        ),
+                                        modifier = Modifier.width(80.dp)
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+                if (rotationEnabled) {
+                    item {
+                        Card(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            SuperDropdown(
+                                title = stringResource(R.string.rotation_order_title),
+                                items = listOf(
+                                    stringResource(R.string.rotation_order_chronological),
+                                    stringResource(R.string.rotation_order_random)
+                                ),
+                                selectedIndex = rotationOrderMode,
+                                onSelectedIndexChange = { index ->
+                                    rotationOrderMode = index
+                                    ThemeRotationManager.setOrderMode(index)
+                                }
+                            )
+                        }
+                    }
+                }
                 item {
                     Card(
                         modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
@@ -413,5 +560,14 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                 colors = ButtonDefaults.textButtonColorsPrimary()
             )
         }
+    }
+}
+
+private fun formatIntervalText(context: Context, minutes: Int): String {
+    return when {
+        minutes < 60 -> context.getString(R.string.rotation_time_minutes, minutes)
+        minutes == 60 -> context.getString(R.string.rotation_time_1hour)
+        minutes % 60 == 0 -> context.getString(R.string.rotation_time_hours, minutes / 60)
+        else -> context.getString(R.string.rotation_time_hours_minutes, minutes / 60, minutes % 60)
     }
 }
