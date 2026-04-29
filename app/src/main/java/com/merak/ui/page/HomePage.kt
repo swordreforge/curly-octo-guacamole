@@ -125,6 +125,20 @@ fun HomePage(navController: NavController) {
                     )
                 }
             }
+            item {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp)
+                        .padding(bottom = 6.dp)
+                ) {
+                    SuperArrow(
+                        title = stringResource(R.string.batch_import_title),
+                        summary = stringResource(R.string.batch_import_summary),
+                        onClick = { navController.navigate(Route.BATCH_IMPORT) }
+                    )
+                }
+            }
 
             item {
                 SmallTitle(stringResource(R.string.home_tools_title))

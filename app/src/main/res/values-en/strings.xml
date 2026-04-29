@@ -186,4 +186,6 @@
     <string name="rotation_interval_input_hint">minutes (≥1)</string>
     <string name="rotation_without_screen_off_title">Rotate while screen on</string>
     <string name="rotation_without_screen_off_summary">When enabled, rotation will execute immediately even if the screen is on</string>
+    <string name="batch_import_title">Batch Import Themes</string>
+    <string name="batch_import_summary">Import multiple themes into history without auto-applying</string>
 </resources>

@@ -252,7 +252,7 @@ object ThemeInstaller {
     suspend fun quickInstall(context: Context, sourcePath: String): Result<Boolean> {
         return try {
             val result = installThemeFromPath(sourcePath)
-            
+
             result.fold(
                 onSuccess = {
                     val applied = applyTheme(context)
@@ -276,6 +276,46 @@ object ThemeInstaller {
             )
         } catch (e: Exception) {
             Result.failure(e)
+        }
+    }
+
+    /**
+     * 批量导入主题到历史记录，但不应用（不启动主题管理器）。
+     * 适用于一次性导入多个主题文件到历史列表。
+     *
+     * @param sourcePaths 主题文件路径列表
+     * @return Pair<成功数, 失败数>
+     */
+    suspend fun batchImportWithoutApply(sourcePaths: List<String>): Pair<Int, Int> {
+        return withContext(Dispatchers.IO) {
+            var successCount = 0
+            var failCount = 0
+
+            for (sourcePath in sourcePaths) {
+                try {
+                    val sourceFile = findFile(sourcePath)
+                    if (sourceFile == null || !sourceFile.exists()) {
+                        failCount++
+                        continue
+                    }
+
+                    // 只添加到历史记录，不复制到主题目录，也不启动主题管理器
+                    val fileName = sourceFile.name
+                    ThemeHistory.add(
+                        ThemeHistory.HistoryItem(
+                            fileName = fileName,
+                            sourcePath = sourcePath,
+                            installTime = System.currentTimeMillis()
+                        )
+                    )
+                    successCount++
+                } catch (e: Exception) {
+                    Log.e("ThemeInstaller", "批量导入失败: $sourcePath", e)
+                    failCount++
+                }
+            }
+
+            successCount to failCount
         }
     }
 

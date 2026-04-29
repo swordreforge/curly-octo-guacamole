@@ -186,4 +186,6 @@
     <string name="rotation_interval_input_hint">分鐘 (≥1)</string>
     <string name="rotation_without_screen_off_title">亮屏時直接輪換</string>
     <string name="rotation_without_screen_off_summary">開啟後即使螢幕亮著也會直接執行主題輪換，無需等待滅屏</string>
+    <string name="batch_import_title">批量匯入主題</string>
+    <string name="batch_import_summary">一次性匯入多個主題到歷史記錄，不自動應用</string>
 </resources>

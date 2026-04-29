@@ -90,7 +90,7 @@ fun App() {
             composable(Route.FILE_PICKER) {
                 val context = LocalContext.current
                 val coroutineScope = rememberCoroutineScope()
-                
+
                 FilePickerPage(
                     onBack = { navController.popBackStack() },
                     onFileSelected = { file ->
@@ -101,10 +101,10 @@ fun App() {
                                     context.getString(com.merak.R.string.copying_theme),
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                
+
                                 // 一键安装主题
                                 val result = ThemeInstaller.quickInstall(context, file.absolutePath)
-                                
+
                                 result.fold(
                                     onSuccess = {
                                         com.merak.utils.LogManager.log(
@@ -113,7 +113,7 @@ fun App() {
                                             context.getString(com.merak.R.string.log_theme_install_success),
                                             "${context.getString(com.merak.R.string.log_file)} ${file.name}, ${context.getString(com.merak.R.string.log_size)} ${file.length()} bytes"
                                         )
-                                        
+
                                         Toast.makeText(
                                             context,
                                             context.getString(com.merak.R.string.theme_copied),
@@ -128,7 +128,7 @@ fun App() {
                                             context.getString(com.merak.R.string.log_theme_install_failed),
                                             error.message
                                         )
-                                        
+
                                         Toast.makeText(
                                             context,
                                             "${context.getString(com.merak.R.string.copy_failed)}: ${error.message}",
@@ -140,6 +140,44 @@ fun App() {
                                 Toast.makeText(
                                     context,
                                     "${context.getString(com.merak.R.string.copy_failed)}: ${e.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        }
+                    }
+                )
+            }
+            composable(Route.BATCH_IMPORT) {
+                val context = LocalContext.current
+                val coroutineScope = rememberCoroutineScope()
+
+                FilePickerPage(
+                    onBack = { navController.popBackStack() },
+                    multiSelect = true,
+                    onFilesSelected = { files ->
+                        coroutineScope.launch {
+                            try {
+                                Toast.makeText(
+                                    context,
+                                    "正在批量导入 ${files.size} 个主题...",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                val paths = files.map { it.absolutePath }
+                                val (success, fail) = ThemeInstaller.batchImportWithoutApply(paths)
+
+                                val message = if (fail == 0) {
+                                    "成功导入 $success 个主题"
+                                } else {
+                                    "导入完成：成功 $success 个，失败 $fail 个"
+                                }
+
+                                Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                                navController.popBackStack()
+                            } catch (e: Exception) {
+                                Toast.makeText(
+                                    context,
+                                    "批量导入失败: ${e.message}",
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }

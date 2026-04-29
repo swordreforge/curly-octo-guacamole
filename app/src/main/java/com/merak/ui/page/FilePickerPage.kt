@@ -3,6 +3,7 @@ package com.merak.ui.page
 import android.os.Environment
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -57,18 +58,22 @@ data class FileItem(
 @Composable
 fun FilePickerPage(
     onBack: () -> Unit,
-    onFileSelected: (File) -> Unit
+    onFileSelected: (File) -> Unit = {},
+    multiSelect: Boolean = false,
+    onFilesSelected: (List<File>) -> Unit = {}
 ) {
-    var currentPath by remember { 
-        mutableStateOf(Environment.getExternalStorageDirectory()) 
+    var currentPath by remember {
+        mutableStateOf(Environment.getExternalStorageDirectory())
     }
     var fileItems by remember { mutableStateOf<List<FileItem>>(emptyList()) }
+    var selectedFiles by remember { mutableStateOf<Set<File>>(emptySet()) }
     val scrollBehavior = MiuixScrollBehavior(rememberTopAppBarState())
 
     // 加载当前目录的文件列表
     LaunchedEffect(currentPath) {
         loadFiles(currentPath) { items ->
             fileItems = items
+            selectedFiles = emptySet()
         }
     }
 
@@ -81,7 +86,7 @@ fun FilePickerPage(
                     IconButton(
                         onClick = {
                             // 如果在根目录，返回上一页；否则返回上级目录
-                            if (currentPath.parent != null && 
+                            if (currentPath.parent != null &&
                                 currentPath != Environment.getExternalStorageDirectory()
                             ) {
                                 currentPath = currentPath.parentFile ?: currentPath
@@ -124,17 +129,45 @@ fun FilePickerPage(
                 }
             }
 
+            // 多选模式提示
+            if (multiSelect) {
+                item {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = "点击 MTZ 文件进行多选，选中后点击底部按钮批量导入",
+                            fontSize = 13.sp,
+                            color = Color(0xFF3482FF),
+                            modifier = Modifier.padding(12.dp)
+                        )
+                    }
+                }
+            }
+
             // 显示文件和文件夹列表
             items(fileItems, key = { it.file.absolutePath }) { item ->
+                val isSelected = selectedFiles.contains(item.file)
                 FileItemView(
                     item = item,
+                    isSelected = isSelected,
+                    multiSelect = multiSelect,
                     onClick = {
                         if (item.isDirectory) {
                             // 进入文件夹
                             currentPath = item.file
                         } else if (item.isMtzFile) {
-                            // 选择 .mtz 文件
-                            onFileSelected(item.file)
+                            if (multiSelect) {
+                                selectedFiles = if (isSelected) {
+                                    selectedFiles - item.file
+                                } else {
+                                    selectedFiles + item.file
+                                }
+                            } else {
+                                onFileSelected(item.file)
+                            }
                         }
                     }
                 )
@@ -157,6 +190,33 @@ fun FilePickerPage(
                     }
                 }
             }
+
+            // 底部占位，给多选按钮留空间
+            if (multiSelect) {
+                item {
+                    Spacer(modifier = Modifier.height(80.dp))
+                }
+            }
+        }
+
+        // 多选模式底部导入按钮
+        if (multiSelect && selectedFiles.isNotEmpty()) {
+            androidx.compose.foundation.layout.Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(padding)
+                    .padding(horizontal = 12.dp, vertical = 12.dp),
+                contentAlignment = androidx.compose.ui.Alignment.BottomCenter
+            ) {
+                top.yukonga.miuix.kmp.basic.TextButton(
+                    text = "导入选中 (${selectedFiles.size})",
+                    onClick = {
+                        onFilesSelected(selectedFiles.toList())
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = top.yukonga.miuix.kmp.basic.ButtonDefaults.textButtonColorsPrimary()
+                )
+            }
         }
     }
 }
@@ -164,6 +224,8 @@ fun FilePickerPage(
 @Composable
 fun FileItemView(
     item: FileItem,
+    isSelected: Boolean = false,
+    multiSelect: Boolean = false,
     onClick: () -> Unit
 ) {
     Card(
@@ -171,6 +233,11 @@ fun FileItemView(
             .fillMaxWidth()
             .padding(vertical = 4.dp)
             .clickable(onClick = onClick)
+            .background(
+                if (isSelected) Color(0xFF3482FF).copy(alpha = 0.12f)
+                else Color.Transparent,
+                shape = RoundedCornerShape(12.dp)
+            )
     ) {
         Row(
             modifier = Modifier
@@ -187,6 +254,7 @@ fun FileItemView(
                 },
                 contentDescription = null,
                 tint = when {
+                    isSelected -> Color(0xFF3482FF)
                     item.isMtzFile -> Color(0xFF3482FF)
                     item.isDirectory -> Color(0xFFFFA726)
                     else -> Color.Gray
@@ -203,14 +271,14 @@ fun FileItemView(
                 Text(
                     text = item.name,
                     fontSize = 15.sp,
-                    fontWeight = if (item.isMtzFile) FontWeight.Bold else FontWeight.Normal,
-                    color = if (item.isMtzFile) {
-                        Color(0xFF3482FF)
-                    } else {
-                        MiuixTheme.colorScheme.onSurface
+                    fontWeight = if (item.isMtzFile || isSelected) FontWeight.Bold else FontWeight.Normal,
+                    color = when {
+                        isSelected -> Color(0xFF3482FF)
+                        item.isMtzFile -> Color(0xFF3482FF)
+                        else -> MiuixTheme.colorScheme.onSurface
                     }
                 )
-                
+
                 // 显示文件大小（仅文件）
                 if (!item.isDirectory && item.file.exists()) {
                     Text(
@@ -221,8 +289,19 @@ fun FileItemView(
                 }
             }
 
+            // 多选模式下显示选中标记
+            if (multiSelect && isSelected) {
+                Text(
+                    text = "✓",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF3482FF),
+                    modifier = Modifier.padding(end = 8.dp)
+                )
+            }
+
             // MTZ 文件标识
-            if (item.isMtzFile) {
+            if (item.isMtzFile && !isSelected) {
                 Text(
                     text = "MTZ",
                     fontSize = 11.sp,
