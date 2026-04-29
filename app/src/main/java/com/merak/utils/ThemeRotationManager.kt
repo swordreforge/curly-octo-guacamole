@@ -245,6 +245,19 @@ object ThemeRotationManager {
                 sendRotationNotification(context, targetItem.fileName)
                 setLastRotationTime(System.currentTimeMillis())
                 setCurrentFileName(targetItem.fileName)
+                
+                // 关闭 ThemeStore 返回桌面
+                android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
+                    try {
+                        val homeIntent = Intent(Intent.ACTION_MAIN).apply {
+                            addCategory(Intent.CATEGORY_HOME)
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        }
+                        context.startActivity(homeIntent)
+                    } catch (e: Exception) {
+                        // 忽略错误
+                    }
+                }, 2000)
 
                 true
             } catch (e: Exception) {

@@ -6,15 +6,16 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.util.Log
+import com.merak.MainActivity
+import com.merak.utils.ThemeHistory
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileOutputStream
 import java.net.URL
 import java.security.MessageDigest
 import java.util.zip.ZipFile
-
-import com.merak.utils.ThemeHistory
 
 object ThemeInstaller {
 
@@ -206,6 +207,51 @@ object ThemeInstaller {
             val themeFile = getThemeInstallFile()
             if (!themeFile.exists()) return false
 
+            // 先把 ThemeStore 启动到前台
+            val launcherIntent = Intent(context, MainActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(launcherIntent)
+            
+            // 等待一小段时间让 ThemeStore 进入前台
+            Thread.sleep(500)
+            
+            val originalPath = "/sdcard/Android/data/com.android.thememanager/files/theme/安装主题.mtz"
+
+            val intent = Intent().apply {
+                action = Intent.ACTION_MAIN
+                setClassName(
+                    "com.android.thememanager",
+                    "com.android.thememanager.ApplyThemeForScreenshot"
+                )
+                putExtra("theme_file_path", originalPath)
+                putExtra("api_called_from", "ThemeEditor")
+                putExtra("ver2_step", "ver2_step_apply")
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+
+            context.startActivity(intent)
+            true
+        } catch (e: Exception) {
+            Log.e("ThemeInstaller", "启动失败", e)
+            false
+        }
+    }
+    
+    suspend fun applyThemeDirectWithDelay(context: Context): Boolean {
+        return try {
+            val themeFile = getThemeInstallFile()
+            if (!themeFile.exists()) return false
+
+            // 先把 ThemeStore 启动到前台
+            val launcherIntent = Intent(context, MainActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            context.startActivity(launcherIntent)
+            
+            // 等待一小段时间让 ThemeStore 进入前台
+            delay(500)
+            
             val originalPath = "/sdcard/Android/data/com.android.thememanager/files/theme/安装主题.mtz"
 
             val intent = Intent().apply {
