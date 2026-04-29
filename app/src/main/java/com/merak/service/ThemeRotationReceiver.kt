@@ -32,6 +32,14 @@ class ThemeRotationReceiver : BroadcastReceiver() {
         if (isScreenOn) {
             Log.d(TAG, "Screen is on, marking rotation as pending")
             ThemeRotationManager.setPending(true)
+
+            // 通过广播实时通知 :alarm_intercept 进程，避免 SharedPreferences 跨进程延迟
+            Intent(ThemeInstallAccessibilityService.ACTION_ROTATION_PENDING_SET).apply {
+                setPackage(context.packageName)
+                putExtra("pending", true)
+                context.sendBroadcast(this)
+            }
+            Log.d(TAG, "已发送 pending 广播到 :alarm_intercept")
         } else {
             Log.d(TAG, "Screen is off, performing rotation immediately")
 

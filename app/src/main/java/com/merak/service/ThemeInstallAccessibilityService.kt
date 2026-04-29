@@ -43,7 +43,16 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         @Volatile private var st_connectedTime = ""
         @Volatile private var st_currentTime = ""
         @Volatile private var st_receiveTime = ""
-        
+
+        /**
+         * 跨进程内存变量：标记是否有待执行的轮换任务。
+         * 主进程通过广播实时同步，避免 SharedPreferences 跨进程延迟。
+         */
+        @Volatile private var rotationPending = false
+
+        /** 主进程通知 :alarm_intercept 进程设置 pending 的广播 Action */
+        const val ACTION_ROTATION_PENDING_SET = "com.merak.action.ROTATION_PENDING_SET"
+
         @JvmStatic
         fun isAccessibilityServiceEnabled(
             context: Context,
@@ -129,7 +138,25 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
                     }
                 }
                 Intent.ACTION_SCREEN_OFF -> {
-                    ThemeRotationManager.checkAndPerformPendingRotation(context)
+                    if (rotationPending || ThemeRotationManager.isPending()) {
+                        rotationPending = false
+                        ThemeRotationManager.checkAndPerformPendingRotation(context)
+                    }
+                }
+                ACTION_ROTATION_PENDING_SET -> {
+                    val pending = intent.getBooleanExtra("pending", false)
+                    if (pending) {
+                        rotationPending = true
+                        Log.d("HyperThemeService", "收到 pending 广播，rotationPending 已设为 true")
+                        // 如果当前屏幕已经是灭的，立即执行（避免错过 SCREEN_OFF）
+                        val powerManager = context.getSystemService(Context.POWER_SERVICE) as android.os.PowerManager
+                        if (!powerManager.isInteractive) {
+                            rotationPending = false
+                            ThemeRotationManager.checkAndPerformPendingRotation(context)
+                        }
+                    } else {
+                        rotationPending = false
+                    }
                 }
                 ACTION_UPDATE_NOTIFICATION, ACTION_REFRESH_NOTIFICATION -> {
                     Log.d("HyperThemeService", "收到通知更新广播: ${intent.action}")
@@ -302,6 +329,7 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         val intentFilter = IntentFilter().apply {
             addAction(ALARM_ACTION)
             addAction(Intent.ACTION_SCREEN_OFF)
+            addAction(ACTION_ROTATION_PENDING_SET)
             addAction(ACTION_UPDATE_NOTIFICATION)
             addAction(ACTION_REFRESH_NOTIFICATION)
             priority = 1000
