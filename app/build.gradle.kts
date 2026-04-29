@@ -1,3 +1,12 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -23,9 +32,9 @@ android {
     signingConfigs {
         create("release") {
             storeFile = file("keystore.jks")
-            storePassword = "themestore"
-            keyAlias = "release"
-            keyPassword = "themestore"
+            storePassword = localProperties.getProperty("THEMESTORE_STORE_PASSWORD", "123456")
+            keyAlias = localProperties.getProperty("THEMESTORE_KEY_ALIAS", "release")
+            keyPassword = localProperties.getProperty("THEMESTORE_KEY_PASSWORD", "123456")
         }
     }
 

@@ -7,3 +7,10 @@
 **/build/
 /.trae/
 /AGENTS.md/
+.kotlin/
+.worktrees/
+*.apk
+*.mtz
+*.zip
+*.rar
+*/com.android.thememanager_*/
