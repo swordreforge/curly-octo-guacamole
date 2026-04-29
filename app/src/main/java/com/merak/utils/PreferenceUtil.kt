@@ -22,8 +22,22 @@ object PreferenceUtil {
     fun getBoolean(key: String, defaultValue: Boolean = false): Boolean =
         prefs.getBoolean(key, defaultValue)
 
-    fun setBoolean(key: String, value: Boolean) {
+fun setBoolean(key: String, value: Boolean) {
         prefs.edit().putBoolean(key, value).apply()
+    }
+
+    fun getString(key: String, defaultValue: String = ""): String =
+        prefs.getString(key, defaultValue) ?: defaultValue
+
+    fun setString(key: String, value: String) {
+        prefs.edit().putString(key, value).apply()
+    }
+
+    fun getLong(key: String, defaultValue: Long = 0): Long =
+        prefs.getLong(key, defaultValue)
+
+    fun setLong(key: String, value: Long) {
+        prefs.edit().putLong(key, value).apply()
     }
 
     fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {

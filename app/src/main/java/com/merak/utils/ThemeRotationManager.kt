@@ -24,6 +24,8 @@ object ThemeRotationManager {
     private const val PREF_ORDER_MODE = "theme_rotation_order_mode"
     private const val PREF_LAST_INDEX = "theme_rotation_last_index"
     private const val PREF_PENDING = "theme_rotation_pending"
+    private const val PREF_CURRENT_FILE = "theme_rotation_current_file"
+    private const val PREF_LAST_ROTATION_TIME = "theme_rotation_last_time"
     private const val CHANNEL_ID = "theme_rotation_channel"
     private const val NOTIFICATION_ID = 2001
 
@@ -36,7 +38,7 @@ object ThemeRotationManager {
     fun getIntervalMinutes(): Int = PreferenceUtil.getInt(PREF_INTERVAL, 60)
 
     fun setIntervalMinutes(minutes: Int) {
-        PreferenceUtil.setInt(PREF_INTERVAL, minutes.coerceIn(3, 2880))
+        PreferenceUtil.setInt(PREF_INTERVAL, minutes.coerceIn(1, 2880))
     }
 
     fun getOrderMode(): Int = PreferenceUtil.getInt(PREF_ORDER_MODE, 0)
@@ -50,6 +52,14 @@ object ThemeRotationManager {
     fun isPending(): Boolean = PreferenceUtil.getBoolean(PREF_PENDING, false)
 
     fun setPending(pending: Boolean) = PreferenceUtil.setBoolean(PREF_PENDING, pending)
+
+    fun getCurrentFileName(): String = PreferenceUtil.getString(PREF_CURRENT_FILE, "")
+
+    fun setCurrentFileName(name: String) = PreferenceUtil.setString(PREF_CURRENT_FILE, name)
+
+    fun getLastRotationTime(): Long = PreferenceUtil.getLong(PREF_LAST_ROTATION_TIME, 0)
+
+    fun setLastRotationTime(time: Long) = PreferenceUtil.setLong(PREF_LAST_ROTATION_TIME, time)
 
     /**
      * 调度下一次轮换闹钟
@@ -69,19 +79,29 @@ object ThemeRotationManager {
         )
 
         val triggerAt = System.currentTimeMillis() + intervalMs
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            if (!alarmManager.canScheduleExactAlarms()) {
+        val hasExactPermission = Build.VERSION.SDK_INT < Build.VERSION_CODES.S ||
+                alarmManager.canScheduleExactAlarms()
+
+        if (!hasExactPermission) {
+            // 仅首次或状态变化时记录一次，避免刷屏
+            if (PreferenceUtil.getBoolean("exact_alarm_warned", false).not()) {
+                PreferenceUtil.setBoolean("exact_alarm_warned", true)
                 CoroutineScope(Dispatchers.IO).launch {
                     LogManager.log(
                         context,
                         LogManager.LogType.WARNING,
                         "Exact alarm permission denied",
-                        "Cannot schedule exact alarms; skipping rotation schedule."
+                        "Falling back to inexact alarm"
                     )
                 }
-                return
             }
+            setInexact(alarmManager, triggerAt, pendingIntent)
+            return
         }
+
+        // 权限恢复后重置标记
+        PreferenceUtil.setBoolean("exact_alarm_warned", false)
+
         try {
             alarmManager.setExactAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
@@ -97,6 +117,25 @@ object ThemeRotationManager {
                     e.message ?: e.toString()
                 )
             }
+            setInexact(alarmManager, triggerAt, pendingIntent)
+        }
+    }
+
+    private fun setInexact(alarmManager: AlarmManager, triggerAt: Long, pendingIntent: PendingIntent) {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                // Android 12+ setAndAllowWhileIdle 也需要 SCHEDULE_EXACT_ALARM 权限
+                // 回退到 set()，不需要精确闹钟权限，Doze 下可能有延迟但至少能成功设置
+                alarmManager.set(AlarmManager.RTC_WAKEUP, triggerAt, pendingIntent)
+            } else {
+                alarmManager.setAndAllowWhileIdle(
+                    AlarmManager.RTC_WAKEUP,
+                    triggerAt,
+                    pendingIntent
+                )
+            }
+        } catch (e: Exception) {
+            // Final fallback - do nothing
         }
     }
 
@@ -180,6 +219,7 @@ object ThemeRotationManager {
                 )
 
                 sendRotationNotification(context, targetItem.fileName)
+                setLastRotationTime(System.currentTimeMillis())
 
                 true
             } catch (e: Exception) {

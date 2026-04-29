@@ -16,8 +16,17 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        
+
         buildConfigField("long", "BUILD_TIMESTAMP", "${System.currentTimeMillis()}L")
+    }
+
+    signingConfigs {
+        create("release") {
+            storeFile = file("keystore.jks")
+            storePassword = "themestore"
+            keyAlias = "release"
+            keyPassword = "themestore"
+        }
     }
 
     buildTypes {
@@ -25,11 +34,12 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             isDebuggable = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            
+
             // 优化选项
             ndk {
                 debugSymbolLevel = "NONE"

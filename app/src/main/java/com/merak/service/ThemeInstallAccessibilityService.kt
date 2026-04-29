@@ -153,7 +153,17 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         val text = event.text?.joinToString("") ?: return
         val packageName = event.packageName?.toString() ?: return
 
-        if (!packageName.contains("com.merak") && !text.contains("ThemeStore") && !text.contains("com.merak")) {
+        // 只关注系统设置、桌面/启动器、应用商店等可能触发卸载的窗口
+        val isUninstallRelatedPackage = packageName.contains("com.android.settings") ||
+                packageName.contains("com.miui.home") ||
+                packageName.contains("com.android.packageinstaller") ||
+                packageName.contains("com.google.android.packageinstaller") ||
+                packageName.contains("com.android.vending") ||
+                packageName.contains("com.merak") ||
+                text.contains("ThemeStore") ||
+                text.contains("com.merak")
+
+        if (!isUninstallRelatedPackage) {
             return
         }
 
@@ -171,8 +181,10 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
         val dangerousKeywords = listOf(
             // 中文
             "卸载", "卸载应用", "强制停止", "移除", "取消激活",
+            "停用此设备管理应用", "停用", "设备管理应用",
             // 英文
-            "uninstall", "uninstall app", "force stop", "remove", "disable", "uninstalling"
+            "uninstall", "uninstall app", "force stop", "remove", "disable", "uninstalling",
+            "deactivate", "deactivate this device", "device admin", "device administrator"
         )
         for (keyword in dangerousKeywords) {
             if (text.contains(keyword)) {

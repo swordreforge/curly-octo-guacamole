@@ -2,11 +2,14 @@ package com.merak.ui.page
 
 import android.Manifest
 import android.app.Activity
+import android.app.AlarmManager
 import android.app.admin.DevicePolicyManager
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.provider.Settings
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -25,7 +28,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import android.content.Context
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.app.NotificationManagerCompat
@@ -88,6 +90,7 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
     var rotationEnabled by remember {
         mutableStateOf(ThemeRotationManager.isEnabled())
     }
+    val showExactAlarmDialog = remember { mutableStateOf(false) }
     var rotationInterval by remember {
         mutableStateOf(ThemeRotationManager.getIntervalMinutes())
     }
@@ -267,6 +270,14 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                     } else {
                                         rotationEnabled = true
                                         ThemeRotationManager.setEnabled(true)
+
+                                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                                            val alarmManager = appContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                                            if (!alarmManager.canScheduleExactAlarms()) {
+                                                showExactAlarmDialog.value = true
+                                            }
+                                        }
+
                                         ThemeRotationManager.scheduleNextRotation(appContext)
                                         Toast.makeText(
                                             context,
@@ -314,7 +325,7 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                     Slider(
                                         value = rotationInterval.toFloat(),
                                         onValueChange = { rotationInterval = it.toInt() },
-                                        valueRange = 3f..2880f,
+                                        valueRange = 1f..2880f,
                                         onValueChangeFinished = {
                                             ThemeRotationManager.setIntervalMinutes(rotationInterval)
                                             ThemeRotationManager.scheduleNextRotation(appContext)
@@ -327,7 +338,7 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                         onValueChange = { newValue ->
                                             val parsed = newValue.toIntOrNull()
                                             if (parsed != null) {
-                                                val coerced = parsed.coerceIn(3, 2880)
+                                                val coerced = parsed.coerceIn(1, 2880)
                                                 rotationInterval = coerced
                                                 ThemeRotationManager.setIntervalMinutes(coerced)
                                                 ThemeRotationManager.scheduleNextRotation(appContext)
@@ -458,9 +469,13 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                     val deviceAdminComponent = ComponentName(context, com.merak.service.DeviceAdminReceiver::class.java)
                     var deviceAdminEnabled by remember { mutableStateOf(devicePolicyManager.isAdminActive(deviceAdminComponent)) }
 
+                    val isDeviceOwner = remember {
+                        com.merak.service.DeviceAdminReceiver.isDeviceOwner(context)
+                    }
+
                     SuperSwitch(
                         title = stringResource(R.string.device_admin_title),
-                        summary = stringResource(R.string.device_admin_summary),
+                        summary = if (isDeviceOwner) "🔒 设备所有者模式已激活 - 最强卸载防护已生效" else stringResource(R.string.device_admin_summary),
                         checked = deviceAdminEnabled,
                         onCheckedChange = { checked ->
                             if (checked) {
@@ -476,11 +491,61 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                         Toast.LENGTH_SHORT).show()
                                 }
                             } else {
-                                devicePolicyManager.removeActiveAdmin(deviceAdminComponent)
-                                deviceAdminEnabled = false
+                                try {
+                                    // 检查是否有功能依赖设备管理器
+                                    val uninstallProtectionOn = PreferenceUtil.getBoolean(
+                                        PreferenceUtil.KEY_UNINSTALL_PROTECTION, false
+                                    )
+                                    val optimizationModeOn = PreferenceUtil.getBoolean(
+                                        "optimization_mode_enabled", false
+                                    )
+                                    if (uninstallProtectionOn || optimizationModeOn) {
+                                        Toast.makeText(
+                                            context,
+                                            "请先关闭「防止卸载保护」和「优化模式」后再关闭设备管理器",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                        return@SuperSwitch
+                                    }
+                                    devicePolicyManager.removeActiveAdmin(deviceAdminComponent)
+                                    deviceAdminEnabled = false
+                                    Toast.makeText(
+                                        context,
+                                        "设备管理器已关闭",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                } catch (e: Exception) {
+                                    Toast.makeText(
+                                        context,
+                                        "关闭失败：${e.message}",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
                             }
                         }
                     )
+
+                    if (!isDeviceOwner && deviceAdminEnabled) {
+                        androidx.compose.foundation.layout.Column(
+                            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
+                        ) {
+                            Text(
+                                text = "💡 提示：当前仅为普通设备管理员。通过 ADB 设置为「设备所有者」后，可获得系统级卸载阻止保护（无法通过长按卸载）。",
+                                fontSize = 13.sp,
+                                color = androidx.compose.ui.graphics.Color.Gray
+                            )
+                            top.yukonga.miuix.kmp.basic.TextButton(
+                                text = "复制 ADB 激活命令",
+                                onClick = {
+                                    val cmd = "adb shell dpm set-device-owner com.merak/.service.DeviceAdminReceiver"
+                                    val clipboard = context.getSystemService(android.content.Context.CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                                    clipboard.setPrimaryClip(android.content.ClipData.newPlainText("ADB命令", cmd))
+                                    Toast.makeText(context, "已复制到剪贴板", Toast.LENGTH_SHORT).show()
+                                },
+                                modifier = Modifier.padding(top = 4.dp)
+                            )
+                        }
+                    }
                 }
             }
             item {
@@ -554,6 +619,51 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                         delay(2000)
                         activity.finish()
                         exitProcess(0)
+                    }
+                },
+                modifier = Modifier.weight(1f),
+                colors = ButtonDefaults.textButtonColorsPrimary()
+            )
+        }
+    }
+
+    // 精确闹钟权限提示对话框
+    SuperDialog(
+        title = "需要精确闹钟权限",
+        summary = "Android 12+ 要求应用获得「精确闹钟」权限才能准时执行主题轮换。" +
+                "如果没有该权限，轮换可能会在 Doze 模式下被系统推迟甚至失效。请点击「去设置」手动授权。",
+        show = showExactAlarmDialog,
+        onDismissRequest = {
+            showExactAlarmDialog.value = false
+        }
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            TextButton(
+                text = "稍后再说",
+                onClick = {
+                    showExactAlarmDialog.value = false
+                },
+                modifier = Modifier.weight(1f)
+            )
+            Spacer(Modifier.width(20.dp))
+            TextButton(
+                text = "去设置",
+                onClick = {
+                    showExactAlarmDialog.value = false
+                    try {
+                        val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM).apply {
+                            data = android.net.Uri.parse("package:${appContext.packageName}")
+                        }
+                        activity.startActivity(intent)
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            context,
+                            "无法打开设置页面，请手动前往「应用信息 → 权限 → 精确闹钟」开启",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 },
                 modifier = Modifier.weight(1f),

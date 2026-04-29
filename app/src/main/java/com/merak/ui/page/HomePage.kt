@@ -27,6 +27,9 @@ import androidx.navigation.NavController
 import com.merak.R
 import com.merak.service.ThemeInstallAccessibilityService
 import com.merak.ui.Route
+import com.merak.ui.page.RotationProgressCard
+import com.merak.utils.ThemeHistory
+import com.merak.utils.ThemeRotationManager
 import top.yukonga.miuix.kmp.basic.Card
 import top.yukonga.miuix.kmp.basic.MiuixScrollBehavior
 import top.yukonga.miuix.kmp.basic.Scaffold
@@ -99,6 +102,10 @@ fun HomePage(navController: NavController) {
                         }
                     }
                 )
+            }
+
+            if (ThemeRotationManager.isEnabled() && ThemeHistory.getAll().isNotEmpty()) {
+                item { RotationProgressCard() }
             }
 
             item {
