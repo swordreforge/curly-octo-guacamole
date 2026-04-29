@@ -67,15 +67,27 @@ fun RotationProgressCard() {
                     0f
                 }
                 progress = progressValue
-                val remainingMin = (remainingMs / 60_000).toInt()
-                val elapsedMin = ((intervalMs - remainingMs) / 60_000).toInt().coerceAtLeast(0)
-                elapsedText = formatTime(elapsedMin)
-                remainingText = if (remainingMs == 0L) {
-                    "即将触发..."
+                
+                // 检查是否处于挂起等待息屏状态
+                val isPending = ThemeRotationManager.isPending()
+                
+                if (isPending && remainingMs == 0L) {
+                    // 挂起且时间已到 -> 显示等待息屏
+                    elapsedText = formatTime((intervalMs / 60_000).toInt())
+                    remainingText = "0m"
+                    statusText = "等待息屏中..."
                 } else {
-                    formatTime(remainingMin)
+                    // 正常倒计时
+                    val remainingMin = (remainingMs / 60_000).toInt()
+                    val elapsedMin = ((intervalMs - remainingMs) / 60_000).toInt().coerceAtLeast(0)
+                    elapsedText = formatTime(elapsedMin)
+                    remainingText = if (remainingMs == 0L) {
+                        "即将触发..."
+                    } else {
+                        formatTime(remainingMin)
+                    }
+                    statusText = ""
                 }
-                statusText = ""
             } else {
                 progress = 0f
                 elapsedText = "0m"
