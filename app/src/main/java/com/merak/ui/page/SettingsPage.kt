@@ -38,6 +38,7 @@ import com.merak.service.KeepAliveService
 import com.merak.service.ThemeInstallAccessibilityService
 import com.merak.state.AppSettingsState
 import com.merak.utils.PreferenceUtil
+import com.merak.utils.LogManager
 import com.merak.utils.ThemeHistory
 import com.merak.utils.ThemeRotationManager
 import androidx.compose.foundation.layout.Column
@@ -119,12 +120,14 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                         if (PreferenceUtil.getBoolean("exact_alarm_warned", false)) {
                             PreferenceUtil.setBoolean("exact_alarm_warned", false)
                             ThemeRotationManager.scheduleNextRotation(appContext)
-                            LogManager.log(
-                                appContext,
-                                LogManager.LogType.INFO,
-                                "Exact alarm permission granted",
-                                "Permission restored, rescheduled rotation"
-                            )
+                            coroutineScope.launch {
+                                LogManager.log(
+                                    appContext,
+                                    LogManager.LogType.INFO,
+                                    "Exact alarm permission granted",
+                                    "Permission restored, rescheduled rotation"
+                                )
+                            }
                         }
                     }
                 }
