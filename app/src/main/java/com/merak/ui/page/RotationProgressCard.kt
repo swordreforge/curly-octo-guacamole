@@ -55,18 +55,26 @@ fun RotationProgressCard() {
     LaunchedEffect(refreshTick) {
         while (true) {
             val intervalMinutes = ThemeRotationManager.getIntervalMinutes()
-            val lastTime = ThemeRotationManager.getLastRotationTime()
+            val intervalMs = intervalMinutes * 60_000L
+            val nextTriggerTime = ThemeRotationManager.getNextTriggerTime()
             val now = System.currentTimeMillis()
 
-            if (lastTime > 0) {
-                val elapsedMs = now - lastTime
-                val intervalMs = intervalMinutes * 60_000L
-                val remainingMs = (intervalMs - elapsedMs).coerceAtLeast(0)
-                progress = (elapsedMs.toFloat() / intervalMs).coerceIn(0f, 1f)
-                val elapsedMin = (elapsedMs / 60_000).toInt()
+            if (nextTriggerTime > 0) {
+                val remainingMs = (nextTriggerTime - now).coerceAtLeast(0)
+                val progressValue = if (intervalMs > 0) {
+                    ((intervalMs - remainingMs).toFloat() / intervalMs).coerceIn(0f, 1f)
+                } else {
+                    0f
+                }
+                progress = progressValue
                 val remainingMin = (remainingMs / 60_000).toInt()
+                val elapsedMin = ((intervalMs - remainingMs) / 60_000).toInt().coerceAtLeast(0)
                 elapsedText = formatTime(elapsedMin)
-                remainingText = formatTime(remainingMin)
+                remainingText = if (remainingMs == 0L) {
+                    "即将触发..."
+                } else {
+                    formatTime(remainingMin)
+                }
                 statusText = ""
             } else {
                 progress = 0f
