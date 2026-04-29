@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -40,6 +41,9 @@ import com.merak.utils.PreferenceUtil
 import com.merak.utils.ThemeHistory
 import com.merak.utils.ThemeRotationManager
 import androidx.compose.foundation.layout.Column
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
@@ -74,9 +78,10 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
     val scrollBehavior = MiuixScrollBehavior(rememberTopAppBarState())
     val coroutineScope = rememberCoroutineScope()
     val appContext = context.applicationContext
-    
+    val lifecycleOwner = LocalLifecycleOwner.current
+
     // 常驻通知保活状态
-    var keepAliveEnabled by remember { 
+    var keepAliveEnabled by remember {
         mutableStateOf(PreferenceUtil.getBoolean("keep_alive_enabled", false))
     }
     
@@ -101,7 +106,34 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
         mutableStateOf(ThemeRotationManager.isWithoutScreenOff())
     }
     val historyEmpty = remember { ThemeHistory.getAll().isEmpty() }
-    
+
+    // 监听生命周期：用户从系统设置页返回时，重新检查精确闹钟权限
+    DisposableEffect(lifecycleOwner, context) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) {
+                // 用户可能刚从设置页回来，检查权限是否已授予
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && ThemeRotationManager.isEnabled()) {
+                    val alarmManager = appContext.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+                    if (alarmManager.canScheduleExactAlarms()) {
+                        // 权限已恢复，重置警告标记并重新调度
+                        if (PreferenceUtil.getBoolean("exact_alarm_warned", false)) {
+                            PreferenceUtil.setBoolean("exact_alarm_warned", false)
+                            ThemeRotationManager.scheduleNextRotation(appContext)
+                            LogManager.log(
+                                appContext,
+                                LogManager.LogType.INFO,
+                                "Exact alarm permission granted",
+                                "Permission restored, rescheduled rotation"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
+
     fun hasNotificationPermission(): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ContextCompat.checkSelfPermission(
