@@ -674,16 +674,23 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                 onClick = {
                     showExactAlarmDialog.value = false
                     try {
-                        val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM).apply {
-                            data = android.net.Uri.parse("package:${appContext.packageName}")
-                        }
+                        // 不带 package URI，让系统跳转到正确的「闹钟和提醒」授权页
+                        val intent = Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM)
                         activity.startActivity(intent)
                     } catch (e: Exception) {
-                        Toast.makeText(
-                            context,
-                            "无法打开设置页面，请手动前往「应用信息 → 权限 → 精确闹钟」开启",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        // 回退到应用详情页
+                        try {
+                            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                                data = android.net.Uri.parse("package:${appContext.packageName}")
+                            }
+                            activity.startActivity(intent)
+                        } catch (e2: Exception) {
+                            Toast.makeText(
+                                context,
+                                "无法打开设置页面，请手动前往「应用信息 → 权限 → 精确闹钟」开启",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
                 },
                 modifier = Modifier.weight(1f),
