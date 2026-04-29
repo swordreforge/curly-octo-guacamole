@@ -422,8 +422,19 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                 summary = stringResource(R.string.rotation_without_screen_off_summary),
                                 checked = rotationWithoutScreenOff,
                                 onCheckedChange = { checked ->
+                                    val wasPending = ThemeRotationManager.isPending()
                                     rotationWithoutScreenOff = checked
                                     ThemeRotationManager.setWithoutScreenOff(checked)
+
+                                    // 如果用户切回"立即轮换"且有挂起任务，立即执行
+                                    if (!checked && wasPending) {
+                                        ThemeRotationManager.checkAndPerformPendingRotation(appContext)
+                                        Toast.makeText(
+                                            context,
+                                            "已切换为立即轮换，当前待执行任务将立即运行",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
                                 }
                             )
                         }
