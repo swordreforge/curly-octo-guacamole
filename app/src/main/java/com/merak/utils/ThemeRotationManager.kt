@@ -19,6 +19,7 @@ import kotlinx.coroutines.withContext
 object ThemeRotationManager {
 
     const val ACTION_ROTATION_ALARM = "com.merak.action.ROTATION_ALARM"
+    const val ACTION_ROTATION_COMPLETED = "com.merak.action.ROTATION_COMPLETED"
     private const val PREF_ENABLED = "theme_rotation_enabled"
     private const val PREF_INTERVAL = "theme_rotation_interval_minutes"
     private const val PREF_ORDER_MODE = "theme_rotation_order_mode"
@@ -71,6 +72,10 @@ object ThemeRotationManager {
      */
     fun scheduleNextRotation(context: Context) {
         if (!isEnabled()) return
+        // 首次开启轮换时，从未执行过，将当前时间设为计时起点，避免进度条永远卡在 0%
+        if (getLastRotationTime() == 0L) {
+            setLastRotationTime(System.currentTimeMillis())
+        }
         val intervalMs = getIntervalMinutes() * 60_000L
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, ThemeRotationReceiver::class.java).apply {
@@ -233,6 +238,7 @@ object ThemeRotationManager {
 
                 sendRotationNotification(context, targetItem.fileName)
                 setLastRotationTime(System.currentTimeMillis())
+                setCurrentFileName(targetItem.fileName)
 
                 true
             } catch (e: Exception) {
@@ -272,6 +278,11 @@ object ThemeRotationManager {
                 if (wakeLock.isHeld) wakeLock.release()
                 // 无论本次轮换成功与否，都调度下一次闹钟，避免功能卡住
                 scheduleNextRotation(context)
+                // 通知主进程刷新 UI，解决跨进程 SharedPreferences 缓存延迟
+                Intent(ACTION_ROTATION_COMPLETED).apply {
+                    setPackage(context.packageName)
+                    context.sendBroadcast(this)
+                }
             }
         }
     }

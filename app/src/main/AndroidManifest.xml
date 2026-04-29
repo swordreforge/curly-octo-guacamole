@@ -28,6 +28,9 @@
     <!-- 设备管理器权限 -->
     <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
 
+    <!-- 开机广播权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
         android:name=".ThemeStoreApplication"
         android:allowBackup="true"
@@ -117,6 +120,16 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="com.merak.ACTION_EXIT_OPTIMIZATION" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 开机恢复轮换调度接收器 -->
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 

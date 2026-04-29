@@ -57,14 +57,15 @@ class ThemeRotationReceiver : BroadcastReceiver() {
                 try {
                     val success = ThemeRotationManager.performRotation(context)
                     if (success) {
-                        Log.d(TAG, "Rotation succeeded, scheduling next")
-                        ThemeRotationManager.scheduleNextRotation(context)
+                        Log.d(TAG, "Rotation succeeded")
                     } else {
                         Log.d(TAG, "Rotation failed")
                     }
                 } catch (e: Exception) {
                     Log.e(TAG, "Rotation exception", e)
                 } finally {
+                    // 无论成功失败都调度下一次，避免轮换链条断裂
+                    ThemeRotationManager.scheduleNextRotation(context)
                     if (wakeLock.isHeld) wakeLock.release()
                     pendingResult.finish()
                 }

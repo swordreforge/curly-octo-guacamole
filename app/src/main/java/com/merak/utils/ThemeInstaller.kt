@@ -325,10 +325,10 @@ object ThemeInstaller {
                 val sourceFile = File(sourcePath)
                 if (!sourceFile.exists()) return@withContext null
 
-                val thumbnailsDir = File(context.cacheDir, "thumbnails")
+                val thumbnailsDir = File(context.filesDir, "thumbnails")
                 if (!thumbnailsDir.exists()) thumbnailsDir.mkdirs()
 
-                val md5Name = md5(sourcePath + System.currentTimeMillis())
+                val md5Name = md5(sourcePath)
                 val coverFile = File(thumbnailsDir, "$md5Name.jpg")
 
                 ZipFile(sourceFile).use { zip ->

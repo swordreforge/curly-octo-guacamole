@@ -60,7 +60,8 @@ fun HistoryPage() {
     fun extractMissingCovers() {
         coroutineScope.launch {
             historyList.forEachIndexed { index, item ->
-                if (item.coverPath.isNullOrEmpty()) {
+                val coverMissing = item.coverPath.isNullOrEmpty() || !File(item.coverPath).exists()
+                if (coverMissing) {
                     val coverPath = ThemeInstaller.extractCover(context, item.sourcePath)
                     if (coverPath != null) {
                         ThemeHistory.updateCoverPath(index, coverPath)
