@@ -201,6 +201,33 @@ object ThemeInstaller {
         }
     }
 
+    fun applyThemeDirect(context: Context): Boolean {
+        return try {
+            val themeFile = getThemeInstallFile()
+            if (!themeFile.exists()) return false
+
+            val originalPath = "/sdcard/Android/data/com.android.thememanager/files/theme/安装主题.mtz"
+
+            val intent = Intent().apply {
+                action = Intent.ACTION_MAIN
+                setClassName(
+                    "com.android.thememanager",
+                    "com.android.thememanager.ApplyThemeForScreenshot"
+                )
+                putExtra("theme_file_path", originalPath)
+                putExtra("api_called_from", "ThemeEditor")
+                putExtra("ver2_step", "ver2_step_apply")
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+
+            context.startActivity(intent)
+            true
+        } catch (e: Exception) {
+            Log.e("ThemeInstaller", "启动失败", e)
+            false
+        }
+    }
+
     private fun isAppInForeground(context: Context): Boolean {
         val am = context.getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager
         return am.runningAppProcesses?.any {

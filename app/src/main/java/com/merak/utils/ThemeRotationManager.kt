@@ -210,7 +210,7 @@ object ThemeRotationManager {
                     return@withContext false
                 }
 
-                val applied = ThemeInstaller.applyTheme(context)
+                val applied = applyThemeDirect(context)
                 if (!applied) {
                     LogManager.log(
                         context,
