@@ -32,6 +32,7 @@ object ThemeRotationManager {
     private const val PREF_LAST_ROTATION_TIME = "theme_rotation_last_time"
     private const val CHANNEL_ID = "theme_rotation_channel"
     private const val NOTIFICATION_ID = 2001
+    private const val PROGRESS_NOTIFICATION_ID = 2002
 
     fun isEnabled(): Boolean = PreferenceUtil.getBoolean(PREF_ENABLED, false)
 
@@ -74,6 +75,8 @@ object ThemeRotationManager {
      */
     fun scheduleNextRotation(context: Context) {
         if (!isEnabled()) return
+        showProgressNotification(context)
+        
         // 首次开启轮换时，从未执行过，将当前时间设为计时起点，避免进度条永远卡在 0%
         if (getLastRotationTime() == 0L) {
             setLastRotationTime(System.currentTimeMillis())
@@ -339,6 +342,49 @@ object ThemeRotationManager {
             .build()
 
         notificationManager.notify(NOTIFICATION_ID, notification)
+    }
+
+    fun showProgressNotification(context: Context) {
+        ensureNotificationChannel(context)
+        val notificationManager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        val intervalStr = formatMinutes(context, getIntervalMinutes())
+
+        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setContentTitle(context.getString(R.string.rotation_progress_title))
+            .setContentText(context.getString(R.string.rotation_progress_content, intervalStr))
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setProgress(100, 0, true)
+            .setOngoing(true)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .build()
+
+        notificationManager.notify(PROGRESS_NOTIFICATION_ID, notification)
+    }
+
+    fun updateProgressNotification(context: Context, progress: Int) {
+        val notificationManager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        val intervalStr = formatMinutes(context, getIntervalMinutes())
+
+        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setContentTitle(context.getString(R.string.rotation_progress_title))
+            .setContentText(context.getString(R.string.rotation_progress_content, intervalStr))
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setProgress(100, progress, false)
+            .setOngoing(true)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .build()
+
+        notificationManager.notify(PROGRESS_NOTIFICATION_ID, notification)
+    }
+
+    fun cancelProgressNotification(context: Context) {
+        val notificationManager =
+            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.cancel(PROGRESS_NOTIFICATION_ID)
     }
 
     private fun formatMinutes(context: Context, minutes: Int): String {

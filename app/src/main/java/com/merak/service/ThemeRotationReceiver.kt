@@ -52,6 +52,7 @@ class ThemeRotationReceiver : BroadcastReceiver() {
             } catch (e: Exception) {
                 // 忽略错误
             } finally {
+                ThemeRotationManager.cancelProgressNotification(context)
                 ThemeRotationManager.scheduleNextRotation(context)
                 if (wakeLock.isHeld) wakeLock.release()
                 pendingResult.finish()

@@ -178,6 +178,8 @@
     <string name="rotation_notification_content">已切换至「%1$s」，下次轮换：%2$s后</string>
     <string name="rotation_channel_name">主题轮换</string>
     <string name="rotation_channel_desc">自动轮换主题成功时的通知</string>
+    <string name="rotation_progress_title">主题轮换进行中</string>
+    <string name="rotation_progress_content">预计 %1$s 后自动切换</string>
     <string name="log_rotation_success">主题自动轮换成功</string>
     <string name="log_rotation_failed">主题轮换失败</string>
     <string name="log_rotation_empty_history">历史记录为空</string>
