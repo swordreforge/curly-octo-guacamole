@@ -30,6 +30,7 @@ object ThemeRotationManager {
     private const val PREF_WITHOUT_SCREEN_OFF = "theme_rotation_without_screen_off"
     private const val PREF_CURRENT_FILE = "theme_rotation_current_file"
     private const val PREF_LAST_ROTATION_TIME = "theme_rotation_last_time"
+    private const val PREF_NEXT_TRIGGER_TIME = "theme_rotation_next_trigger_time"
     private const val CHANNEL_ID = "theme_rotation_channel"
     private const val NOTIFICATION_ID = 2001
     private const val PROGRESS_NOTIFICATION_ID = 2002
@@ -70,6 +71,10 @@ object ThemeRotationManager {
 
     fun setLastRotationTime(time: Long) = PreferenceUtil.setLong(PREF_LAST_ROTATION_TIME, time)
 
+    fun getNextTriggerTime(): Long = PreferenceUtil.getLong(PREF_NEXT_TRIGGER_TIME, 0)
+
+    fun setNextTriggerTime(time: Long) = PreferenceUtil.setLong(PREF_NEXT_TRIGGER_TIME, time)
+
     /**
      * 调度下一次轮换闹钟
      */
@@ -94,6 +99,7 @@ object ThemeRotationManager {
         )
 
         val triggerAt = System.currentTimeMillis() + intervalMs
+        setNextTriggerTime(triggerAt)
         val hasExactPermission = Build.VERSION.SDK_INT < Build.VERSION_CODES.S ||
                 alarmManager.canScheduleExactAlarms()
 
@@ -169,6 +175,7 @@ object ThemeRotationManager {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         alarmManager.cancel(pendingIntent)
+        setNextTriggerTime(0)
         setPending(false)
     }
 
