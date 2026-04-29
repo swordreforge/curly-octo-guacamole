@@ -11,6 +11,8 @@ import androidx.core.app.NotificationCompat
 import com.merak.MainActivity
 import com.merak.R
 import com.merak.service.ThemeRotationReceiver
+import com.merak.utils.LogManager
+import com.merak.utils.ThemeInstaller
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -172,6 +174,7 @@ object ThemeRotationManager {
      */
     suspend fun performRotation(context: Context): Boolean {
         val history = ThemeHistory.getAll()
+        LogManager.log(context, LogManager.LogType.INFO, "开始轮换", "历史记录数=${history.size}")
         if (history.isEmpty()) {
             LogManager.log(
                 context,
@@ -210,7 +213,7 @@ object ThemeRotationManager {
                     return@withContext false
                 }
 
-                val applied = applyThemeDirect(context)
+                val applied = ThemeInstaller.applyThemeDirect(context)
                 if (!applied) {
                     LogManager.log(
                         context,

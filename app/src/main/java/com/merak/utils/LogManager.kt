@@ -163,15 +163,14 @@ object LogManager {
                         logs.add(LogEntry(timestamp, type, message, details))
                     }
                 } catch (e: Exception) {
-                    e.printStackTrace()
+                    // skip this line
                 }
                 
                 i++
             }
             
-            logs.reversed() // 最新的在前面
+            logs.reversed()
         } catch (e: Exception) {
-            e.printStackTrace()
             emptyList()
         }
     }
@@ -188,21 +187,25 @@ object LogManager {
     )
     
     suspend fun getStatistics(context: Context): Statistics = withContext(Dispatchers.IO) {
-        val logFile = getLogFile(context)
-        val logs = getAllLogs(context)
-        
-        val themeCount = logs.count { it.type == LogType.THEME_INSTALL }
-        val alarmCount = logs.count { it.type == LogType.ALARM_INTERCEPT }
-        val lastThemeTime = PreferenceUtil.getInt("stat_last_theme_install", 0).toLong() * 1000
-        val lastAlarmTime = PreferenceUtil.getInt("stat_last_alarm_intercept", 0).toLong() * 1000
-        
-        Statistics(
-            themeInstallCount = themeCount,
-            alarmInterceptCount = alarmCount,
-            lastThemeInstallTime = lastThemeTime,
-            lastAlarmInterceptTime = lastAlarmTime,
-            totalLogSize = if (logFile.exists()) logFile.length() else 0L
-        )
+        try {
+            val logFile = getLogFile(context)
+            val logs = getAllLogs(context)
+            
+            val themeCount = logs.count { it.type == LogType.THEME_INSTALL }
+            val alarmCount = logs.count { it.type == LogType.ALARM_INTERCEPT }
+            val lastThemeTime = PreferenceUtil.getInt("stat_last_theme_install", 0).toLong() * 1000
+            val lastAlarmTime = PreferenceUtil.getInt("stat_last_alarm_intercept", 0).toLong() * 1000
+            
+            Statistics(
+                themeInstallCount = themeCount,
+                alarmInterceptCount = alarmCount,
+                lastThemeInstallTime = lastThemeTime,
+                lastAlarmInterceptTime = lastAlarmTime,
+                totalLogSize = if (logFile.exists()) logFile.length() else 0L
+            )
+        } catch (e: Exception) {
+            Statistics(0, 0, 0L, 0L, 0L)
+        }
     }
     
     suspend fun clearAllLogs(context: Context) = withContext(Dispatchers.IO) {

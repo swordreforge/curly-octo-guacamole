@@ -44,7 +44,8 @@ fun LogPage(onBack: () -> Unit) {
     // 刷新函数
     suspend fun refreshLogs() {
         logs = LogManager.getAllLogs(context)
-        statistics = LogManager.getStatistics(context)
+        var stats = LogManager.getStatistics(context)
+        statistics = stats
     }
     
     // 初次加载日志
