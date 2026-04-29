@@ -183,5 +183,7 @@
     <string name="log_rotation_empty_history">History is empty</string>
     <string name="log_rotation_copy_failed">Copy failed: %1$s</string>
     <string name="log_rotation_apply_failed">applyTheme returned false</string>
-    <string name="rotation_interval_input_hint">minutes (≥3)</string>
+    <string name="rotation_interval_input_hint">minutes (≥1)</string>
+    <string name="rotation_without_screen_off_title">Rotate while screen on</string>
+    <string name="rotation_without_screen_off_summary">When enabled, rotation will execute immediately even if the screen is on</string>
 </resources>

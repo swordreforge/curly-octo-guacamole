@@ -183,5 +183,7 @@
     <string name="log_rotation_empty_history">歷史記錄為空</string>
     <string name="log_rotation_copy_failed">複製檔案失敗: %1$s</string>
     <string name="log_rotation_apply_failed">applyTheme 返回 false</string>
-    <string name="rotation_interval_input_hint">分鐘 (≥3)</string>
+    <string name="rotation_interval_input_hint">分鐘 (≥1)</string>
+    <string name="rotation_without_screen_off_title">亮屏時直接輪換</string>
+    <string name="rotation_without_screen_off_summary">開啟後即使螢幕亮著也會直接執行主題輪換，無需等待滅屏</string>
 </resources>

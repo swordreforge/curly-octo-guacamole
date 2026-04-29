@@ -29,7 +29,7 @@ class ThemeRotationReceiver : BroadcastReceiver() {
             powerManager.isScreenOn
         }
 
-        if (isScreenOn) {
+        if (isScreenOn && !ThemeRotationManager.isWithoutScreenOff()) {
             Log.d(TAG, "Screen is on, marking rotation as pending")
             ThemeRotationManager.setPending(true)
 

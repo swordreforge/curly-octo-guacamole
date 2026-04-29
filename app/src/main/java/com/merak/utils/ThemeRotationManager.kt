@@ -24,6 +24,7 @@ object ThemeRotationManager {
     private const val PREF_ORDER_MODE = "theme_rotation_order_mode"
     private const val PREF_LAST_INDEX = "theme_rotation_last_index"
     private const val PREF_PENDING = "theme_rotation_pending"
+    private const val PREF_WITHOUT_SCREEN_OFF = "theme_rotation_without_screen_off"
     private const val PREF_CURRENT_FILE = "theme_rotation_current_file"
     private const val PREF_LAST_ROTATION_TIME = "theme_rotation_last_time"
     private const val CHANNEL_ID = "theme_rotation_channel"
@@ -52,6 +53,10 @@ object ThemeRotationManager {
     fun isPending(): Boolean = PreferenceUtil.getBoolean(PREF_PENDING, false)
 
     fun setPending(pending: Boolean) = PreferenceUtil.setBoolean(PREF_PENDING, pending)
+
+    fun isWithoutScreenOff(): Boolean = PreferenceUtil.getBoolean(PREF_WITHOUT_SCREEN_OFF, false)
+
+    fun setWithoutScreenOff(enabled: Boolean) = PreferenceUtil.setBoolean(PREF_WITHOUT_SCREEN_OFF, enabled)
 
     fun getCurrentFileName(): String = PreferenceUtil.getString(PREF_CURRENT_FILE, "")
 
@@ -216,6 +221,14 @@ object ThemeRotationManager {
                     LogManager.LogType.THEME_INSTALL,
                     context.getString(R.string.log_rotation_success),
                     targetItem.fileName
+                )
+
+                ThemeHistory.add(
+                    ThemeHistory.HistoryItem(
+                        fileName = targetItem.fileName,
+                        sourcePath = targetItem.sourcePath,
+                        installTime = System.currentTimeMillis()
+                    )
                 )
 
                 sendRotationNotification(context, targetItem.fileName)

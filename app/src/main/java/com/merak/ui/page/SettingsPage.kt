@@ -97,6 +97,9 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
     var rotationOrderMode by remember {
         mutableStateOf(ThemeRotationManager.getOrderMode())
     }
+    var rotationWithoutScreenOff by remember {
+        mutableStateOf(ThemeRotationManager.isWithoutScreenOff())
+    }
     val historyEmpty = remember { ThemeHistory.getAll().isEmpty() }
     
     fun hasNotificationPermission(): Boolean {
@@ -369,6 +372,23 @@ fun SettingsPage(onNavigateToAbout: () -> Unit = {}) {
                                 onSelectedIndexChange = { index ->
                                     rotationOrderMode = index
                                     ThemeRotationManager.setOrderMode(index)
+                                }
+                            )
+                        }
+                    }
+                }
+                if (rotationEnabled) {
+                    item {
+                        Card(
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                        ) {
+                            SuperSwitch(
+                                title = stringResource(R.string.rotation_without_screen_off_title),
+                                summary = stringResource(R.string.rotation_without_screen_off_summary),
+                                checked = rotationWithoutScreenOff,
+                                onCheckedChange = { checked ->
+                                    rotationWithoutScreenOff = checked
+                                    ThemeRotationManager.setWithoutScreenOff(checked)
                                 }
                             )
                         }
