@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="@dimen/detail_concentration_layout_margin_top"
+    android:paddingBottom="@dimen/detail_concentration_layout_margin_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/detail_concentration_container_size">
+    <include
+        android:id="@+id/detail_concentration_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/detail_concentration_head_margin_bottom"
+        layout="@layout/rc_concentration_head"/>
+    <com.android.thememanager.recommend.view.widget.ReboundRecyclerViewContainer
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/detail_concentration_head">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detail_concentration_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.android.thememanager.recommend.view.widget.ReboundRecyclerViewContainer>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

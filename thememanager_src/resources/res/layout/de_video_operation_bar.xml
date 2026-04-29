@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/magic_mode"
+        android:background="@drawable/wallpaper_detail_btn_mode_bg"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:clickable="true"
+        android:layout_width="@dimen/de_magic_mode_icon_size"
+        android:layout_height="@dimen/de_magic_mode_icon_size"
+        android:src="@drawable/magic_mode_icon"
+        android:contentDescription="@string/wallpaper_magic_mode_preview_tip"
+        android:layout_marginStart="@dimen/de_video_operation_horizontal_margin"/>
+    <com.android.thememanager.detail.video.view.widget.VideoApplyButton
+        android:layout_gravity="center_vertical"
+        android:id="@+id/apply"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/de_video_apply_height"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/de_video_apply_horizontal_margin_start"
+        android:layout_marginEnd="@dimen/de_video_apply_horizontal_margin_end"/>
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/callShow"
+        android:layout_width="@dimen/de_incall_show_icon_size"
+        android:layout_height="@dimen/de_incall_show_icon_size"
+        android:src="@drawable/de_ic_callshow"
+        android:contentDescription="@string/incall_show_title"
+        android:layout_marginEnd="@dimen/de_video_operation_horizontal_margin"/>
+</LinearLayout>

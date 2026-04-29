@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/card_line_divider_color"/>
+    <size android:height="1px"/>
+    <padding
+        android:left="@dimen/itemview_horizontal_padding_from_screen"
+        android:right="@dimen/itemview_horizontal_padding_from_screen"/>
+</shape>

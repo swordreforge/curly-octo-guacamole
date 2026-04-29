@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:useLevel="false"
+    android:thickness="@dimen/de_aod_cache_view_ring_thickness">
+    <solid android:color="@color/de_aod_cache_view_ring"/>
+</shape>

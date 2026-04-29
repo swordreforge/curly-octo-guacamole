@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:title="@string/wallpaper_loop_more_options">
+    <miuix.preference.DropDownPreference
+        android:title="@string/wallpaper_loop_interval_title"
+        android:key="interval"
+        android:defaultValue="90000"
+        app:entries="@array/set_wallpaper_loop_interval"
+        app:entryValues="@array/set_wallpaper_loop_interval_values"/>
+    <miuix.preference.DropDownPreference
+        android:title="@string/wallpaper_loop_order_title"
+        android:key="order"
+        android:defaultValue="0"
+        app:entries="@array/set_wallpaper_loop_order"
+        app:entryValues="@array/set_wallpaper_loop_order_values"/>
+</PreferenceScreen>

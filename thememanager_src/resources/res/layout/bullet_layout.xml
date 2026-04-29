@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bullet_dialog_smooth_margin_top"
+        android:radius="20.36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/content"
+            android:layout_width="@dimen/bullet_dialog_width"
+            android:layout_height="@dimen/bullet_dialog_height"
+            android:scaleType="fitXY"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bullet_dialog_close_btn_margin_top"
+        android:src="@drawable/bullet_cancel_btn"
+        android:contentDescription="@string/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content_container"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/image_fl"
+        style="@style/SmoothLayoutDefault">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/detail_recommend_item_width"
+            android:layout_height="@dimen/detail_recommend_item_height"
+            android:scaleType="fitXY"/>
+        <include
+            android:layout_width="@dimen/detail_recommend_item_width"
+            android:layout_height="@dimen/detail_recommend_item_height"
+            layout="@layout/recommend_holder_ad_info_container"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <LinearLayout
+        android:id="@+id/stagger_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/StaggerItemBottomContainer">
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/StaggerItemTitle"/>
+        <TextView
+            android:id="@+id/price"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/StaggerItemSubTitle"/>
+        <include layout="@layout/ad_bottom_download_button"/>
+    </LinearLayout>
+</LinearLayout>

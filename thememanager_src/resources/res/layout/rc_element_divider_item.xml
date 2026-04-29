@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/divide_line_height">
+    <View
+        android:id="@+id/divider"
+        android:background="@drawable/divider_default"
+        android:layout_width="match_parent"
+        android:layout_height="0.67dp"
+        android:layout_marginStart="@dimen/default_margin_start"
+        android:layout_marginEnd="@dimen/default_margin_end"/>
+</LinearLayout>

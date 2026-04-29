@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/local_ring_fragement_margin_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/online_picker"
+        layout="@layout/resource_list_ringtone_picker_header_item"/>
+    <include
+        android:id="@+id/local_picker"
+        layout="@layout/resource_list_ringtone_picker_header_item"/>
+    <include
+        android:id="@+id/mi_ai_picker"
+        android:visibility="gone"
+        layout="@layout/resource_list_ringtone_picker_header_item"/>
+    <FrameLayout
+        android:id="@+id/list_head_line"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_content_height"
+        android:paddingStart="@dimen/ring_list_content_padding_start"
+        android:paddingEnd="@dimen/ring_list_content_padding_end">
+        <View
+            android:layout_gravity="center"
+            android:background="@color/common_divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"/>
+    </FrameLayout>
+</LinearLayout>

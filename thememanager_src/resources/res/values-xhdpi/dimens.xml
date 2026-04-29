@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_local_preview_width">257dp</dimen>
+    <dimen name="detail_local_screenview_height">497dp</dimen>
+    <dimen name="detail_online_preview_width">213dp</dimen>
+    <dimen name="detail_online_screenview_height">419dp</dimen>
+    <dimen name="recommend_thumbnail_round_corner_radius">10px</dimen>
+    <dimen name="resource_color_search_circle_diameter_1">266px</dimen>
+    <dimen name="resource_color_search_circle_diameter_2">250px</dimen>
+    <dimen name="resource_color_search_circle_diameter_3">235px</dimen>
+    <dimen name="resource_color_search_circle_diameter_4">260px</dimen>
+    <dimen name="resource_color_search_circle_diameter_5">250px</dimen>
+    <dimen name="resource_color_search_circle_diameter_6">216px</dimen>
+</resources>

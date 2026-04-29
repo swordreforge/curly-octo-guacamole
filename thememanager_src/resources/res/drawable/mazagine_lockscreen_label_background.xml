@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/wallpaper_subject_detail_top_label_corner"/>
+    <solid android:color="@color/default_wallpaper_gallery_label_color"/>
+    <size
+        android:height="@dimen/wallpaper_subject_detail_top_label_height"
+        android:width="@dimen/wallpaper_subject_detail_top_label_width"/>
+</shape>

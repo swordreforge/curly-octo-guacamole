@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="de_comment_list_divider_height">8.7dp</dimen>
+    <dimen name="de_comment_list_divider_margin_end">5.26dp</dimen>
+    <dimen name="de_comment_list_divider_margin_start">5.6dp</dimen>
+    <dimen name="de_widget_door_ic_margin_end">-13.09dp</dimen>
+    <dimen name="wallpaper_setting_stagger_item_image_radius">16dp</dimen>
+    <dimen name="wallpaper_setting_super_wallpaper_item_radius">16dp</dimen>
+</resources>

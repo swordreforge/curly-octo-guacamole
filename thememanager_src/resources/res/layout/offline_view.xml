@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:layout_gravity="bottom|center_horizontal"
+    android:orientation="vertical"
+    android:id="@+id/offline"
+    android:visibility="gone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:src="@drawable/wallpaper_setting_offline_icon"/>
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/wallpaper_settings_cover_item_count_color"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/offline_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wallpaper_online_tip"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+</LinearLayout>

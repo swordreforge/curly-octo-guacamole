@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="false">
+    <solid android:color="@color/common_black_transparent_percent_42"/>
+    <size
+        android:height="@dimen/lock_screen_panel_height"
+        android:width="@dimen/lock_screen_panel_height"/>
+</shape>

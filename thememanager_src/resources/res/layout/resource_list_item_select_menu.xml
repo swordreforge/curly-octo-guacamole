@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:gravity="center"
+        android:id="@+id/list_item_select_menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        style="@style/Widget.DialogTitle"/>
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/list_item_select_btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/list_item_select_menu_vertical_offset"
+        android:layout_marginBottom="@dimen/list_item_select_menu_vertical_offset"
+        android:layout_marginStart="@dimen/list_item_select_menu_horizaontal_offset"
+        android:layout_marginEnd="@dimen/list_item_select_menu_horizaontal_offset">
+        <Button
+            android:id="@+id/list_item_select_menu_left_button"
+            style="@style/Widget.BottomBarButton"/>
+        <Button
+            android:id="@+id/list_item_select_menu_right_button"
+            style="@style/Widget.BottomBarButton"/>
+    </LinearLayout>
+</LinearLayout>

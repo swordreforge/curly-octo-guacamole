@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/description_size"
+            style="@style/WallpaperDetailInfoTitle"/>
+        <TextView
+            android:id="@+id/size"
+            style="@style/WallpaperDetailInfoContent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/wallpaper_detail_info_modified_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/description_uploadtime"
+            style="@style/WallpaperDetailInfoTitle"/>
+        <TextView
+            android:id="@+id/modifiedTime"
+            style="@style/WallpaperDetailInfoContent"/>
+    </LinearLayout>
+</LinearLayout>

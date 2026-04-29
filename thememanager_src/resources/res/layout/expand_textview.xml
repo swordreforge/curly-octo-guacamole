@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:textSize="@dimen/expand_view_content_text_size"
+        android:textColor="@color/detail_sub_title_color"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textDirection="locale"/>
+    <TextView
+        android:textSize="@dimen/expand_view_expand_text_size"
+        android:textColor="@color/resource_expand_color"
+        android:id="@+id/expand"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resource_expand_full_text"
+        android:layout_alignBottom="@+id/content"
+        android:layout_alignEnd="@+id/content"/>
+</merge>

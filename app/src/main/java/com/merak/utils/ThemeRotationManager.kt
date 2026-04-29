@@ -241,10 +241,22 @@ object ThemeRotationManager {
     fun checkAndPerformPendingRotation(context: Context) {
         if (!isPending()) return
         setPending(false)
+
+        // 点亮屏幕，提升后台启动 Activity 成功率
+        val powerManager = context.getSystemService(Context.POWER_SERVICE) as android.os.PowerManager
+        val wakeLock = powerManager.newWakeLock(
+            android.os.PowerManager.FULL_WAKE_LOCK
+                    or android.os.PowerManager.ACQUIRE_CAUSES_WAKEUP
+                    or android.os.PowerManager.ON_AFTER_RELEASE,
+            "ThemeStore:ScreenOffRotationWakeLock"
+        )
+        wakeLock.acquire(15 * 1000)
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 performRotation(context)
             } finally {
+                if (wakeLock.isHeld) wakeLock.release()
                 // 无论本次轮换成功与否，都调度下一次闹钟，避免功能卡住
                 scheduleNextRotation(context)
             }

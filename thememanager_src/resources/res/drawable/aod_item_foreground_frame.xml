@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/round_corner_default"/>
+    <stroke
+        android:width="@dimen/aod_item_foreground_frame_width"
+        android:color="@color/aod_preview"/>
+</shape>

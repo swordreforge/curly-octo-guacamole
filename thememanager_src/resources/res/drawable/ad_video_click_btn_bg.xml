@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#1a000000"/>
+    <corners android:radius="@dimen/ad_video_detail_download_btn_radius"/>
+    <padding
+        android:left="@dimen/ad_video_detail_download_btn_padding_start"
+        android:top="@dimen/ad_video_detail_download_btn_padding_top"
+        android:right="@dimen/ad_video_detail_download_btn_padding_end"
+        android:bottom="@dimen/ad_video_detail_download_btn_padding_bottom"/>
+</shape>

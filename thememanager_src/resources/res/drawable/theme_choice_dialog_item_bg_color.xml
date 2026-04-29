@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:miui="http://schemas.android.com/apk/res/miui">
+    <item
+        android:state_pressed="true"
+        android:drawable="@color/theme_choice_dialog_item_bg_color_p"/>
+    <item
+        android:state_selected="true"
+        android:drawable="@color/theme_choice_dialog_item_bg_color_p"/>
+    <item android:drawable="@color/theme_choice_dialog_item_bg_color_n"/>
+</selector>

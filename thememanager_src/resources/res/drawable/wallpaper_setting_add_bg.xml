@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/wallpaper_setting_add_gallery_color"/>
+    <corners android:radius="@dimen/wallpaper_setting_tile_radius"/>
+</shape>

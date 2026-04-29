@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/wallpaper_img"
+        android:background="@color/personalize_lockscreen_desk_background_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/slideshow_stroke"
+        android:scaleType="centerCrop"/>
+    <com.android.thememanager.basemodule.views.ThemeTextView
+        android:textSize="@dimen/personalize_theme_card_title_text_size"
+        android:textColor="@color/personalize_theme_card_title_text_color"
+        android:layout_gravity="start|top"
+        android:id="@+id/card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/personalize_wallpaper_card_margin"
+        android:text="@string/component_title_wallpaper"
+        android:fontFamily="mipro-medium"
+        android:layout_marginStart="@dimen/personalize_wallpaper_card_margin"/>
+</FrameLayout>

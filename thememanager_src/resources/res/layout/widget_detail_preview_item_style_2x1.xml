@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipChildren="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.smooth.SmoothFrameLayout2
+        android:layout_gravity="center"
+        android:id="@+id/wrap_widget_thumbnail"
+        android:padding="@dimen/widget_preview_border_type1_width"
+        android:clipChildren="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/widget_preview_img_1_radius"
+        android:elevation="@dimen/de_detail_info_popup_padding_start"
+        android:outlineSpotShadowColor="#26000000"
+        app:miuix_strokeColor="@color/widget_list_item_bg"
+        app:miuix_strokeWidth="@dimen/widget_preview_border_type1_width">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/widget_thumbnail"
+            android:layout_width="127.64dp"
+            android:layout_height="46.18dp"
+            android:scaleType="fitXY"
+            android:clipToOutline="true"/>
+    </miuix.smooth.SmoothFrameLayout2>
+</FrameLayout>

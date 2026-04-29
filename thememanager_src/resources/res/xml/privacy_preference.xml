@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/pref_privacy_policy">
+        <miuix.preference.TextPreference
+            android:title="@string/pref_privacy_policy"
+            android:key="privacyPolicy"/>
+        <miuix.preference.TextPreference
+            android:title="@string/privacy_revoke_agree_content"
+            android:key="revoke_agreement"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/personalize"
+        android:key="category_key_recommend"
+        app:isPreferenceVisible="@bool/support_recommend"/>
+    <PreferenceCategory
+        android:title="@string/privacy_permission_related_content"
+        android:key="category_key_about_permission">
+        <miuix.preference.TextPreference
+            android:title="@string/privacy_permission_management_description"
+            android:key="privilege_management"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/local_mode"
+        android:key="category_key_local_mode">
+        <CheckBoxPreference
+            android:title="@string/local_mode_open"
+            android:key="key_local_mode"
+            android:summary="@string/local_mode_desc"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/privacy_logoff_services_title"
+        android:key="category_key_logoff_services">
+        <miuix.preference.TextPreference
+            android:title="@string/privacy_phone_logoff_service_content"
+            android:key="logoff_theme_servers"/>
+    </PreferenceCategory>
+</PreferenceScreen>

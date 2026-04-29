@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/thumbnail_0"
+        android:layout_marginStart="@dimen/itemview_horizontal_padding_from_screen"
+        style="@style/OddThreeGridViewSmallImage"/>
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/thumbnail_1"
+        android:layout_marginStart="@dimen/recycler_divider_height"
+        android:layout_marginEnd="@dimen/itemview_horizontal_padding_from_screen"
+        android:layout_toEndOf="@+id/thumbnail_0"
+        style="@style/OddThreeGridViewSmallImage"/>
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/thumbnail_2"
+        android:layout_marginTop="@dimen/recycler_divider_height"
+        android:layout_marginBottom="@dimen/itemview_vertical_padding_from_screen"
+        android:layout_below="@+id/thumbnail_0"
+        android:layout_marginStart="@dimen/itemview_horizontal_padding_from_screen"
+        style="@style/OddThreeGridViewSmallImage"/>
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/thumbnail_3"
+        android:layout_marginTop="@dimen/recycler_divider_height"
+        android:layout_marginBottom="@dimen/itemview_vertical_padding_from_screen"
+        android:layout_below="@+id/thumbnail_1"
+        android:layout_marginStart="@dimen/recycler_divider_height"
+        android:layout_marginEnd="@dimen/itemview_horizontal_padding_from_screen"
+        android:layout_toEndOf="@+id/thumbnail_2"
+        style="@style/OddThreeGridViewSmallImage"/>
+</RelativeLayout>

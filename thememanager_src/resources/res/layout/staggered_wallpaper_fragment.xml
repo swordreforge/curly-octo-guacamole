@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.springback.view.SpringBackLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:scrollableView="@+id/sub">
+    <FrameLayout
+        android:id="@+id/sub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:paddingStart="@dimen/stagger_divider"
+            android:paddingEnd="@dimen/stagger_divider"/>
+        <ViewStub
+            android:id="@+id/reload_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            android:gravity="center_vertical"
+            layout="@layout/v9_loading_progress"/>
+    </FrameLayout>
+</miuix.springback.view.SpringBackLayout>

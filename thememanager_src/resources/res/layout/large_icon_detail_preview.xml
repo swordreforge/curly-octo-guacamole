@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.android.thememanager.view.largeicon.LargeIconHeaderView
+        android:id="@+id/preview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:center_padding="@dimen/large_icon_detail_selector_center_padding"
+        app:edge_padding="@dimen/large_icon_detail_selector_edge_padding"
+        app:item_count="4"
+        app:logo_slide_length="@dimen/large_icon_detail_logo_size"
+        app:title_margin_top="@dimen/large_icon_head_detail_selector_title_margin_top"/>
+    <include layout="@layout/large_icon_picker_selector"/>
+</LinearLayout>

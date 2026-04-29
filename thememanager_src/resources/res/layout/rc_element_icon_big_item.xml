@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/image_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SmoothLayoutDefault">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/icon_recommend_image_width"
+            android:layout_height="@dimen/icon_recommend_image_height"
+            android:scaleType="centerCrop"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Icon_StaggerItemBottomContainer">
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Icon_StaggerItemTitle"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Icon_StaggerItemSubTitle"/>
+    </LinearLayout>
+</LinearLayout>

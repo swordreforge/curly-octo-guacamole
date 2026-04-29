@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/preview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/large_icon_select_flag_margin"
+    android:radius="@dimen/large_icon_picker_page_recommend_list_item_radius">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@color/large_icon_picker_page_recommend_list_more_item_background_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:background="@drawable/while_round_bg"
+            android:layout_width="@dimen/large_icon_picker_page_recommend_list_more_icon_slide_length"
+            android:layout_height="@dimen/large_icon_picker_page_recommend_list_more_icon_slide_length"
+            android:src="@drawable/ic_recommend_more"
+            android:scaleType="center"/>
+        <TextView
+            android:textSize="13sp"
+            android:textColor="@color/large_icon_more_recommend"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_icon_picker_recommend_more_vh_msg_margin"
+            android:text="@string/large_icon_picker_more"
+            android:singleLine="true"
+            android:fontFamily="mipro-regular"
+            android:textFontWeight="500"/>
+    </LinearLayout>
+</miuix.smooth.SmoothFrameLayout2>

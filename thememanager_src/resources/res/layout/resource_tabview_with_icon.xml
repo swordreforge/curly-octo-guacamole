@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.thememanager.view.TabViewWithIcon xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:background="@null"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="0dp"
+    android:paddingEnd="0dp"
+    style="@android:style/Widget.ActionBar.TabView">
+    <TextView
+        android:textAppearance="@style/Widget.ActionBar.TabText"
+        android:id="@+id/text"
+        android:duplicateParentState="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:textSize="@dimen/tab_title_corner_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/tab_title_corner_text_color"
+        android:gravity="center"
+        android:id="@+id/icon"
+        android:background="@drawable/tab_title_icon_bg"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/text"/>
+</com.android.thememanager.view.TabViewWithIcon>

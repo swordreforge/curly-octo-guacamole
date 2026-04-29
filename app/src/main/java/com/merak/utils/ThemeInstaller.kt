@@ -171,9 +171,9 @@ object ThemeInstaller {
         return try {
             val themeFile = getThemeInstallFile()
             if (!themeFile.exists()) return false
-            
+
             val originalPath = "/sdcard/Android/data/com.android.thememanager/files/theme/安装主题.mtz"
-            
+
             val intent = Intent().apply {
                 action = Intent.ACTION_MAIN
                 setClassName(
@@ -185,13 +185,68 @@ object ThemeInstaller {
                 putExtra("ver2_step", "ver2_step_apply")
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
-            
+
+            // Android 10+ 限制后台启动 Activity
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && !isAppInForeground(context)) {
+                Log.w("ThemeInstaller", "应用处于后台，尝试发送全屏通知触发主题应用")
+                sendApplyThemeNotification(context, intent)
+                return true
+            }
+
             context.startActivity(intent)
             true
         } catch (e: Exception) {
             Log.e("ThemeInstaller", "启动失败", e)
             false
         }
+    }
+
+    private fun isAppInForeground(context: Context): Boolean {
+        val am = context.getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager
+        return am.runningAppProcesses?.any {
+            it.processName == context.packageName &&
+                    it.importance == android.app.ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND
+        } ?: false
+    }
+
+    private fun sendApplyThemeNotification(context: Context, themeIntent: Intent) {
+        val channelId = "theme_apply_fallback"
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
+            if (nm.getNotificationChannel(channelId) == null) {
+                val channel = android.app.NotificationChannel(
+                    channelId,
+                    "主题应用提醒",
+                    android.app.NotificationManager.IMPORTANCE_HIGH
+                ).apply {
+                    description = "当后台自动轮换无法直接弹出界面时，通过通知提醒您手动确认"
+                    enableLights(true)
+                    enableVibration(true)
+                }
+                nm.createNotificationChannel(channel)
+            }
+        }
+
+        val pendingIntent = android.app.PendingIntent.getActivity(
+            context,
+            0,
+            themeIntent,
+            android.app.PendingIntent.FLAG_UPDATE_CURRENT or android.app.PendingIntent.FLAG_IMMUTABLE
+        )
+
+        val notification = androidx.core.app.NotificationCompat.Builder(context, channelId)
+            .setContentTitle("主题轮换已就绪")
+            .setContentText("点击以应用新主题")
+            .setSmallIcon(android.R.drawable.ic_menu_gallery)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .setPriority(androidx.core.app.NotificationCompat.PRIORITY_HIGH)
+            .setCategory(androidx.core.app.NotificationCompat.CATEGORY_ALARM)
+            .setFullScreenIntent(pendingIntent, true)
+            .build()
+
+        val nm = context.getSystemService(Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
+        nm.notify(2002, notification)
     }
     
     suspend fun quickInstall(context: Context, sourcePath: String): Result<Boolean> {

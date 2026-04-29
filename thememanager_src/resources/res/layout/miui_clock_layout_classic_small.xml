@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.classic.ClassicClockSmallView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.miui.clock.classic.ClassicTextAreaView
+        android:textColor="@color/classic_color_white"
+        android:id="@+id/text_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/classic_text_area_margin_top_has_face"
+        android:fontFamily="mipro-medium"
+        android:layout_marginHorizontal="@dimen/classic_text_area_small_margin_start_end"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <View
+        android:id="@+id/area1"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/classic_area_location_height"
+        android:layout_marginTop="@dimen/classic_area2_margin_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_area"/>
+    <com.miui.clock.MiuiTextGlassView
+        android:textSize="@dimen/classic_time_area_text_size"
+        android:textColor="@color/classic_color_white"
+        android:id="@+id/time_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/classic_area_2_3_4_content_margin_bottom"
+        android:fontFamily="mipro-normal"
+        android:letterSpacing="-0.02"
+        android:layout_marginHorizontal="@dimen/classic_time_area_small_margin_start_end"
+        app:layout_constraintBottom_toBottomOf="@+id/area1"
+        app:layout_constraintTop_toTopOf="@+id/area1"/>
+    <FrameLayout
+        android:id="@+id/magazine_info_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/classic_gallery_area_margin_top"
+        android:layout_marginHorizontal="@dimen/classic_text_area_small_margin_start_end"
+        app:layout_constraintTop_toBottomOf="@+id/area1"/>
+</com.miui.clock.classic.ClassicClockSmallView>

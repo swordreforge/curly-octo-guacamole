@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Space
+        android:layout_width="@dimen/wallpaper_staggered_divider_double"
+        android:layout_height="1dp"/>
+    <include
+        android:id="@+id/item_0"
+        layout="@layout/element_normal_two_theme_group_item"/>
+    <Space
+        android:layout_width="@dimen/detail_recommend_item_divider_size"
+        android:layout_height="1dp"/>
+    <include
+        android:id="@+id/item_1"
+        layout="@layout/element_normal_two_theme_group_item"/>
+    <Space
+        android:layout_width="@dimen/wallpaper_staggered_divider_double"
+        android:layout_height="1dp"/>
+</LinearLayout>

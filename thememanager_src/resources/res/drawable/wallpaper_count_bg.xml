@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/wallpaper_subject_count_round_raidus"/>
+    <size
+        android:height="@dimen/wallpaper_subject_count_height"
+        android:width="@dimen/wallpaper_subject_count_width"/>
+    <solid android:color="#26000000"/>
+</shape>

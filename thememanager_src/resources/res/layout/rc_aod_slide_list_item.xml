@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/rc_aod_slide_list_item_width"
+    android:layout_height="@dimen/rc_aod_slide_list_item_height"
+    android:radius="@dimen/thumbnail_round_size"
+    style="@style/SmoothLayoutDefault">
+    <com.android.thememanager.basemodule.views.ForegroundImageView
+        android:id="@+id/thumbnail"
+        android:paddingBottom="1.3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@drawable/aod_item_foreground_frame"
+        android:scaleType="centerCrop"
+        app:foreground="@drawable/aod_item_foreground_frame"/>
+</miuix.smooth.SmoothFrameLayout2>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/item_color"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <miuix.miuixbasewidget.widget.FilterSortView2
+        android:id="@+id/filter_sort_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/filter_sort_view_margin_bottom"
+        android:layout_marginStart="@dimen/filter_sort_view_margin"
+        android:layout_marginEnd="@dimen/filter_sort_view_margin">
+        <view
+            android:id="@+id/tab_view_system_wallpaper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/title_system_wallpaper_resource"
+            app:layout_constraintEnd_toStartOf="@+id/tab_view_online_wallpaper"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            class="miuix.miuixbasewidget.widget.FilterSortView$TabView"/>
+        <view
+            android:id="@+id/tab_view_online_wallpaper"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/wallpaper_setting_library"
+            app:layout_constraintBottom_toBottomOf="@+id/tab_view_system_wallpaper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/tab_view_system_wallpaper"
+            app:layout_constraintTop_toTopOf="@+id/tab_view_system_wallpaper"
+            class="miuix.miuixbasewidget.widget.FilterSortView$TabView"/>
+    </miuix.miuixbasewidget.widget.FilterSortView2>
+</RelativeLayout>

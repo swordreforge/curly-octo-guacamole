@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="29.82dp"
+    android:width="94.9dp"
+    android:autoMirrored="true"
+    android:viewportWidth="261"
+    android:viewportHeight="82">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M41,1L220,1A40,40 0,0 1,260 41L260,41A40,40 0,0 1,220 81L41,81A40,40 0,0 1,1 41L1,41A40,40 0,0 1,41 1z"
+        android:strokeColor="@color/ad_download_btn_border_color"
+        android:strokeWidth="2"/>
+</vector>

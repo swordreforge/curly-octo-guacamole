@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.androidbasewidget.widget.ProgressBar
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/progress_loading"
+        android:layout_width="@dimen/author_loading_progress_size"
+        android:layout_height="@dimen/author_loading_progress_size"/>
+    <TextView
+        android:textSize="@dimen/author_empty_text_size"
+        android:textColor="@color/author_light_black_100_night_white_90"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tv_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/author_loading_text_margin_top"
+        android:text="@string/card_loading"
+        android:maxLines="1"
+        android:includeFontPadding="false"
+        android:fontFamily="sans-serif-medium"/>
+</LinearLayout>

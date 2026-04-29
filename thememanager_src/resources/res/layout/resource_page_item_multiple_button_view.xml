@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/resource_page_item_multiple_button_addition_top_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/multiple_button_icon"
+        android:background="@drawable/resource_multiple_button_bg"
+        android:layout_width="@dimen/resource_multiple_button_size"
+        android:layout_height="@dimen/resource_multiple_button_size"
+        android:scaleType="fitCenter"/>
+    <TextView
+        android:textSize="@dimen/resource_page_item_multiple_button_title_text_size"
+        android:textColor="@color/resource_multiple_button_text_color"
+        android:ellipsize="end"
+        android:id="@+id/multiple_button_text"
+        android:paddingTop="8.3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="@dimen/resource_multiple_button_size"
+        android:singleLine="true"/>
+</LinearLayout>

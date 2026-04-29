@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:paddingStart="@dimen/me_local_item_padding"
+    android:paddingEnd="@dimen/me_local_item_padding">
+    <FrameLayout
+        android:id="@+id/thumbnail_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/me_local_icon_item_height"
+            android:scaleType="centerCrop"/>
+        <CheckBox
+            android:layout_gravity="end|bottom"
+            android:id="@+id/checkbox"
+            android:focusable="false"
+            android:visibility="gone"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/checkbox_margin"/>
+    </FrameLayout>
+    <TextView
+        android:ellipsize="end"
+        android:id="@+id/title"
+        android:maxWidth="@dimen/three_group_title_max_width"
+        android:singleLine="true"
+        android:paddingStart="0dp"
+        style="@style/ResourceBrowser.ResourceDescription.Vertical"/>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.thememanager.activity.WallpaperLoadView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/wallpaper_detail_bg_default"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/wallpaper_item_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <miuix.androidbasewidget.widget.ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/process_bar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.ProgressBar.Dark"/>
+</com.android.thememanager.activity.WallpaperLoadView>

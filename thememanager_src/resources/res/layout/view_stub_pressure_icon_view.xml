@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pressure_icon"
+    android:layout_width="@dimen/weather_pressure_icon_w_h"
+    android:layout_height="@dimen/weather_pressure_icon_w_h"
+    android:scaleType="centerCrop"
+    android:importantForAccessibility="no"/>

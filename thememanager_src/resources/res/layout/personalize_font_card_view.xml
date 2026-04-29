@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/personalize_bottom_card_black_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foreground="@drawable/personalize_card_foreground">
+    <TextView
+        android:textSize="@dimen/personalize_card_text_size"
+        android:textStyle="bold"
+        android:textColor="#e5ffffff"
+        android:id="@+id/font_card_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/personalize_card_title_margin_top"
+        android:text="@string/personalize_default_font"
+        android:lineSpacingExtra="@dimen/personalize_card_text_lineSpacingExtra"
+        android:layout_marginStart="@dimen/personalize_card_title_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="@dimen/personalize_card_font_title_size"
+        android:textStyle="bold"
+        android:textColor="#e6ffffff"
+        android:id="@+id/font_card_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/personalize_card_font_margin_bottom"
+        android:text="@string/personalize_font_demo_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

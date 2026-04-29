@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/wallpaper_classification_banner_item_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Space
+            android:layout_width="@dimen/itemview_horizontal_padding_from_screen"
+            android:layout_height="1dp"/>
+        <include
+            android:id="@+id/thumbnail_0"
+            android:visibility="gone"
+            layout="@layout/rc_element_normal_two_classification_banner_item"/>
+        <Space
+            android:layout_width="@dimen/wallpaper_classification_banner_item_bottom"
+            android:layout_height="1dp"/>
+        <include
+            android:id="@+id/thumbnail_1"
+            android:visibility="gone"
+            layout="@layout/rc_element_normal_two_classification_banner_item"/>
+        <Space
+            android:layout_width="@dimen/itemview_horizontal_padding_from_screen"
+            android:layout_height="1dp"/>
+    </LinearLayout>
+    <include
+        android:id="@+id/wallpaper_classification_banner_divider"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line_height"
+        android:layout_below="@+id/rank_image_container"
+        layout="@layout/rc_element_divider_item"/>
+</LinearLayout>

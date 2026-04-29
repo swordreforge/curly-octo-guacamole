@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:id="@+id/download_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/ad_info_btn_margin"
+    android:text="@string/ad_download_download_now"
+    android:layout_centerVertical="true"
+    android:layout_marginEnd="@dimen/ad_info_btn_margin"
+    android:layout_alignParentEnd="true"
+    style="@style/adBottomDownloadBtn"/>

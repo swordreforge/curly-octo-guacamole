@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:background="@drawable/diy_add_bg"
+    android:layout_width="@dimen/loop_wallpaper_width"
+    android:layout_height="@dimen/loop_wallpaper_height"
+    android:radius="@dimen/loop_wallpaper_radius"
+    style="@style/SmoothLayoutDefault">
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/imageView"
+        android:background="@drawable/ic_diy_add_n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</miuix.smooth.SmoothFrameLayout2>

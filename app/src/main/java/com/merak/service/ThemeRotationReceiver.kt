@@ -34,6 +34,16 @@ class ThemeRotationReceiver : BroadcastReceiver() {
             ThemeRotationManager.setPending(true)
         } else {
             Log.d(TAG, "Screen is off, performing rotation immediately")
+
+            // 获取 WakeLock 点亮屏幕，解除 Android 10+ 后台启动 Activity 限制
+            val wakeLock = powerManager.newWakeLock(
+                PowerManager.FULL_WAKE_LOCK
+                        or PowerManager.ACQUIRE_CAUSES_WAKEUP
+                        or PowerManager.ON_AFTER_RELEASE,
+                "ThemeStore:RotationWakeLock"
+            )
+            wakeLock.acquire(15 * 1000)
+
             val pendingResult = goAsync()
             CoroutineScope(Dispatchers.IO).launch {
                 try {
@@ -47,6 +57,7 @@ class ThemeRotationReceiver : BroadcastReceiver() {
                 } catch (e: Exception) {
                     Log.e(TAG, "Rotation exception", e)
                 } finally {
+                    if (wakeLock.isHeld) wakeLock.release()
                     pendingResult.finish()
                 }
             }

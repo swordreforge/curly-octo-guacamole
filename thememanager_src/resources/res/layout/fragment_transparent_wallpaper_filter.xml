@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/search_view"
+            layout="@layout/miuix_appcompat_search_stub"/>
+        <com.android.thememanager.view.expandableview.WrapPinnedHeaderListView
+            android:id="@+id/app_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <include
+        android:id="@+id/loading"
+        layout="@layout/wallpaper_settings_list_loading"/>
+</FrameLayout>

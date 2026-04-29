@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/thumbnail_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/pad_online_theme_thumb_radius">
+        <ImageView
+            android:id="@+id/online_icon_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:id="@+id/online_icon_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.thememanager.basemodule.views.ThemeTextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:gravity="center"
+    android:id="@+id/text"
+    android:minWidth="@dimen/search_recommend_item_min_width"
+    app:supportElder="true"/>

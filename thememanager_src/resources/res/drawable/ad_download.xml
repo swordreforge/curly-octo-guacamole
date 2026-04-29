@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="21.8dp"
+    android:width="21.8dp"
+    android:autoMirrored="true"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+    <path
+        android:fillColor="@color/ringtone_color"
+        android:pathData="M29.9668,5.9606C31.0714,5.9606 31.9668,6.856 31.9668,7.9606L31.9668,7.9606L31.9668,35.1856L40.5,26.6534C41.2399,25.9134 42.4154,25.8745 43.2012,26.5365L43.3284,26.6534C44.1094,27.4344 44.1094,28.7007 43.3284,29.4818L43.3284,29.4818L29.9659,42.8443L16.6054,29.4817C15.8245,28.7006 15.8246,27.4342 16.6057,26.6533C17.3868,25.8723 18.6531,25.8724 19.4341,26.6535L19.4341,26.6535L27.9668,35.1876L27.9668,7.9606C27.9668,6.9062 28.7827,6.0424 29.8175,5.9661Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.35"
+        android:fillAlpha="0.35"/>
+    <path
+        android:fillColor="@color/ringtone_color"
+        android:pathData="M9.0004,54.0563L50.9332,54.0563C52.0378,54.0563 52.9332,53.1608 52.9332,52.0563C52.9332,50.9517 52.0378,50.0563 50.9332,50.0563L9.0004,50.0563C7.8958,50.0563 7.0004,50.9517 7.0004,52.0563C7.0004,53.1608 7.8958,54.0563 9.0004,54.0563Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.35"
+        android:fillAlpha="0.35"/>
+</vector>

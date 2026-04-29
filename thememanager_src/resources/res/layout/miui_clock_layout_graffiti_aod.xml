@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.graffiti.MiuiGraffitiAodClock xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/content_miui_graffiti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_miui_graffiti_aod"/>
+    <FrameLayout
+        android:id="@+id/magazine_info_container"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/miui_graffiti_magazine_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+</com.miui.clock.graffiti.MiuiGraffitiAodClock>

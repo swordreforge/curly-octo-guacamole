@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bottom_notify_vh_bg"/>
+    <corners android:radius="@dimen/personalize_notify_center_preview_bg_corner"/>
+    <stroke
+        android:width="@dimen/personalize_notify_stroke_width"
+        android:color="#474747"/>
+</shape>

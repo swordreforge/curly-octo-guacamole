@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="15.26dp"
+    android:width="9.4dp"
+    android:autoMirrored="true"
+    android:viewportWidth="26"
+    android:viewportHeight="42">
+    <path
+        android:fillColor="@color/de_detail_reward_back_icon_color"
+        android:pathData="M7.0018,20.3635L19.4613,7.9041L21.5101,5.8552C22.1633,5.202 22.1633,4.143 21.5101,3.4899C20.857,2.8367 19.798,2.8367 19.1448,3.4899L17.0959,5.5388L4.6365,17.9982L2.5876,20.0471C2.2404,20.3943 2.0777,20.8562 2.0997,21.3109C2.0762,21.7673 2.2388,22.2315 2.5874,22.5801L4.6362,24.629L17.0957,37.0884L19.1446,39.1373C19.7977,39.7904 20.8567,39.7904 21.5099,39.1373C22.163,38.4841 22.163,37.4251 21.5099,36.772L19.461,34.7231L7.0016,22.2636L6.0516,21.3137L7.0018,20.3635Z"
+        android:strokeAlpha="0.8"/>
+</vector>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/local_icon_item_padding_bottom"
+    style="@style/ResourceBrowser.ListItem">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/thumbnail_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:cardBackgroundColor="@android:color/transparent"
+            card_view:cardCornerRadius="@dimen/local_icon_item_radius"
+            card_view:cardElevation="0dp">
+            <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+                android:id="@+id/thumbnail"
+                android:scaleType="centerCrop"
+                style="@style/ResourceBrowser.ResourceImage"/>
+            <include layout="@layout/resource_flag"/>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+    <TextView
+        android:id="@android:id/title"
+        android:layout_marginStart="@dimen/author_work_item_title_horizontal_offset"
+        android:layout_marginEnd="@dimen/author_work_item_title_horizontal_offset"
+        style="@style/ResourceBrowser.ResourceDescription.Vertical"/>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/author_work_item_title_horizontal_offset"
+        android:paddingEnd="@dimen/author_work_item_title_horizontal_offset">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/setting_find_more_text"
+            android:id="@+id/current_using"
+            android:visibility="gone"
+            android:layout_marginTop="1dp"
+            android:text="@string/current_using"
+            android:fontFamily="mipro-regular"
+            android:paddingStart="0dp"
+            style="@style/ResourceBrowser.ResourceDescription.SubDescription"/>
+        <include layout="@layout/resource_item_price_view"/>
+    </FrameLayout>
+</LinearLayout>

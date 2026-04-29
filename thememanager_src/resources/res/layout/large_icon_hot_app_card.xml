@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="@dimen/large_icon_home_card_title_text_size"
+        android:textColor="@color/large_icon_home_card_title"
+        android:id="@+id/hot_app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_icon_home_hot_card_title_margin_top"
+        android:fontFamily="mipro-medium"
+        android:layout_marginStart="@dimen/large_icon_home_card_title_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="@dimen/large_icon_home_card_sub_title_text_size"
+        android:textColor="@color/large_icon_home_card_sub_title"
+        android:id="@+id/hot_app_subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_resources"
+        android:drawablePadding="@dimen/large_icon_home_card_sub_title_drawable_padding"
+        android:drawableEnd="@drawable/ic_large_icon_arrow"
+        android:fontFamily="mipro-regular"
+        android:layout_marginEnd="@dimen/large_icon_home_card_title_margin"
+        app:layout_constraintBottom_toBottomOf="@+id/hot_app_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hot_app_title"/>
+    <GridLayout
+        android:id="@+id/hot_app_grid_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_icon_home_hot_app_item_margin_top"
+        android:columnCount="5"
+        app:layout_constraintEnd_toEndOf="@+id/hot_app_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hot_app_title"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

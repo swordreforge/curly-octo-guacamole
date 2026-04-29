@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/widget_item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/wrap_widget_thumbnail"
+        android:padding="@dimen/widget_list_border_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/widget_list_radius"
+        app:miuix_strokeColor="@color/widget_list_item_bg"
+        app:miuix_strokeWidth="@dimen/widget_list_border_width">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/widget_thumbnail"
+            android:layout_width="@dimen/widget_2_3_width"
+            android:layout_height="@dimen/widget_2_3_height"
+            android:scaleType="fitXY"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/wrap_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/divi_line_margin_top">
+        <TextView
+            android:textSize="@dimen/widget_title_size"
+            android:textStyle="bold"
+            android:id="@+id/widget_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/widget_title_size"
+            android:textStyle="bold"
+            android:textColor="@color/item_foot_tips_color"
+            android:id="@+id/widget_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

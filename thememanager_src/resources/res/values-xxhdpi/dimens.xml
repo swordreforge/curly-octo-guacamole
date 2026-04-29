@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="recommend_thumbnail_gap">6dp</dimen>
+    <dimen name="recommend_thumbnail_round_corner_radius">10px</dimen>
+    <dimen name="resource_color_search_circle_diameter_1">465px</dimen>
+    <dimen name="resource_color_search_circle_diameter_2">436px</dimen>
+    <dimen name="resource_color_search_circle_diameter_3">408px</dimen>
+    <dimen name="resource_color_search_circle_diameter_4">450px</dimen>
+    <dimen name="resource_color_search_circle_diameter_5">435px</dimen>
+    <dimen name="resource_color_search_circle_diameter_6">378px</dimen>
+</resources>

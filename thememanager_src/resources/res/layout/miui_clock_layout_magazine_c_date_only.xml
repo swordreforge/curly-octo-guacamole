@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.magazine.MiuiMagazineCDateClock xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clock_container"
+        android:layout_width="@dimen/miui_magazine_c_clock_style2_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/miui_magazine_c_clock_style2_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.miui.clock.utils.BaseLineSpaceView
+            android:id="@+id/time_space_style2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/miui_magazine_c_clock_style2_time_margin_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:textSize="@dimen/miui_magazine_c_clock_style2_date_text_size"
+            android:id="@+id/current_date_style2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/miui_magazine_c_clock_style2_date_margin_top"
+            android:fontFamily="mipro-medium"
+            android:elegantTextHeight="false"
+            android:letterSpacing="0.38"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time_space_style2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/magazine_info_container"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/miui_magazine_c_clock_style2_gallery_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clock_container"/>
+</com.miui.clock.magazine.MiuiMagazineCDateClock>

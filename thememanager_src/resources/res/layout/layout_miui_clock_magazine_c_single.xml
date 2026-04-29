@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.miui.clock.utils.BaseLineSpaceView
+        android:id="@+id/time_space"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/miui_magazine_c_clock_style1_time_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:gravity="start"
+        android:orientation="horizontal"
+        android:id="@+id/time_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layoutDirection="ltr">
+            <com.miui.clock.MiuiTextGlassView
+                android:textSize="@dimen/miui_magazine_c_clock_style1_text_size"
+                android:id="@+id/current_time_hour_style1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:importantForAccessibility="no"
+                android:fontFamily="miclock-neue-matic-compressed-black"
+                android:elegantTextHeight="false"/>
+            <com.miui.clock.MiuiTextGlassView
+                android:textSize="@dimen/miui_magazine_c_clock_style1_text_size"
+                android:id="@+id/current_time_minute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:importantForAccessibility="no"
+                android:fontFamily="miclock-neue-matic-compressed-black"
+                android:elegantTextHeight="false"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

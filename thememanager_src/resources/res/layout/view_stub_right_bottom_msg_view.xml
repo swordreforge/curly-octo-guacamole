@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.classic.PlaceHolderTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/classic_content_area_right_bottom_msg_text_size"
+    android:textColor="@color/classic_color_white_60"
+    android:id="@+id/right_bottom_msg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:includeFontPadding="false"
+    android:importantForAccessibility="no"/>

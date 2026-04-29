@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/de_detail_reward_success_margin_top">
+    <TextView
+        android:textSize="@dimen/de_detail_reward_success_size"
+        android:textColor="#fccc50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_reward_successed"
+        android:fontFamily="mipro-medium"/>
+    <TextView
+        android:textSize="@dimen/de_detail_reward_success_support_size"
+        android:textColor="#ccffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/de_detail_reward_success_support_margin_top"
+        android:text="@string/detail_reward_thanks_for_your_support"
+        android:fontFamily="mipro-regular"/>
+    <Button
+        android:textSize="@dimen/de_detail_reward_success_ok_size"
+        android:textColor="#ffffff"
+        android:id="@+id/reward_success_ok"
+        android:background="@drawable/de_reward_success_btn_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/de_detail_reward_success_ok_margin_top"
+        android:text="@string/detail_reward_know_it"
+        android:fontFamily="mipro-medium"/>
+</LinearLayout>

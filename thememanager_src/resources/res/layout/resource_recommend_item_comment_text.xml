@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:textSize="@dimen/de_comment_tag_size"
+    android:textColor="@color/comment_tag_select_color"
+    android:gravity="center"
+    android:id="@+id/text"
+    android:background="@drawable/resource_comment_item_tag_background"
+    android:height="@dimen/de_comment_tag_height"
+    android:paddingStart="@dimen/de_comment_tag_padding"
+    android:paddingEnd="@dimen/de_comment_tag_padding"/>

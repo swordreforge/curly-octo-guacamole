@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:paddingBottom="78dp"
+        android:clipChildren="true"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/itemview_horizontal_padding_from_screen"
+        android:layout_marginEnd="@dimen/itemview_horizontal_padding_from_screen"/>
+    <TextView
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@+id/text_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:text="@string/resource_data_empty"
+        style="@style/Resource.Widget.List.Empty"/>
+    <Button
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:id="@+id/find_more_button"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_cancel_content_height"
+        android:layout_marginBottom="@dimen/dialog_cancel_margin_bottom"
+        android:text="@string/incall_show_find_more"
+        android:layout_marginStart="@dimen/dialog_cancel_margin_start"
+        android:layout_marginEnd="@dimen/dialog_cancel_margin_end"
+        style="@style/Widget.Button.Primary"/>
+    <ViewStub
+        android:layout_gravity="end|bottom"
+        android:id="@+id/select_others_fab_stub"
+        android:layout="@layout/resource_list_piece_select_others_fab"
+        android:inflatedId="@+id/select_others_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"/>
+    <include layout="@layout/v9_loading_progress"/>
+</FrameLayout>

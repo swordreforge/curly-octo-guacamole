@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/me_account_dot_color"/>
+    <size
+        android:height="@dimen/new_message_size"
+        android:width="@dimen/new_message_size"/>
+    <corners android:radius="@dimen/new_message_radius"/>
+</shape>

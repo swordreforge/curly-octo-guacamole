@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="14sp"
+        android:textColor="#813910"
+        android:gravity="center"
+        android:id="@+id/guideText"
+        android:background="@drawable/bg_maml_widget_guide"
+        android:paddingTop="@dimen/wallpaper_settings_category_page_horizontal_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guide_to_widget"
+        android:paddingHorizontal="@dimen/ring_apply_radius"/>
+</FrameLayout>

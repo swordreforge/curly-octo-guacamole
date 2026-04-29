@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/itemview_vertical_padding_from_screen"
+    android:radius="@dimen/search_round_corner_radius"
+    android:layout_marginStart="@dimen/itemview_horizontal_padding_from_screen"
+    android:layout_marginEnd="@dimen/itemview_horizontal_padding_from_screen"
+    style="@style/SmoothLayoutDefault">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/top_banner"
+        android:layout_width="@dimen/wallpaper_alien_banner_grid_view_top_image_width"
+        android:layout_height="@dimen/wallpaper_alien_banner_grid_view_top_image_height"
+        android:scaleType="centerCrop"/>
+</miuix.smooth.SmoothFrameLayout2>

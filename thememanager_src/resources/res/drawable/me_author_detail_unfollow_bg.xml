@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:height="@dimen/author_detail_follow_bg_height"/>
+    <corners android:radius="@dimen/author_detail_follow_bg_radius"/>
+    <solid android:color="@color/author_detail_unfollow_color"/>
+    <padding
+        android:left="@dimen/author_detail_follow_bg_padding"
+        android:right="@dimen/author_detail_follow_bg_padding"/>
+</shape>

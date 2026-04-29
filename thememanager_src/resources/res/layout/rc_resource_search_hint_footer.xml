@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Widget.ListView.Item.SingleLine">
+    <com.android.thememanager.basemodule.views.ThemeTextView
+        android:textColor="@color/resource_search_footer_text_color"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/resource_clear_search_history"
+        android:singleLine="true"
+        app:supportElder="true"
+        style="@style/TextAppearance.List.Primary"/>
+</LinearLayout>

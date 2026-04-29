@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/classic_content_area_right_top_msg_weather_text_size"
+    android:textColor="@color/classic_color_white_60"
+    android:id="@+id/right_top_msg_weather"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/temperature_unit"
+    android:includeFontPadding="false"
+    android:importantForAccessibility="no"/>

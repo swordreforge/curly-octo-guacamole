@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/local_grid_item_bg"
+    android:paddingTop="@dimen/detail_category_vertical_normal_padding"
+    android:paddingBottom="@dimen/detail_category_vertical_normal_padding"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@android:id/title"
+        style="@style/Resource.Detail.Category.Title"/>
+    <View
+        android:id="@+id/divider"
+        android:background="@drawable/resource_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="@dimen/detail_category_horizontal_padding"
+        android:layout_marginEnd="@dimen/detail_category_horizontal_padding"/>
+</LinearLayout>

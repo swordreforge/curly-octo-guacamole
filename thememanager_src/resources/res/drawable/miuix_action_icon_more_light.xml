@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawable xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:height="26dp"
+    android:width="26dp"
+    android:viewportWidth="26"
+    android:viewportHeight="26"
+    app:actionIconDisabledAlpha="0.3"
+    app:actionIconNormalAlpha="0.8"
+    app:actionIconPressedAlpha="0.5"
+    class="miuix.theme.ActionIconDrawable">
+    <path
+        android:fillColor="#000000"
+        android:pathData="M6.9265,19.0778C10.2808,22.4321 15.7192,22.4321 19.0735,19.0778C22.4277,15.7235 22.4277,10.2851 19.0735,6.9308C15.7192,3.5766 10.2808,3.5766 6.9265,6.9308C3.5722,10.2851 3.5722,15.7235 6.9265,19.0778ZM5.7951,20.2092C9.7743,24.1883 16.2257,24.1883 20.2048,20.2092C24.184,16.23 24.184,9.7786 20.2048,5.7995C16.2257,1.8203 9.7743,1.8203 5.7951,5.7995C1.816,9.7786 1.816,16.23 5.7951,20.2092Z"
+        android:fillAlpha="1"
+        android:fillType="evenOdd"/>
+    <path
+        android:fillColor="#000000"
+        android:pathData="M14.0999,13C14.0999,13.6075 13.6074,14.1 12.9999,14.1C12.3924,14.1 11.8999,13.6075 11.8999,13C11.8999,12.3925 12.3924,11.9 12.9999,11.9C13.6074,11.9 14.0999,12.3925 14.0999,13Z"
+        android:fillAlpha="1"/>
+    <path
+        android:fillColor="#000000"
+        android:pathData="M18.3162,13C18.3162,13.6075 17.8237,14.1 17.2162,14.1C16.6087,14.1 16.1162,13.6075 16.1162,13C16.1162,12.3925 16.6087,11.9 17.2162,11.9C17.8237,11.9 18.3162,12.3925 18.3162,13Z"
+        android:fillAlpha="1"/>
+    <path
+        android:fillColor="#000000"
+        android:pathData="M9.8837,13C9.8837,13.6075 9.3912,14.1 8.7837,14.1C8.1762,14.1 7.6837,13.6075 7.6837,13C7.6837,12.3925 8.1762,11.9 8.7837,11.9C9.3912,11.9 9.8837,12.3925 9.8837,13Z"
+        android:fillAlpha="1"/>
+</drawable>

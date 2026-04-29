@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/home_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <com.android.thememanager.view.NavViewBottomContainer
+        android:id="@+id/nav_container"
+        android:background="@color/recommend_navigation_bg_color"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_view_bottom_container"
+        android:paddingStart="@dimen/nav_view_bottom_padding"
+        android:paddingEnd="@dimen/nav_view_bottom_padding"
+        android:elevation="12dp"
+        android:outlineProvider="background"/>
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/pad_round_corner_default"
+        app:miuix_strokeColor="@color/wallpaper_view_holder_border_color_pad"
+        app:miuix_strokeWidth="@dimen/wallpaper_view_holder_stroke_width">
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/wallpaper_my_card_fold_dynamic_width"
+            android:layout_height="@dimen/wallpaper_my_card_fold_dynamic_height"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <ImageView
+        android:layout_gravity="end|top"
+        android:id="@+id/flag_type"
+        android:visibility="visible"
+        android:layout_width="31.33dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="6dp"
+        android:src="@drawable/ic_typeicon_single_24h"
+        android:contentDescription="@null"
+        android:layout_marginEnd="7.3dp"/>
+</FrameLayout>

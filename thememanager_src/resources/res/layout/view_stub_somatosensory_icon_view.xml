@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/somatosensory_icon"
+    android:paddingTop="@dimen/weather_somatosensory_icon_padding_top"
+    android:paddingBottom="@dimen/weather_somatosensory_icon_padding_bottom"
+    android:layout_width="@dimen/weather_somatosensory_icon_w"
+    android:layout_height="@dimen/weather_somatosensory_icon_h"
+    android:scaleType="centerCrop"
+    android:importantForAccessibility="no"/>

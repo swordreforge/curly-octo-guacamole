@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/back_btn"
+        android:background="@drawable/miuix_appcompat_action_bar_back_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+    <com.android.thememanager.view.TabViewContainer
+        android:id="@+id/tabview_container"
+        android:layout_width="@dimen/author_tabview_container_width"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5.3dp"
+        android:layout_marginStart="@dimen/author_tabview_container_margin_start"/>
+</RelativeLayout>

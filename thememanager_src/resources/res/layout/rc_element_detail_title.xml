@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/de_detail_recommend_title_text_size"
+    android:id="@+id/detail_recommend_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/de_detail_recommend_title_margin_top"
+    android:layout_marginBottom="@dimen/de_detail_recommend_title_margin_bottom"
+    android:text="@string/detail_recommend_title"
+    android:layout_marginStart="@dimen/de_detail_title_margin_start"/>

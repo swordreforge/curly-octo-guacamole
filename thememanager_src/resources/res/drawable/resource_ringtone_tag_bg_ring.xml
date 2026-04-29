@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="2dp"/>
+    <solid android:color="@color/ringtone_tag_color9"/>
+    <padding
+        android:left="@dimen/recommend_polyphonic_ring_tag_padding_start_and_end"
+        android:right="@dimen/recommend_polyphonic_ring_tag_padding_start_and_end"/>
+    <size android:height="@dimen/recommend_polyphonic_ring_tag_height"/>
+</shape>

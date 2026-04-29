@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="@dimen/super_wallpaper_download_status_icon_width_height"
+    android:width="@dimen/super_wallpaper_download_status_icon_width_height"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M58,70L58,30A2,2 0,0 1,60 28L68,28A2,2 0,0 1,70 30L70,70A2,2 0,0 1,68 72L60,72A2,2 0,0 1,58 70z"/>
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M30,70L30,30A2,2 0,0 1,32 28L40,28A2,2 0,0 1,42 30L42,70A2,2 0,0 1,40 72L32,72A2,2 0,0 1,30 70z"/>
+</vector>

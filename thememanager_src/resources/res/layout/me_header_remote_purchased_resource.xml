@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <miuix.miuixbasewidget.widget.MessageView
+        android:id="@+id/alert_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="@dimen/me_theme_open_info_margin_bottom"
+        android:text="@string/long_click_can_hide_resource"
+        android:layout_marginStart="@dimen/me_purchased_open_info_margin_start"
+        android:layout_marginEnd="@dimen/me_purchased_open_info_margin_bottom"
+        style="@style/Widget.MessageView.Guide"/>
+</FrameLayout>

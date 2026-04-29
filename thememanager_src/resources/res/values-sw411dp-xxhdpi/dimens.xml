@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="author_dynamic_list_content_height">478.7578dp</dimen>
+    <dimen name="author_dynamic_thumbnail_height">376.7188dp</dimen>
+    <dimen name="author_dynamic_thumbnail_margin_start">11.524dp</dimen>
+    <dimen name="detail_recommend_item_width">185.01dp</dimen>
+    <dimen name="display_triple_image_height">248.38dp</dimen>
+    <dimen name="display_triple_image_width">124.19dp</dimen>
+    <dimen name="icon_chosen_image_height">114dp</dimen>
+    <dimen name="icon_chosen_image_width">184.799dp</dimen>
+    <dimen name="icon_recommend_image_height">238.415dp</dimen>
+    <dimen name="icon_recommend_image_width">184.764dp</dimen>
+    <dimen name="itemview_horizontal_padding_from_screen">13.72dp</dimen>
+    <dimen name="local_grid_bg_height">123.04dp</dimen>
+    <dimen name="local_grid_bg_width">172.187dp</dimen>
+    <dimen name="local_grid_padding_start">18.27dp</dimen>
+    <dimen name="local_grid_padding_top">13.619dp</dimen>
+    <dimen name="me_display_triple_image_width">124.195dp</dimen>
+    <dimen name="me_itemview_triple_vertical_theme_padding_from_bottom">21.685dp</dimen>
+    <dimen name="personalize_bottom_card_margin">24dp</dimen>
+    <dimen name="personalize_lock_card_margin">16.8dp</dimen>
+    <dimen name="rank_list_top_image_height">248.38dp</dimen>
+    <dimen name="rank_list_top_image_width">124.195dp</dimen>
+    <dimen name="wallpaper_detail_operation_bg_height">91.43dp</dimen>
+</resources>

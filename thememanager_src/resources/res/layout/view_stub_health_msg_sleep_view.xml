@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.classic.HealthMsgSleepChartView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/health_msg_sleep_chart_view"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/health_view_height"
+    android:importantForAccessibility="no"/>

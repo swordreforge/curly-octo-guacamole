@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:height="17.45dp"
+    android:width="69.09dp"
+    android:viewportWidth="190"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@drawable/_wallpaper_group_dialog_item_extra_label_backgroud__0_res_0x7f080048"
+        android:pathData="M0,20C0,8.954 8.954,0 20,0H170C181.046,0 190,8.954 190,20V28C190,39.046 181.046,48 170,48H0V20Z"/>
+</vector>

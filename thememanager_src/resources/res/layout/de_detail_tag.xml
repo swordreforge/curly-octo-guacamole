@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <com.android.thememanager.basemodule.views.ThemeTextView
+        android:textSize="@dimen/de_detail_tag_text_size"
+        android:textColor="@drawable/de_tag_text_color"
+        android:id="@+id/tv_tag"
+        android:background="@drawable/de_detail_tag_bg"
+        android:paddingTop="@dimen/de_detail_tag_padding_top"
+        android:paddingBottom="@dimen/de_detail_tag_padding_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/de_detail_tag_vertical_margin"
+        android:paddingStart="@dimen/de_detail_tag_horizontal_padding"
+        android:paddingEnd="@dimen/de_detail_tag_horizontal_padding"
+        android:layout_marginEnd="@dimen/de_detail_tag_horizontal_margin"
+        app:supportElder="true"/>
+</LinearLayout>

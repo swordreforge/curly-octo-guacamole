@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@android:color/transparent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:radius="@dimen/wallpaper_setting_item_round_corner"
+    style="@style/SmoothLayoutDefault">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/wallpaper_setting_item_width"
+        android:layout_height="@dimen/wallpaper_setting_item_height"/>
+</miuix.smooth.SmoothFrameLayout2>

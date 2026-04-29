@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="@dimen/super_wallpaper_download_status_icon_width_height"
+    android:width="@dimen/super_wallpaper_download_status_icon_width_height"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#616060"
+        android:pathData="M30,30m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0"
+        android:fillAlpha="0.56"/>
+    <path
+        android:fillColor="#f2f2f2"
+        android:pathData="M30,30m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0"
+        android:fillAlpha="0.64"/>
+</vector>

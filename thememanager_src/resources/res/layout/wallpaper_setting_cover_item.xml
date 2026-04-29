@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/card_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:radius="@dimen/wallpaper_setting_tile_radius"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/SmoothLayoutDefault">
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:textSize="@dimen/wallpaper_setting_cover_title_size"
+        android:textColor="@color/wallpaper_settings_cover_item_name_color"
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5.3dp"
+        android:text="@string/account_info"
+        android:singleLine="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_item_content"/>
+    <TextView
+        android:textSize="11.64sp"
+        android:textColor="@color/wallpaper_settings_cover_item_count_color"
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

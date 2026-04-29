@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="16dp"
+    android:width="16dp"
+    android:autoMirrored="true"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/rington_notification_color"
+        android:pathData="M25.617,12.6977C25.617,18.0225 29.948,22.339 35.2904,22.339C36.7289,22.339 38.094,22.0261 39.321,21.4648L39.321,37.6989C39.321,39.4216 37.9199,40.8181 36.1914,40.8181L9.3998,40.8181C7.6714,40.8181 6.2702,39.4216 6.2702,37.6989L6.2702,11.7998C6.2702,10.0771 7.6714,8.6805 9.3998,8.6805L26.4942,8.6805C25.931,9.9035 25.617,11.264 25.617,12.6977ZM35.2904,19.1252C31.7288,19.1252 28.8415,16.2475 28.8415,12.6977C28.8415,9.1479 31.7288,6.2702 35.2904,6.2702C38.8521,6.2702 41.7394,9.1479 41.7394,12.6977C41.7394,16.2475 38.8521,19.1252 35.2904,19.1252Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1"/>
+</vector>

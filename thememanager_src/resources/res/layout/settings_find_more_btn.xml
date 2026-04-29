@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button"
+    android:background="@color/settings_find_more_bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
+    <TextView
+        android:textSize="13sp"
+        android:textColor="@color/resource_secondary_tab_color_pressed"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_find_more_height"
+        android:text="@string/find_more_theme"/>
+    <View
+        android:layout_gravity="top"
+        android:background="@color/settings_find_more_line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+</FrameLayout>

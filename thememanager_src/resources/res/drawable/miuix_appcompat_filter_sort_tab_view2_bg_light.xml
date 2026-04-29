@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_selected="true"
+        android:drawable="@drawable/miuix_appcompat_filter_sort_tab_view2_bg_blur_selected_light"
+        android:state_activated="true"/>
+    <item
+        android:state_selected="true"
+        android:drawable="@drawable/miuix_appcompat_filter_sort_tab_view2_bg_blur_normal_light"/>
+    <item
+        android:drawable="@drawable/miuix_appcompat_filter_sort_tab_view2_bg_selected_light"
+        android:state_activated="true"/>
+    <item android:drawable="@drawable/miuix_appcompat_filter_sort_tab_view2_bg_normal_light"/>
+</selector>

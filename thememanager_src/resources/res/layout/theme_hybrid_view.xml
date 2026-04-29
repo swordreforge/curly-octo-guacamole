@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.hybrid.HybridView
+        android:id="@+id/hybrid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <View
+        android:id="@+id/web_mask"
+        android:background="@color/item_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ViewStub
+        android:id="@+id/webview_reload_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

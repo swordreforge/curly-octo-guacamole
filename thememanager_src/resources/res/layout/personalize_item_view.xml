@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="12dp">
+    <ImageView
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/icon"
+        android:layout_width="@dimen/personalize_item_view_icon_size"
+        android:layout_height="@dimen/personalize_item_view_icon_size"
+        android:scaleType="fitXY"
+        android:layout_marginStart="@dimen/personalize_item_view_icon_margin_start"/>
+    <TextView
+        android:textSize="@dimen/personalize_item_view_title_text_size"
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="mipro-medium"
+        android:textDirection="locale"
+        android:layout_marginStart="@dimen/personalize_item_view_title_margin_start"/>
+    <ImageView
+        android:layout_gravity="end|center_vertical"
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/personalize_item_view_arrow_height"
+        android:src="@drawable/personalize_item_arrow"
+        android:paddingStart="@dimen/personalize_item_view_arrow_padding"
+        android:layout_marginEnd="@dimen/personalize_item_view_arrow_margin_end"/>
+</LinearLayout>

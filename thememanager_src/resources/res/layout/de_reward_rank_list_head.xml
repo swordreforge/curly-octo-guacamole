@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/de_detail_reward_rank_list_item_height">
+    <ImageView
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/reward_rank_list_head_back"
+        android:padding="@dimen/de_detail_reward_container_back_padding"
+        android:layout_width="@dimen/de_detail_reward_container_back_size"
+        android:layout_height="@dimen/de_detail_reward_container_back_size"
+        android:src="@drawable/de_reward_back"
+        android:layout_marginStart="@dimen/de_detail_reward_container_back_margin_start"/>
+    <TextView
+        android:textSize="@dimen/de_detail_reward_rank_list_head_alert"
+        android:textColor="@color/de_detail_reward_rank_title_color"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/detail_reward_thanks_for_fans_support"
+        android:width="300dp"
+        android:fontFamily="mipro-medium"/>
+</FrameLayout>

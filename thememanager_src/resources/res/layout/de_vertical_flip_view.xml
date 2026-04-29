@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:id="@+id/share_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="@dimen/de_detail_icon_size"
+        android:minHeight="@dimen/de_detail_icon_size"
+        android:inAnimation="@anim/de_anim_share_flip_in"
+        android:outAnimation="@anim/de_anim_share_flip_out"
+        android:flipInterval="2000"
+        android:layout_marginEnd="@dimen/de_detail_action_icon_margin_end"/>
+    <TextView
+        android:textSize="@dimen/de_detail_icon_text_size"
+        android:textColor="@color/de_color_70_000000"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

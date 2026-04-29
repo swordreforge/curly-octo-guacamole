@@ -1,0 +1,108 @@
+<MAMLDEMO frameRate="60" screenWidth="1080" resDensity="440" extraResources="sw720-den320::0.667,sw1536-den320::0.933,sw1440-den640::1.222" extraScales="sw720-den320:0.667,sw1536-den320:0.933,sw1440-den640:1.222" scaleByDensity="true">
+    <Var name="image_au7ub3vqqmg_rotationZ_arr" type="number[]" const="true" values="0,-360"/>
+    <Var name="image_au7ub3vqqmg_rotationZ_arr_ease" type="number[]" const="true" values="1,1"/>
+    <Var name="image_au7ub3vqqmg_rotationZ_arr_dur" type="number[]" const="true" values="100,4000"/>
+    <Var name="image_au7ub3vqqmg_rotationZ_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_w_arr" type="number[]" const="true" values="32.1,321"/>
+    <Var name="image_mgr0vgl0h1_w_arr_ease" type="number[]" const="true" values="1,-2"/>
+    <Var name="image_mgr0vgl0h1_w_arr_dur" type="number[]" const="true" values="100,1000"/>
+    <Var name="image_mgr0vgl0h1_w_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_w_arr_func0" type="number[]" const="true" values="0,0.9"/>
+    <Var name="image_mgr0vgl0h1_w_arr_func1" type="number[]" const="true" values="0,0.3"/>
+    <Var name="image_mgr0vgl0h1_h_arr" type="number[]" const="true" values="36,360"/>
+    <Var name="image_mgr0vgl0h1_h_arr_ease" type="number[]" const="true" values="1,-2"/>
+    <Var name="image_mgr0vgl0h1_h_arr_dur" type="number[]" const="true" values="100,1000"/>
+    <Var name="image_mgr0vgl0h1_h_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_h_arr_func0" type="number[]" const="true" values="0,0.9"/>
+    <Var name="image_mgr0vgl0h1_h_arr_func1" type="number[]" const="true" values="0,0.3"/>
+    <Var name="image_mgr0vgl0h1_pivotX_arr" type="number[]" const="true" values="16.05,160.5"/>
+    <Var name="image_mgr0vgl0h1_pivotX_arr_ease" type="number[]" const="true" values="1,1"/>
+    <Var name="image_mgr0vgl0h1_pivotX_arr_dur" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_pivotX_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_pivotY_arr" type="number[]" const="true" values="18,180"/>
+    <Var name="image_mgr0vgl0h1_pivotY_arr_ease" type="number[]" const="true" values="1,1"/>
+    <Var name="image_mgr0vgl0h1_pivotY_arr_dur" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_pivotY_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_x_arr" type="number[]" const="true" values="421.95,277.5"/>
+    <Var name="image_mgr0vgl0h1_x_arr_ease" type="number[]" const="true" values="1,-2"/>
+    <Var name="image_mgr0vgl0h1_x_arr_dur" type="number[]" const="true" values="100,1000"/>
+    <Var name="image_mgr0vgl0h1_x_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_x_arr_func0" type="number[]" const="true" values="0,0.9"/>
+    <Var name="image_mgr0vgl0h1_x_arr_func1" type="number[]" const="true" values="0,0.3"/>
+    <Var name="image_mgr0vgl0h1_y_arr" type="number[]" const="true" values="420,258"/>
+    <Var name="image_mgr0vgl0h1_y_arr_ease" type="number[]" const="true" values="1,-2"/>
+    <Var name="image_mgr0vgl0h1_y_arr_dur" type="number[]" const="true" values="100,1000"/>
+    <Var name="image_mgr0vgl0h1_y_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_mgr0vgl0h1_y_arr_func0" type="number[]" const="true" values="0,0.9"/>
+    <Var name="image_mgr0vgl0h1_y_arr_func1" type="number[]" const="true" values="0,0.3"/>
+    <Var name="image_mgr0vgl0h1_alpha_arr" type="number[]" const="true" values="128,255"/>
+    <Var name="image_mgr0vgl0h1_alpha_arr_ease" type="number[]" const="true" values="1,1"/>
+    <Var name="image_mgr0vgl0h1_alpha_arr_dur" type="number[]" const="true" values="100,100"/>
+    <Var name="image_mgr0vgl0h1_alpha_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="image_c762660iu1o_alpha_arr" type="number[]" const="true" values="0,255"/>
+    <Var name="image_c762660iu1o_alpha_arr_ease" type="number[]" const="true" values="5,5"/>
+    <Var name="image_c762660iu1o_alpha_arr_dur" type="number[]" const="true" values="1000,1000"/>
+    <Var name="image_c762660iu1o_alpha_arr_delay" type="number[]" const="true" values="0,0"/>
+    <Var name="framequeue" type="number[]" values="1,1"/>
+    <Var name="frame_large_dur" type="number[]" values="1000,5000"/>
+    <FolmeState name="image_au7ub3vqqmg_state" rotationZ="#image_au7ub3vqqmg_rotationZ_arr[#frame]"/>
+    <FolmeState name="image_mgr0vgl0h1_state" w="#image_mgr0vgl0h1_w_arr[#frame]" h="#image_mgr0vgl0h1_h_arr[#frame]" pivotX="#image_mgr0vgl0h1_pivotX_arr[#frame]" pivotY="#image_mgr0vgl0h1_pivotY_arr[#frame]"  y="#image_mgr0vgl0h1_y_arr[#frame]" alpha="#image_mgr0vgl0h1_alpha_arr[#frame]"/>
+    <FolmeState name="image_c762660iu1o_state" alpha="#image_c762660iu1o_alpha_arr[#frame]"/>
+    <FolmeConfig name="image_au7ub3vqqmg_config" ease="1,0" delay="0">
+        <Special property="'rotationZ'" ease="#image_au7ub3vqqmg_rotationZ_arr_ease[#frame],ifelse(#image_au7ub3vqqmg_rotationZ_arr_ease[#frame]==-2,#image_au7ub3vqqmg_rotationZ_arr_func0[#frame],#image_au7ub3vqqmg_rotationZ_arr_dur[#frame]),ifelse(#image_au7ub3vqqmg_rotationZ_arr_ease[#frame]==-2,#image_au7ub3vqqmg_rotationZ_arr_func1[#frame],0)" delay="#image_au7ub3vqqmg_rotationZ_arr_delay[#frame]"/>
+        <Special property="'rotationZ'" ease="#image_au7ub3vqqmg_rotationZ_arr_ease[#frame],ifelse(#image_au7ub3vqqmg_rotationZ_arr_ease[#frame]==-2,#image_au7ub3vqqmg_rotationZ_arr_func0[#frame],#image_au7ub3vqqmg_rotationZ_arr_dur[#frame]),ifelse(#image_au7ub3vqqmg_rotationZ_arr_ease[#frame]==-2,#image_au7ub3vqqmg_rotationZ_arr_func1[#frame],0)" delay="#image_au7ub3vqqmg_rotationZ_arr_delay[#frame]"/>
+    </FolmeConfig>
+    <FolmeConfig name="image_mgr0vgl0h1_config" ease="1,0" delay="0">
+        <Special property="'w'" ease="#image_mgr0vgl0h1_w_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_w_arr_ease[#frame]==-2,#image_mgr0vgl0h1_w_arr_func0[#frame],#image_mgr0vgl0h1_w_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_w_arr_ease[#frame]==-2,#image_mgr0vgl0h1_w_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_w_arr_delay[#frame]"/>
+        <Special property="'w'" ease="#image_mgr0vgl0h1_w_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_w_arr_ease[#frame]==-2,#image_mgr0vgl0h1_w_arr_func0[#frame],#image_mgr0vgl0h1_w_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_w_arr_ease[#frame]==-2,#image_mgr0vgl0h1_w_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_w_arr_delay[#frame]"/>
+        <Special property="'h'" ease="#image_mgr0vgl0h1_h_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_h_arr_ease[#frame]==-2,#image_mgr0vgl0h1_h_arr_func0[#frame],#image_mgr0vgl0h1_h_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_h_arr_ease[#frame]==-2,#image_mgr0vgl0h1_h_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_h_arr_delay[#frame]"/>
+        <Special property="'h'" ease="#image_mgr0vgl0h1_h_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_h_arr_ease[#frame]==-2,#image_mgr0vgl0h1_h_arr_func0[#frame],#image_mgr0vgl0h1_h_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_h_arr_ease[#frame]==-2,#image_mgr0vgl0h1_h_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_h_arr_delay[#frame]"/>
+        <Special property="'pivotX'" ease="#image_mgr0vgl0h1_pivotX_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_pivotX_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotX_arr_func0[#frame],#image_mgr0vgl0h1_pivotX_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_pivotX_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotX_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_pivotX_arr_delay[#frame]"/>
+        <Special property="'pivotX'" ease="#image_mgr0vgl0h1_pivotX_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_pivotX_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotX_arr_func0[#frame],#image_mgr0vgl0h1_pivotX_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_pivotX_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotX_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_pivotX_arr_delay[#frame]"/>
+        <Special property="'pivotY'" ease="#image_mgr0vgl0h1_pivotY_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_pivotY_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotY_arr_func0[#frame],#image_mgr0vgl0h1_pivotY_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_pivotY_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotY_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_pivotY_arr_delay[#frame]"/>
+        <Special property="'pivotY'" ease="#image_mgr0vgl0h1_pivotY_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_pivotY_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotY_arr_func0[#frame],#image_mgr0vgl0h1_pivotY_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_pivotY_arr_ease[#frame]==-2,#image_mgr0vgl0h1_pivotY_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_pivotY_arr_delay[#frame]"/>
+        <Special property="'x'" ease="#image_mgr0vgl0h1_x_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_x_arr_ease[#frame]==-2,#image_mgr0vgl0h1_x_arr_func0[#frame],#image_mgr0vgl0h1_x_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_x_arr_ease[#frame]==-2,#image_mgr0vgl0h1_x_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_x_arr_delay[#frame]"/>
+        <Special property="'x'" ease="#image_mgr0vgl0h1_x_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_x_arr_ease[#frame]==-2,#image_mgr0vgl0h1_x_arr_func0[#frame],#image_mgr0vgl0h1_x_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_x_arr_ease[#frame]==-2,#image_mgr0vgl0h1_x_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_x_arr_delay[#frame]"/>
+        <Special property="'y'" ease="#image_mgr0vgl0h1_y_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_y_arr_ease[#frame]==-2,#image_mgr0vgl0h1_y_arr_func0[#frame],#image_mgr0vgl0h1_y_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_y_arr_ease[#frame]==-2,#image_mgr0vgl0h1_y_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_y_arr_delay[#frame]"/>
+        <Special property="'y'" ease="#image_mgr0vgl0h1_y_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_y_arr_ease[#frame]==-2,#image_mgr0vgl0h1_y_arr_func0[#frame],#image_mgr0vgl0h1_y_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_y_arr_ease[#frame]==-2,#image_mgr0vgl0h1_y_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_y_arr_delay[#frame]"/>
+        <Special property="'alpha'" ease="#image_mgr0vgl0h1_alpha_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_alpha_arr_ease[#frame]==-2,#image_mgr0vgl0h1_alpha_arr_func0[#frame],#image_mgr0vgl0h1_alpha_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_alpha_arr_ease[#frame]==-2,#image_mgr0vgl0h1_alpha_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_alpha_arr_delay[#frame]"/>
+        <Special property="'alpha'" ease="#image_mgr0vgl0h1_alpha_arr_ease[#frame],ifelse(#image_mgr0vgl0h1_alpha_arr_ease[#frame]==-2,#image_mgr0vgl0h1_alpha_arr_func0[#frame],#image_mgr0vgl0h1_alpha_arr_dur[#frame]),ifelse(#image_mgr0vgl0h1_alpha_arr_ease[#frame]==-2,#image_mgr0vgl0h1_alpha_arr_func1[#frame],0)" delay="#image_mgr0vgl0h1_alpha_arr_delay[#frame]"/>
+    </FolmeConfig>
+    <FolmeConfig name="image_c762660iu1o_config" ease="1,0" delay="0">
+        <Special property="'alpha'" ease="#image_c762660iu1o_alpha_arr_ease[#frame],ifelse(#image_c762660iu1o_alpha_arr_ease[#frame]==-2,#image_c762660iu1o_alpha_arr_func0[#frame],#image_c762660iu1o_alpha_arr_dur[#frame]),ifelse(#image_c762660iu1o_alpha_arr_ease[#frame]==-2,#image_c762660iu1o_alpha_arr_func1[#frame],0)" delay="#image_c762660iu1o_alpha_arr_delay[#frame]"/>
+        <Special property="'alpha'" ease="#image_c762660iu1o_alpha_arr_ease[#frame],ifelse(#image_c762660iu1o_alpha_arr_ease[#frame]==-2,#image_c762660iu1o_alpha_arr_func0[#frame],#image_c762660iu1o_alpha_arr_dur[#frame]),ifelse(#image_c762660iu1o_alpha_arr_ease[#frame]==-2,#image_c762660iu1o_alpha_arr_func1[#frame],0)" delay="#image_c762660iu1o_alpha_arr_delay[#frame]"/>
+    </FolmeConfig>
+    <Function name="folme_to_frame">
+        <FolmeCommand target="image_au7ub3vqqmg" command="cancel"/>
+        <FolmeCommand target="image_au7ub3vqqmg" command="to" states="'image_au7ub3vqqmg_state'" config="'image_au7ub3vqqmg_config'"/>
+        <FolmeCommand target="image_mgr0vgl0h1" command="cancel"/>
+        <FolmeCommand target="image_mgr0vgl0h1" command="to" states="'image_mgr0vgl0h1_state'" config="'image_mgr0vgl0h1_config'"/>
+        <FolmeCommand target="image_c762660iu1o" command="cancel"/>
+        <FolmeCommand target="image_c762660iu1o" command="to" states="'image_c762660iu1o_state'" config="'image_c762660iu1o_config'"/>
+    </Function>
+    <Var expression="#frame" threshold="1">
+        <Trigger>
+            <FunctionCommand target="folme_to_frame"/>
+            <AnimationCommand target="frame_auto" command="play"/>
+        </Trigger>
+    </Var>
+    <ExternalCommands>
+        <Trigger action="init">
+            <VariableCommand name="frame" expression="1" type="number"/>
+        </Trigger>
+    </ExternalCommands>
+    <Var name="frame_auto">
+        <VariableAnimation initPause="false" loop="false">
+            <Item value="0" time="0"/>
+            <Item value="1" dtime="#frame_large_dur[#frame]"/>
+            <Triggers>
+                <Trigger action="end" condition="#framequeue[#frame]}=0**#frame{2">
+                    <VariableCommand name="frame" expression="#framequeue[#frame]"/>
+                </Trigger>
+            </Triggers>
+        </VariableAnimation>
+    </Var>
+    <Image name="image_au7ub3vqqmg" x="#view_width/2" align="center" y="0" w="876" h="876" src="assets/74w90Pi9Z.webp" scaleX="1" scaleY="1" rotationX="0" rotationY="0" rotationZ="#image_au7ub3vqqmg_rotationZ_arr[0]" alpha="255" pivotX="438" pivotY="438" folmeMode="true"/>
+    <Image name="image_mgr0vgl0h1" x="#view_width/2" align="center" y="#image_mgr0vgl0h1_y_arr[0]" w="#image_mgr0vgl0h1_w_arr[0]" h="#image_mgr0vgl0h1_h_arr[0]" src="assets/XEE6BR4gy.webp" scaleX="1" scaleY="1" rotationX="0" rotationY="0" rotationZ="0" alpha="#image_mgr0vgl0h1_alpha_arr[0]" pivotX="#image_mgr0vgl0h1_pivotX_arr[0]" pivotY="#image_mgr0vgl0h1_pivotY_arr[0]" folmeMode="true"/>
+    <Image name="image_c762660iu1o" x="#view_width/2" align="center" y="280" w="336" h="304" src="assets/T0BqCgxc2.webp" scaleX="1" scaleY="1" rotationX="0" rotationY="0" rotationZ="0" alpha="#image_c762660iu1o_alpha_arr[0]" pivotX="0" pivotY="0" folmeMode="true"/>
+</MAMLDEMO>

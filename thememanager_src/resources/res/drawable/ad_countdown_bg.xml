@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size
+        android:height="@dimen/ad_video_detail_download_countdown_height"
+        android:width="@dimen/ad_video_detail_download_countdown_width"/>
+    <solid android:color="#4d000000"/>
+    <corners android:radius="@dimen/ad_video_detail_download_countdown_radius"/>
+</shape>

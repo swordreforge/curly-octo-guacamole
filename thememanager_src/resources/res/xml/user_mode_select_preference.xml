@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/privacy_select_mode">
+    <miuix.preference.TextPreference
+        android:layout="@layout/select_mode_warning_layout"
+        android:key="key_user_describe_mode"/>
+    <miuix.preference.RadioButtonPreferenceCategory android:key="key_category_select_parent">
+        <miuix.preference.RadioSetPreferenceCategory>
+            <miuix.preference.RadioButtonPreference
+                android:title="@string/browse_mode"
+                android:key="key_user_mode_look_only"
+                android:summary="@string/browse_mode_desc"/>
+        </miuix.preference.RadioSetPreferenceCategory>
+        <miuix.preference.RadioSetPreferenceCategory>
+            <miuix.preference.RadioButtonPreference
+                android:title="@string/basic_mode"
+                android:key="key_user_mode_base_func"
+                android:summary="@string/basic_mode_desc"/>
+        </miuix.preference.RadioSetPreferenceCategory>
+    </miuix.preference.RadioButtonPreferenceCategory>
+</PreferenceScreen>

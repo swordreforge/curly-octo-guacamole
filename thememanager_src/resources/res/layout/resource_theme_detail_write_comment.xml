@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/write_comment"
+    android:text="@string/resource_comment_edit_comment"
+    android:drawableStart="@drawable/action_button_edit_blue"
+    style="@style/Resource.Detail.TextAppearance.Title.Expand"/>

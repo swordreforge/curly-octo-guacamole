@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    style="@style/ResourceBrowser.ListItem.Theme">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/thumbnail_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/widget_preview_corner_radius">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            style="@style/ResourceBrowser.ResourceImage"/>
+        <include layout="@layout/resource_flag"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:ellipsize="end"
+        android:id="@android:id/title"
+        android:maxWidth="@dimen/three_group_title_max_width"
+        android:singleLine="true"
+        android:paddingStart="0dp"
+        style="@style/ResourceBrowser.ResourceDescription.Vertical"/>
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/setting_find_more_text"
+        android:id="@+id/current_using"
+        android:visibility="gone"
+        android:paddingStart="0dp"
+        style="@style/ResourceBrowser.ResourceDescription.SubDescription"/>
+    <include layout="@layout/resource_item_common_ratingbar"/>
+    <include layout="@layout/resource_item_price_view"/>
+</LinearLayout>

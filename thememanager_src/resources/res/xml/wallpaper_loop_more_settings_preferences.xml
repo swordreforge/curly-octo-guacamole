@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/wallpaper_loop_more_options">
+    <ListPreference
+        android:entries="@array/set_wallpaper_loop_interval"
+        android:layout="@layout/theme_list_preference"
+        android:title="@string/wallpaper_loop_interval_title"
+        android:key="interval"
+        android:summary="@string/wallpaper_loop_interval_desc"
+        android:defaultValue="900000"
+        android:entryValues="@array/set_wallpaper_loop_interval_values"/>
+    <ListPreference
+        android:entries="@array/set_wallpaper_loop_order"
+        android:layout="@layout/theme_list_preference"
+        android:title="@string/wallpaper_loop_order_title"
+        android:key="order"
+        android:summary="@string/wallpaper_loop_order_desc"
+        android:defaultValue="0"
+        android:entryValues="@array/set_wallpaper_loop_order_values"/>
+</PreferenceScreen>

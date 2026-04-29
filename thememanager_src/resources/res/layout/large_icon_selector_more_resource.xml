@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:background="@color/large_icon_header_selector_bg_color"
+    android:layout_width="@dimen/large_icon_picker_more_vh_width"
+    android:layout_height="@dimen/large_icon_picker_purchase_vh_preview_size"
+    android:layout_margin="@dimen/large_icon_select_flag_margin"
+    android:radius="@dimen/de_detail_corner_radius">
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more"/>
+</miuix.smooth.SmoothFrameLayout2>

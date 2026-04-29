@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-cache-path
+        name="theme_external_cache_log"
+        path="MIUI/debug_log/"/>
+    <external-files-path
+        name="theme_external-files_log"
+        path="MIUI/debug_log/"/>
+</paths>

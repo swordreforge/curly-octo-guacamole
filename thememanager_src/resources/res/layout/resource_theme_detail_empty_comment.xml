@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@+id/empty"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_horizontal_offset_from_screen"
+    android:layout_marginEnd="@dimen/default_horizontal_offset_from_screen"
+    style="@style/Widget.ListView.Item.FourLine">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52.6dp"
+        android:text="@string/resource_comment_no_comment"
+        style="@style/Resource.Comment.TextAppearance.List.Primary"/>
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12.3dp"
+        android:layout_marginBottom="44dp"
+        layout="@layout/resource_theme_detail_write_comment"
+        style="@style/Resource.Detail.TextAppearance.Title.Expand"/>
+</LinearLayout>

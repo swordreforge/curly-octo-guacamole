@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android" style="@style/SmoothLayoutDefault">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+</miuix.smooth.SmoothFrameLayout2>

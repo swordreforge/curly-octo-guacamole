@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:title="@string/theme_setting">
+    <CheckBoxPreference
+        android:title="@string/apply_theme_with_ringtones"
+        android:key="apply_theme_with_ringtones"
+        android:defaultValue="false"/>
+    <CheckBoxPreference
+        android:title="@string/theme_user_agreement_remind_again"
+        android:key="theme_user_agreement_remind_again"
+        android:summary="@string/theme_user_agreement_remind_summary"
+        android:defaultValue="true"/>
+    <CheckBoxPreference
+        android:title="@string/using_theme_next_automatic_update"
+        android:key="update_using_theme_automatically"
+        android:summary="@string/using_theme_next_automatic_update_summary"
+        android:defaultValue="true"/>
+    <miuix.preference.TextPreference
+        android:title="@string/privacy_settings"
+        android:key="privacy_setting"/>
+    <miuix.preference.TextPreference
+        android:title="@string/create_home_icon"
+        android:key="theme_create_home_icon"
+        app:isPreferenceVisible="true"/>
+</PreferenceScreen>

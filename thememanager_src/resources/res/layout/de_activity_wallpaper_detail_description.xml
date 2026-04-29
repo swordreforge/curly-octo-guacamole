@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="@dimen/de_activity_wallpaper_detail_description_title_text_size"
+        android:textColor="#ffffff"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="0.9"
+        android:fontFamily="mipro-light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="@dimen/de_activity_wallpaper_detail_description_content_text_size"
+        android:textColor="#99ffffff"
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/de_activity_wallpaper_detail_description_content_margin_top"
+        android:lineSpacingMultiplier="1.15"
+        android:fontFamily="mipro-regular"
+        android:letterSpacing="0.08"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

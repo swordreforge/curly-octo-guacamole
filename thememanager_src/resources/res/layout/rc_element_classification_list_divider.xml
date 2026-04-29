@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_margin_end">
+    <TextView
+        android:textSize="@dimen/category_customize_title_text_size"
+        android:textColor="@color/category_theme_grid_banner_text_color"
+        android:id="@+id/class_divider_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/category_customize_title_margin_bottom"
+        android:text="@string/classification_more_understand_you"
+        android:fontFamily="mipro-medium"/>
+</LinearLayout>

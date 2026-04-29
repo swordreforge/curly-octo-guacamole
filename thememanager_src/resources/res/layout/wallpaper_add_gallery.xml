@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/rootView"
+    android:background="@drawable/wallpaper_setting_add_bg"
+    android:layout_width="@dimen/wallpaper_my_card_width"
+    android:layout_height="@dimen/wallpaper_my_card_height">
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="@dimen/wallpaper_setting_add_size"
+        android:layout_height="@dimen/wallpaper_setting_add_size"
+        android:layout_marginTop="@dimen/wallpaper_setting_add_margin_top"
+        android:src="@drawable/ic_plusicon"
+        android:contentDescription="@null"/>
+    <TextView
+        android:textSize="@dimen/wallpaper_setting_cover_title_size"
+        android:textColor="@color/de_color_60_000000"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="@string/local_photos"/>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ViewStub
+        android:id="@+id/reload_stub"
+        android:layout="@layout/offline_view"
+        android:inflatedId="@+id/reload_offline_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <Button
+        android:layout_gravity="bottom"
+        android:id="@+id/button"
+        android:layout_marginBottom="@dimen/me_settings_font_more_margin_bottom"
+        android:text="@string/find_more_font"
+        style="@style/Widget.Button.Rect.BlankPage"/>
+</FrameLayout>

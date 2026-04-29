@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.magazine.MiuiMagazineAClock xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clock_container"
+        android:layout_width="@dimen/miui_magazine_a_clock_width"
+        android:layout_height="@dimen/miui_magazine_a_clock_height"
+        android:layout_marginBottom="@dimen/miui_magazine_a_clock_margin_bottom"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <include
+            android:id="@+id/clock_container_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            layout="@layout/layout_miui_clock_magazine_a"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.miui.clock.utils.BaseLineSpaceView
+        android:id="@+id/magazine_info_spacer"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/miui_magazine_a_gallery_offset"
+        app:layout_constraintBottom_toBottomOf="@+id/clock_container"
+        app:layout_constraintLeft_toLeftOf="@+id/clock_container"
+        app:layout_constraintRight_toRightOf="@+id/clock_container"/>
+    <FrameLayout
+        android:id="@+id/magazine_info_container"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/magazine_info_spacer"/>
+</com.miui.clock.magazine.MiuiMagazineAClock>

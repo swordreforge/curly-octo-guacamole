@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/privacy_select_user_mode_btn_margin_bottom"
+    android:layout_marginStart="@dimen/privacy_select_user_mode_btn_padding_horizontal"
+    android:layout_marginEnd="@dimen/privacy_select_user_mode_btn_padding_horizontal">
+    <Button
+        android:id="@+id/disagree_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/privacy_exit_btn"
+        android:layout_weight="1"
+        style="@style/Negative_Button"/>
+    <Button
+        android:id="@+id/agree_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/miuix_compat_dialog_ok"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/privacy_select_user_mode_btn_padding_horizontal"
+        style="@style/Positive_Button"/>
+</LinearLayout>

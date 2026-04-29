@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/classic_time_area_text_size"
+    android:textColor="@color/classic_color_white"
+    android:id="@+id/big_msg_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:importantForAccessibility="no"
+    android:fontFamily="mipro-normal"
+    android:letterSpacing="-0.02"/>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.rhombus.MiuiRhombusSingleClock xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/miui_keyguard_rhombus_clock"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/time_container"
+        android:layout_width="@dimen/miui_rhombus_clock_width"
+        android:layout_height="@dimen/miui_rhombus_clock_height"
+        android:layout_centerInParent="true"
+        layout="@layout/layout_miui_clock_rhombus"/>
+    <FrameLayout
+        android:id="@+id/magazine_info_container"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</com.miui.clock.rhombus.MiuiRhombusSingleClock>

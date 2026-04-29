@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:id="@+id/like_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <miuix.androidbasewidget.widget.ProgressBar
+        android:id="@+id/super_wallpaper_setting_progressbar_aod"
+        android:layout_width="@dimen/super_wallpaper_setting_preview_container_progressbar_width"
+        android:layout_height="@dimen/super_wallpaper_preview_progress_height"
+        android:progress="0"
+        android:progressDrawable="@drawable/super_wallpaper_preview_progress_bg"
+        style="?android:attr/progressBarStyleHorizontal"/>
+    <miuix.androidbasewidget.widget.ProgressBar
+        android:id="@+id/super_wallpaper_setting_progressbar_lock_screen"
+        android:layout_width="@dimen/super_wallpaper_setting_preview_container_progressbar_width"
+        android:layout_height="@dimen/super_wallpaper_preview_progress_height"
+        android:progress="0"
+        android:progressDrawable="@drawable/super_wallpaper_preview_progress_bg"
+        android:layout_marginStart="@dimen/super_wallpaper_setting_preview_container_progressbar_lock_screen_margin_start_end"
+        android:layout_marginEnd="@dimen/super_wallpaper_setting_preview_container_progressbar_lock_screen_margin_start_end"
+        style="?android:attr/progressBarStyleHorizontal"/>
+    <miuix.androidbasewidget.widget.ProgressBar
+        android:id="@+id/super_wallpaper_setting_progressbar_desktop"
+        android:layout_width="@dimen/super_wallpaper_setting_preview_container_progressbar_width"
+        android:layout_height="@dimen/super_wallpaper_preview_progress_height"
+        android:progress="0"
+        android:progressDrawable="@drawable/super_wallpaper_preview_progress_bg"
+        style="?android:attr/progressBarStyleHorizontal"/>
+</LinearLayout>

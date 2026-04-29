@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.thememanager.detail.theme.view.widget.WidgetDoorView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/de_widget_fill_bg_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/de_detail_info_popup_padding_start"
+    android:outlineSpotShadowColor="#80000000">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/wrap_widget_door_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/de_widget_door_ic"
+        android:layout_marginStart="@dimen/de_widget_door_icon_margin_left"
+        android:elevation="@dimen/de_detail_action_bar_back_horizontal_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:miuix_strokeColor="@color/de_widget_fill_bg_color"
+        app:miuix_strokeWidth="@dimen/de_icon_count_compound_drawable_padding">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/widget_door_icon"
+            android:background="@drawable/ic_widget_door_layout_back"
+            android:layout_width="@dimen/de_widget_door_wrap_icon_width"
+            android:layout_height="@dimen/de_widget_door_wrap_icon_width"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:textSize="@dimen/de_widget_door_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/de_widget_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme_detail_widget_title"
+        android:ems="1"
+        android:layout_marginStart="@dimen/de_text_left_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/wrap_widget_door_icon"
+        app:layout_constraintTop_toTopOf="parent"/>
+</com.android.thememanager.detail.theme.view.widget.WidgetDoorView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="@dimen/loop_wallpaper_preview_width"
+    android:layout_height="@dimen/loop_wallpaper_preview_height"
+    android:radius="@dimen/loop_wallpaper_radius"
+    style="@style/SmoothLayoutDefault">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+</miuix.smooth.SmoothFrameLayout2>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/de_sub_comments_content_bg_color"/>
+    <corners android:radius="@dimen/de_sub_comment_bar_edit_radius"/>
+    <padding android:left="@dimen/de_sub_comment_bar_edit_padding_start"/>
+</shape>

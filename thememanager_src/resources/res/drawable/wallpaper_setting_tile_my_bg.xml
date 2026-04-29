@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#ffc27a"/>
+            <corners android:radius="@dimen/wallpaper_setting_tile_radius"/>
+            <stroke
+                android:width="1px"
+                android:color="@android:color/transparent"/>
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/wallpaper_setting_tile_my"/>
+    </item>
+</layer-list>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:gravity="center"
+    android:id="@+id/text"
+    android:minWidth="@dimen/search_recommend_item_min_width"/>

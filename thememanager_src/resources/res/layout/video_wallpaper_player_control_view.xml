@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:layout_gravity="center"
+        android:id="@+id/exo_play"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/video_start_play"
+        style="@style/ExoMediaButton.Play"/>
+    <ImageButton
+        android:id="@+id/exo_pause"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

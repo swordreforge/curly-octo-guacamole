@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/large_icon_two_card_padding_vertical">
+    <Space
+        android:layout_width="13.09dp"
+        android:layout_height="1dp"/>
+    <include
+        android:id="@+id/item_0"
+        android:visibility="gone"
+        layout="@layout/view_large_icon_card_item"/>
+    <Space
+        android:layout_width="@dimen/large_icon_two_card_item_width"
+        android:layout_height="1dp"/>
+    <include
+        android:id="@+id/item_1"
+        android:visibility="gone"
+        layout="@layout/view_large_icon_card_item"/>
+    <Space
+        android:layout_width="@dimen/large_icon_two_card_item_width"
+        android:layout_height="1dp"/>
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="@dimen/position_list_stager_item_width_height"
+    android:layout_height="@dimen/position_list_stager_item_width_height">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/position_list_stager_item_image_margin"
+        android:scaleType="centerCrop"/>
+    <ImageView
+        android:id="@+id/background"
+        android:background="@drawable/ic_position_selected_bg"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

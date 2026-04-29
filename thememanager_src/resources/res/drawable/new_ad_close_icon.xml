@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="10.22dp"
+    android:width="9.5dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <path
+        android:fillColor="@color/new_ad_card_close_button_color"
+        android:pathData="M24.2086 27.3491C25.0759 28.2165 26.4822 28.2165 27.3496 27.3491C28.2169 26.4818 28.2169 25.0755 27.3496 24.2081L17.1416 14.0002L27.3491 3.79265C28.2165 2.92529 28.2165 1.51901 27.3491 0.65164C26.4818 -0.215727 25.0755 -0.215729 24.2081 0.651638L14.0006 10.8592L3.79198 0.650525C2.92461 -0.216842 1.51833 -0.216841 0.650964 0.650525C-0.216403 1.51789 -0.216405 2.92417 0.650962 3.79154L10.8596 14.0002L0.650525 24.2092C-0.216842 25.0766 -0.216841 26.4829 0.650525 27.3503C1.51789 28.2176 2.92417 28.2176 3.79154 27.3503L14.0006 17.1412L24.2086 27.3491Z"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.15"
+        android:fillAlpha="0.15"
+        android:fillType="evenOdd"/>
+</vector>

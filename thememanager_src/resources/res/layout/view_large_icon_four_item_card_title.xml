@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="@dimen/large_icon_four_card_title_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/large_icon_home_card_title"
+        android:ellipsize="end"
+        android:id="@+id/large_icon_title"
+        android:paddingTop="@dimen/large_icon_four_card_title_padding_top"
+        android:paddingBottom="@dimen/large_icon_four_card_title_padding_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:layout_marginStart="@dimen/large_icon_four_card_title_margin_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:textSize="@dimen/large_icon_four_card_sub_title_text_size"
+        android:textColor="@color/large_icon_home_card_sub_title"
+        android:id="@+id/large_icon_count"
+        android:paddingTop="@dimen/large_icon_all_page_sub_title_padding_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/large_icon_four_card_sub_title_drawable_padding"
+        android:drawableEnd="@drawable/ic_large_icon_arrow"
+        android:fontFamily="mipro-regular"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/large_icon_four_card_sub_title_padding_end"
+        app:layout_constraintBaseline_toBaselineOf="@+id/large_icon_title"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

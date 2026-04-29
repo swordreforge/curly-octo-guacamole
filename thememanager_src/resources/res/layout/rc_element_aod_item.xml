@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/image_fl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/SmoothLayoutDefault">
+        <com.android.thememanager.basemodule.views.ForegroundImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="@drawable/aod_item_foreground_frame"
+            app:foreground="@drawable/aod_item_foreground_frame"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:textSize="@dimen/stagger_item_title_size"
+        android:textColor="@color/stagger_title_color"
+        android:ellipsize="end"
+        android:id="@android:id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/stagger_bottom_view_padding_top"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/author_work_item_title_horizontal_offset"
+        android:layout_marginEnd="@dimen/author_work_item_title_horizontal_offset"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@+id/image_fl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_fl"/>
+    <TextView
+        android:textSize="@dimen/stagger_item_sub_title_size"
+        android:textColor="@color/stagger_subtitle_color"
+        android:ellipsize="end"
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/stagger_item_sub_margin_top"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="@android:id/title"
+        app:layout_constraintTop_toBottomOf="@android:id/title"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

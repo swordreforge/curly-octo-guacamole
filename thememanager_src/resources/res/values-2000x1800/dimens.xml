@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="doodle_width">786.1094dp</dimen>
+    <dimen name="sf_shape_height">458dp</dimen>
+    <dimen name="sf_shape_margin_bottom">112dp</dimen>
+    <dimen name="sf_shape_margin_left">0dp</dimen>
+    <dimen name="sf_shape_margin_top">228dp</dimen>
+    <dimen name="sf_shape_width">363dp</dimen>
+</resources>

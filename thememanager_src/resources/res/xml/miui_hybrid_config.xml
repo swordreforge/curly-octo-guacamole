@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget>
+    <feature name="miui.hybrid.feature.Geolocation"/>
+    <feature name="miui.hybrid.feature.Device"/>
+    <feature name="com.android.thememanager.h5.feature.AccountFeature"/>
+    <feature name="com.android.thememanager.h5.feature.AnalyticsFeature"/>
+    <feature name="com.android.thememanager.h5.feature.AudioFeature"/>
+    <feature name="com.android.thememanager.h5.feature.ConfigFeature"/>
+    <feature name="com.android.thememanager.h5.feature.DeviceFeature"/>
+    <feature name="com.android.thememanager.h5.feature.GeneralFeature"/>
+    <feature name="com.android.thememanager.h5.feature.NetworkFeature"/>
+    <feature name="com.android.thememanager.h5.feature.PageFeature"/>
+    <feature name="com.android.thememanager.h5.feature.ResourceFeature"/>
+    <feature name="com.android.thememanager.h5.feature.ShareFeature"/>
+    <feature name="com.android.thememanager.h5.feature.AdFeature"/>
+    <access origin="*"/>
+    <access
+        origin="http://market.xiaomi.com"
+        subdomains="true"/>
+    <access
+        origin="http://market.n.xiaomi.com"
+        subdomains="true"/>
+    <access
+        origin="https://zhuti.xiaomi.com"
+        subdomains="true"/>
+    <access
+        origin="http://dev.zhuti.n.xiaomi.com"
+        subdomains="true"/>
+    <access
+        origin="http://dev.test.xiaomi.com"
+        subdomains="true"/>
+    <access
+        origin="https://ts.market.mi-img.com/"
+        subdomains="true"/>
+    <access origin="http://tabtest.com"/>
+</widget>

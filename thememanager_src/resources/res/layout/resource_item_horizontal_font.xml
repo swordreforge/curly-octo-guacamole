@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/default_horizontal_offset_from_screen"
+    android:paddingRight="@dimen/default_horizontal_offset_from_screen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:layout_gravity="center"
+        android:id="@+id/thumbnail"
+        android:paddingTop="30.5dp"
+        android:paddingBottom="30.5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:paddingStart="@dimen/card_font_thunmnail_padding_horizontal"
+        android:paddingEnd="@dimen/card_font_thunmnail_padding_horizontal"/>
+    <include layout="@layout/resource_single_font_flag"/>
+    <LinearLayout
+        android:layout_gravity="end|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <include layout="@layout/resource_item_price_view"/>
+    </LinearLayout>
+    <View
+        android:background="@drawable/resource_divider"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+</FrameLayout>

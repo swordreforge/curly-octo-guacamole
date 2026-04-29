@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.clock.magazine.MiuiMagazineCSingleClock xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/clock_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/miui_magazine_c_clock_notification_height"
+        android:layout_marginStart="@dimen/miui_magazine_c_clock_style1_margin_start"
+        android:layout_marginEnd="@dimen/miui_magazine_c_clock_style1_margin_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/layout_miui_clock_magazine_c_single"/>
+    <FrameLayout
+        android:id="@+id/magazine_info_container"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+</com.miui.clock.magazine.MiuiMagazineCSingleClock>

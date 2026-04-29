@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="21.8dp"
+    android:width="21.8dp"
+    android:autoMirrored="true"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+    <path
+        android:fillColor="@color/ringtone_more"
+        android:pathData="M30,44C32.2091,44 34,45.7909 34,48C34,50.2091 32.2091,52 30,52C27.7909,52 26,50.2091 26,48C26,45.7909 27.7909,44 30,44ZM30,26C32.2091,26 34,27.7909 34,30C34,32.2091 32.2091,34 30,34C27.7909,34 26,32.2091 26,30C26,27.7909 27.7909,26 30,26ZM30,8C32.2091,8 34,9.7909 34,12C34,14.2091 32.2091,16 30,16C27.7909,16 26,14.2091 26,12C26,9.7909 27.7909,8 30,8Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:fillAlpha="0.4"/>
+</vector>

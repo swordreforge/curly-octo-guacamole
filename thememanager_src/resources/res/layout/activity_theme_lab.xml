@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.miuixbasewidget.widget.MessageView
+        android:id="@+id/alert_msg"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/cool_feature_alert_msg_margin_top"
+        android:layout_marginBottom="@dimen/cool_feature_alert_msg_margin_bottom"
+        android:paddingVertical="@dimen/cool_feature_alert_msg_width"
+        style="@style/Widget.MessageView.Guide"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.android.thememanager.activity.ThemeLabFragment"
+        android:id="@+id/lab_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

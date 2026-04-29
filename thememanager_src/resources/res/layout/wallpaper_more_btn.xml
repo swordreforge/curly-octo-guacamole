@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/setting_find_more_subtransparent_btn_height"
+    android:paddingStart="@dimen/dialog_cancel_margin_start"
+    android:paddingEnd="@dimen/dialog_cancel_margin_end">
+    <Button
+        android:textSize="@dimen/common_text_size_xl"
+        android:textStyle="bold"
+        android:textColor="@color/de_color_70_000000"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/find_more_wallpapers"/>
+</FrameLayout>

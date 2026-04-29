@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/default_horizontal_offset_from_screen"
+    android:paddingBottom="@dimen/default_horizontal_offset_from_screen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/default_horizontal_offset_from_screen">
+    <ImageView
+        android:id="@+id/tip"
+        android:background="@drawable/resource_search_history_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <com.android.thememanager.basemodule.views.ThemeTextView
+        android:textColor="@color/resource_history_text_color"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginStart="13dp"
+        app:supportElder="true"
+        style="@style/TextAppearance.List.Primary"/>
+</LinearLayout>

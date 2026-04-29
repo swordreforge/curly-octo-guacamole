@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/theme_oper_info_bar_additional_horizontal_offset_from_screen"
+    android:paddingEnd="@dimen/theme_oper_info_bar_additional_horizontal_offset_from_screen">
+    <miuix.miuixbasewidget.widget.MessageView
+        android:id="@+id/info_bar"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="@dimen/me_theme_open_info_margin_bottom"
+        android:text="@string/goto_purchased_list"
+        android:layout_marginStart="@dimen/me_theme_open_info_margin_start"
+        android:layout_marginEnd="@dimen/me_theme_open_info_margin_start"
+        style="@style/Widget.MessageView.Guide"/>
+</LinearLayout>

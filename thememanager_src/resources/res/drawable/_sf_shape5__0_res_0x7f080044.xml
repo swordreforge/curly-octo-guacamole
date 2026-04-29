@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:height="1361dp"
+    android:width="1080dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1361">
+    <group android:name="_R_G">
+        <group
+            android:name="_R_G_L_0_G"
+            android:translateX="540"
+            android:translateY="680">
+            <path
+                android:name="_R_G_L_0_G_D_0_P_0"
+                android:fillColor="#fdf4e9"
+                android:pathData=" M-378 -290.35 C-378,-421.13 -271.98,-527.15 -141.2,-527.15 C-141.2,-527.15 141.2,-527.15 141.2,-527.15 C271.98,-527.15 378,-421.13 378,-290.35 C378,-227.66 353.64,-170.67 313.88,-128.31 C353.63,-86.13 378,-29.29 378,33.24 C378,95.59 353.78,152.28 314.23,194.41 C353.78,236.55 378,293.24 378,355.59 C378,485.69 272.53,591.15 142.44,591.15 C142.44,591.15 -142.44,591.15 -142.44,591.15 C-272.54,591.15 -378,485.69 -378,355.59 C-378,293.24 -353.78,236.55 -314.23,194.41 C-353.78,152.28 -378,95.59 -378,33.24 C-378,-29.29 -353.63,-86.13 -313.88,-128.31 C-353.64,-170.67 -378,-227.66 -378,-290.35c "
+                android:fillAlpha="1"
+                android:fillType="nonZero"/>
+        </group>
+    </group>
+    <group android:name="time_group"/>
+</vector>

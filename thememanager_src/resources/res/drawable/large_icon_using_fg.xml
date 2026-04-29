@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <stroke
+        android:width="3dp"
+        android:color="@color/large_icon_detail_head_select_item_color"/>
+    <corners android:radius="@dimen/large_icon_picker_page_select_using_flag_radius"/>
+</shape>

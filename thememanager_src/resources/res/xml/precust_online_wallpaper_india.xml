@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WallpaperCoverList>
+    <Cover
+        nameResId="online_precust_abstract"
+        pageId="35987d25-bde4-4baa-9eb6-6830b97f4f50"
+        thumbnail="file:///android_asset/wallpaper-settings-res/wallpaper_settings_precust_abstract.jpg"/>
+    <Cover
+        nameResId="online_precust_scenery"
+        pageId="082a203b-9031-4e77-8fed-4371b508a673"
+        thumbnail="file:///android_asset/wallpaper-settings-res/wallpaper_settings_precust_scenery.jpg"/>
+    <Cover
+        nameResId="online_precust_building"
+        pageId="3577e14b-e504-4460-9f12-d15041809dcd"
+        thumbnail="file:///android_asset/wallpaper-settings-res/wallpaper_settings_precust_building.jpg"/>
+    <Cover
+        nameResId="online_precust_plant"
+        pageId="cea6a9be-4528-4464-84db-50d1b5e50e97"
+        thumbnail="file:///android_asset/wallpaper-settings-res/wallpaper_settings_precust_plant.jpg"/>
+    <Cover
+        nameResId="online_precust_animal"
+        pageId="a8320241-9e6c-4ebf-b569-7ccbb12b839e"
+        thumbnail="file:///android_asset/wallpaper-settings-res/wallpaper_settings_precust_animal.jpg"/>
+</WallpaperCoverList>

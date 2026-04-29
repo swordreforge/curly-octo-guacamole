@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/tab_selected_bottom_flag_color"/>
+    <corners android:radius="@dimen/tab_selected_bottom_flag_radius"/>
+    <size
+        android:height="@dimen/tab_selected_bottom_flag_height"
+        android:width="@dimen/tab_selected_bottom_flag_width"/>
+</shape>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.exoplayer2.ui.AspectRatioFrameLayout
+        android:layout_gravity="center"
+        android:id="@+id/exo_content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.android.thememanager.basemodule.imageloader.ImageRequestRecyclableImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:auto_recycle="true"/>
+    <miuix.androidbasewidget.widget.ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/exo_buffering"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        style="@style/WallpaperDetailProgress"/>
+    <View
+        android:id="@+id/exo_controller_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</merge>

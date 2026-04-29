@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/author_follow_dot_color"/>
+    <size
+        android:height="@dimen/author_dot_size"
+        android:width="@dimen/author_dot_size"/>
+    <corners android:radius="@dimen/author_dot_radius"/>
+</shape>

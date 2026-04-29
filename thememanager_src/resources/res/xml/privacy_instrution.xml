@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <miuix.preference.TextPreference
+        android:title="@string/privacy_phone_read_and_write_storage_above_eleven"
+        android:key="read_write_storage"
+        android:summary="@string/pref_read_write_function_detail"/>
+</PreferenceScreen>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/thumbnail"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/SmoothLayoutDefault">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/content_wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+    <include layout="@layout/ad_info_container"/>
+</miuix.smooth.SmoothFrameLayout2>

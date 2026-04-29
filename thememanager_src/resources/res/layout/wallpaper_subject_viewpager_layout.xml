@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:id="@+id/load_view_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/left_blur"
+        android:background="@color/wallpaper_subject_viewpager_item_bg"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cropToPadding="true"/>
+    <ImageView
+        android:id="@+id/right_blur"
+        android:background="@color/wallpaper_subject_viewpager_item_bg"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cropToPadding="true"/>
+    <miuix.springback.view.SpringBackLayout
+        android:id="@+id/spring_back_layout"
+        android:background="@color/item_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scrollOrientation="angle|horizontal"
+        app:scrollableView="@+id/viewpager">
+        <androidx.viewpager.widget.WallpaperViewPager
+            android:id="@+id/viewpager"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </miuix.springback.view.SpringBackLayout>
+    <ImageView
+        android:id="@+id/left_shade"
+        android:background="@drawable/left_shade_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ImageView
+        android:id="@+id/right_shade"
+        android:background="@drawable/right_shade_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</merge>

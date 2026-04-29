@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    android:id="@+id/ad_bottom_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/ad_info_btn_margin"
+    style="@style/Icon_StaggerItemBottomContainer">
+    <TextView
+        android:textSize="@dimen/element_ad_banner_test_four_download_button_text_size"
+        android:textColor="@color/download_btn_text_color"
+        android:gravity="center"
+        android:id="@+id/download_button"
+        android:background="@drawable/ic_banner_download_btn_bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/element_ad_banner_test_four_download_button_height"
+        android:layout_marginTop="@dimen/divi_line_width"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/adBottomDownloadBtn"/>
+    <com.android.thememanager.basemodule.views.AdSubTextView
+        android:textSize="@dimen/ad_des_text_size"
+        android:textColor="@color/ad_download_btn_border_color"
+        android:gravity="center_horizontal"
+        android:id="@+id/ad_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/element_ad_banner_test_four_download_button_margin_top"
+        android:singleLine="false"
+        android:lineSpacingExtra="@dimen/progress_margin_bottom"
+        android:textDirection="locale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/download_button"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

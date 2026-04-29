@@ -288,12 +288,15 @@ class ThemeInstallAccessibilityService : AccessibilityService() {
             Log.w("HyperThemeService", "服务已连接，onCreate() 跳过")
             return
         }
-        
+
+        // 初始化 PreferenceUtil，确保 :alarm_intercept 进程能读取主进程写入的 SharedPreferences
+        PreferenceUtil.init(applicationContext)
+
         Intent(ACTION_SERVICE_UP).apply {
             setPackage("com.merak")
             sendBroadcast(this)
         }
-        
+
         st_connectedTime = dateFormat_u.format(Date(System.currentTimeMillis()))
         
         val intentFilter = IntentFilter().apply {

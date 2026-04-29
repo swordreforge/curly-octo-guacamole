@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/author_light_black_10_night_white_10"/>
+            <corners android:radius="@dimen/author_error_button_corner_radius"/>
+        </shape>
+    </item>
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="@color/author_bg_retry_button_bg"/>
+            <corners android:radius="@dimen/author_error_button_corner_radius"/>
+        </shape>
+    </item>
+</selector>

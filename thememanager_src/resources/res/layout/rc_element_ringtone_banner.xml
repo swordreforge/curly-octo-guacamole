@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothFrameLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:radius="@dimen/round_corner_non_recommend_three_img_radius"
+    style="@style/SmoothLayoutDefault">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/top_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/recommend_ring_ad_img_height"
+        android:scaleType="fitXY"/>
+</miuix.smooth.SmoothFrameLayout2>

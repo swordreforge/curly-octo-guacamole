@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textSize="@dimen/large_icon_all_split_list_text_size"
+        android:textColor="@color/large_icon_all_category_item"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/large_icon_all_split_list_height"
+        android:fontFamily="mipro-regular"/>
+</FrameLayout>

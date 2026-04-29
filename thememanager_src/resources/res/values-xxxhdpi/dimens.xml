@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="resource_color_search_circle_diameter_1">543px</dimen>
+    <dimen name="resource_color_search_circle_diameter_2">510px</dimen>
+    <dimen name="resource_color_search_circle_diameter_3">476px</dimen>
+    <dimen name="resource_color_search_circle_diameter_4">525px</dimen>
+    <dimen name="resource_color_search_circle_diameter_5">502px</dimen>
+    <dimen name="resource_color_search_circle_diameter_6">441px</dimen>
+    <dimen name="resource_comment_padding_common">10dp</dimen>
+    <dimen name="resource_list_horizontal_padding">10dp</dimen>
+    <dimen name="resource_multiple_button_size">42.7dp</dimen>
+</resources>

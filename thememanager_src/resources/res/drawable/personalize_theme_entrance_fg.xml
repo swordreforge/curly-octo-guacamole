@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    android:height="@dimen/personalize_theme_card_center_fg_height"
+    android:width="@dimen/personalize_theme_card_center_fg_width"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@drawable/_personalize_theme_entrance_fg__0_res_0x7f080037"
+        android:pathData="M66.88,40.13L98.09,40.13A8.92,8.92 0,0 1,107 49.04L107,98.09A8.92,8.92 0,0 1,98.09 107L66.88,107A8.92,8.92 0,0 1,57.96 98.09L57.96,49.04A8.92,8.92 0,0 1,66.88 40.13z"/>
+    <path
+        android:fillColor="@drawable/_personalize_theme_entrance_fg__1_res_0x7f080038"
+        android:pathData="M0,57.96L0,8.92A8.92,8.92 135,0 1,8.92 -0L40.13,-0A8.92,8.92 0,0 1,49.04 8.92L49.04,57.96A8.92,8.92 0,0 1,40.13 66.88L8.92,66.88A8.92,8.92 0,0 1,0 57.96z"/>
+    <path
+        android:fillColor="@drawable/_personalize_theme_entrance_fg__2_res_0x7f080039"
+        android:pathData="M0,98.08L0,84.71A8.92,8.92 0,0 1,8.92 75.79L40.13,75.79A8.92,8.92 0,0 1,49.04 84.71L49.04,98.08A8.92,8.92 0,0 1,40.13 107L8.92,107A8.92,8.92 0,0 1,0 98.08z"/>
+    <path
+        android:fillColor="@drawable/_personalize_theme_entrance_fg__3_res_0x7f08003a"
+        android:pathData="M57.96,22.29L57.96,8.92A8.92,8.92 0,0 1,66.88 0L98.09,0A8.92,8.92 0,0 1,107 8.92L107,22.29A8.92,8.92 0,0 1,98.09 31.21L66.88,31.21A8.92,8.92 0,0 1,57.96 22.29z"/>
+    <path
+        android:fillColor="@drawable/_personalize_theme_entrance_fg__4_res_0x7f08003b"
+        android:pathData="M57.96,22.29L57.96,8.92A8.92,8.92 0,0 1,66.88 0L98.09,0A8.92,8.92 0,0 1,107 8.92L107,22.29A8.92,8.92 0,0 1,98.09 31.21L66.88,31.21A8.92,8.92 0,0 1,57.96 22.29z"/>
+</vector>

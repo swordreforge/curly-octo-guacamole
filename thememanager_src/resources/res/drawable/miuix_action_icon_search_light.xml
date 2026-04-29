@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawable xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:height="26dp"
+    android:width="26dp"
+    android:viewportWidth="26"
+    android:viewportHeight="26"
+    app:actionIconDisabledAlpha="0.3"
+    app:actionIconNormalAlpha="0.8"
+    app:actionIconPressedAlpha="0.5"
+    class="miuix.theme.ActionIconDrawable">
+    <path
+        android:fillColor="#000000"
+        android:pathData="M15.7119,16.8433C14.3502,17.9549 12.6111,18.6216 10.7162,18.6216C6.3502,18.6216 2.8108,15.0822 2.8108,10.7162C2.8108,6.3502 6.3502,2.8108 10.7162,2.8108C15.0822,2.8108 18.6216,6.3502 18.6216,10.7162C18.6216,12.6111 17.9549,14.3503 16.8433,15.712L22.3202,21.1889C22.4768,21.3454 22.5551,21.4237 22.5963,21.5085C22.672,21.6638 22.672,21.8453 22.5963,22.0007C22.5551,22.0854 22.4768,22.1637 22.3202,22.3203C22.1637,22.4768 22.0854,22.5551 22.0006,22.5964C21.8453,22.672 21.6638,22.672 21.5085,22.5964C21.4237,22.5551 21.3454,22.4768 21.1889,22.3203L15.7119,16.8433ZM17.0216,10.7162C17.0216,14.1986 14.1986,17.0216 10.7162,17.0216C7.2338,17.0216 4.4108,14.1986 4.4108,10.7162C4.4108,7.2338 7.2338,4.4108 10.7162,4.4108C14.1986,4.4108 17.0216,7.2338 17.0216,10.7162Z"
+        android:fillAlpha="1"
+        android:fillType="evenOdd"/>
+</drawable>

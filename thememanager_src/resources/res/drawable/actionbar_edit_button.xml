@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp"/>
+            <stroke
+                android:width="0.8dp"
+                android:color="@color/comment_edit_button_stroke"/>
+            <solid android:color="@color/comment_edit_button_solid"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp"/>
+            <stroke
+                android:width="0.8dp"
+                android:color="@color/comment_edit_button_stroke"/>
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="10dp"
+    android:width="6dp"
+    android:autoMirrored="true"
+    android:viewportWidth="6"
+    android:viewportHeight="10">
+    <path
+        android:fillColor="@color/ic_hybrid_six_grid_card_arrow_color"
+        android:pathData="M1.9776 0.6684C1.6847 0.375507 1.20983 0.375507 0.916936 0.6684C0.624042 0.961294 0.624042 1.43617 0.916936 1.72906L4.18798 5.00011L0.917354 8.27073C0.624461 8.56363 0.624461 9.0385 0.917354 9.33139C1.21025 9.62428 1.68512 9.62428 1.97801 9.33139L5.74711 5.56229C5.75828 5.55238 5.76922 5.54207 5.77991 5.53138C5.89221 5.41908 5.96146 5.28002 5.98764 5.13473C6.03062 4.90042 5.96151 4.6496 5.78033 4.46842C5.76746 4.45555 5.75424 4.44324 5.7407 4.4315L1.9776 0.6684Z"
+        android:strokeAlpha="0.3"
+        android:fillType="evenOdd"/>
+</vector>

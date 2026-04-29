@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/recycler_divider_height"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/category_rank_container_margin_start"
+    android:layout_marginEnd="@dimen/category_rank_container_margin_start">
+    <include
+        android:id="@+id/item_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="@string/category_wallpaper_rank"
+        app:layout_constraintEnd_toStartOf="@+id/item_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/rc_element_normal_three_wallpaper_group_item"/>
+    <include
+        android:id="@+id/item_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/category_rank_container_margin_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="@string/category_wallpaper_rank"
+        app:layout_constraintEnd_toStartOf="@+id/item_2"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/item_0"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/rc_element_normal_three_wallpaper_group_item"/>
+    <include
+        android:id="@+id/item_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/category_rank_container_margin_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="@string/category_wallpaper_rank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/item_1"
+        app:layout_constraintTop_toTopOf="parent"
+        layout="@layout/rc_element_normal_three_wallpaper_group_item"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

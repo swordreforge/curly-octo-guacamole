@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.smooth.SmoothContainerDrawable xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:radius="100dp">
+    <child>
+        <shape android:shape="rectangle">
+            <solid android:color="#40e3e3e3"/>
+            <corners android:radius="@dimen/super_wallpaper_item_update_button_corner_radius"/>
+        </shape>
+    </child>
+</miuix.smooth.SmoothContainerDrawable>

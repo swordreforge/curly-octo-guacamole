@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/split_list"
+        android:layout_width="@dimen/large_icon_all_page_catatory_list_width"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <FrameLayout
+        android:id="@+id/large_icon_list"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/split_list"
+        app:layout_constraintTop_toTopOf="parent">
+        <ViewStub
+            android:id="@+id/data_reload_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <include
+            android:gravity="center_vertical"
+            layout="@layout/v9_loading_progress"/>
+    </FrameLayout>
+    <include
+        android:gravity="center_vertical"
+        android:id="@+id/refresh_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/v9_loading_progress"/>
+    <ViewStub
+        android:id="@+id/reload_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

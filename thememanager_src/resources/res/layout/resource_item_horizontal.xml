@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" style="@style/ResourceBrowser.ListItem">
+    <LinearLayout style="@style/ResourceBrowser.HorizontalLine">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            style="@style/ResourceBrowser.ResourceImage"/>
+        <TextView
+            android:id="@android:id/title"
+            style="@style/ResourceBrowser.ResourceDescription.Horizontal"/>
+    </LinearLayout>
+    <include layout="@layout/resource_flag"/>
+</FrameLayout>

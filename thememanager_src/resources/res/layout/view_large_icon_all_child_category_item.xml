@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/large_icon_all_package_category_item_radius"
+        android:layout_marginVertical="14.19dp">
+        <TextView
+            android:textSize="@dimen/large_icon_all_package_category_item_text_size"
+            android:textColor="@color/large_icon_all_category_item"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="mipro-regular"
+            android:paddingHorizontal="@dimen/large_icon_all_child_category_item_padding_horizontal"
+            android:paddingVertical="@dimen/large_icon_all_package_category_item_padding_vertical"/>
+    </miuix.smooth.SmoothFrameLayout2>
+</FrameLayout>

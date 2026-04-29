@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/large_icon_picker_selector"
+    android:paddingTop="@dimen/large_icon_picker_page_icon_size_title_padding_top"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="@dimen/large_icon_detail_icon_size_text_size"
+        android:id="@+id/icon_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_icon_picker_purchase_title_margin_top"
+        android:text="@string/large_icon_picker_size"
+        android:fontFamily="mipro-regular"
+        android:layout_marginStart="@dimen/large_icon_detail_page_icon_size_margin_start"
+        app:layout_constraintBottom_toTopOf="@+id/gd_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        style="@style/LargeIconDetailInfoText"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="horizontal"
+        android:id="@+id/gd_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/selector"
+        android:paddingBottom="@dimen/large_icon_preview_list_padding_bottom"
+        android:scrollbars="none"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toTopOf="@+id/gd_line"/>
+</LinearLayout>

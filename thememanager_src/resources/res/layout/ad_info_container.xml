@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ad_info_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_gravity="end|bottom"
+        android:id="@+id/ad_close_btn"
+        android:layout_marginBottom="@dimen/ad_info_btn_margin"
+        android:text="@string/accessibiliy_description_content_ad"
+        android:contentDescription="@string/close"
+        android:drawableEnd="@drawable/xout_x"
+        android:layout_marginEnd="@dimen/ad_info_btn_margin"
+        style="@style/Ad_Text_Style"/>
+    <TextView
+        android:layout_gravity="end|top"
+        android:id="@+id/download_tip"
+        android:layout_marginTop="@dimen/ad_info_btn_margin"
+        android:text="@string/ad_download_download_now"
+        android:layout_marginEnd="@dimen/ad_info_btn_margin"
+        style="@style/Ad_Text_Style"/>
+</FrameLayout>

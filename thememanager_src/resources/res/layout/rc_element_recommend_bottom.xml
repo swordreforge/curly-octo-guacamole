@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textSize="@dimen/bottom_tips_text_size"
+    android:gravity="center"
+    android:paddingTop="@dimen/recommend_bottom_tips_padding_top"
+    android:paddingBottom="@dimen/recommend_bottom_tips_padding_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/recommend_bottom_tips"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>

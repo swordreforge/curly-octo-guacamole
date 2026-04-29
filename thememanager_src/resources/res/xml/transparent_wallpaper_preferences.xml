@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:title="@string/transparent_wallpaper">
+    <CheckBoxPreference
+        android:checked="false"
+        android:title="@string/enable_transparent_wallpaper"
+        android:key="transparent_wallpaper_trigger"/>
+    <Preference
+        android:title="@string/transparent_wallpaper_filter_pref_title"
+        android:key="transparent_wallpaper_filter"
+        android:summary="@string/transparent_wallpaper_filter_pref_summary"/>
+    <miuix.preference.TextPreference
+        android:title="@string/transparent_wallpaper_white_wallpaper"
+        android:key="white_wallpaper"
+        android:summary="@string/transparent_wallpaper_white_wallpaper_tip"/>
+    <Preference
+        android:title="@string/transparent_wallpaper_auto_start_pref_title"
+        android:key="auto_start"
+        android:summary="@string/transparent_wallpaper_auto_start_pref_summary"/>
+    <SeekBarPreference
+        android:max="50"
+        android:title="@string/transparency_pref_title"
+        android:key="transparent_wallpaper_transparency"
+        android:summary="@string/transparent_wallpaper_auto_start_pref_summary"
+        android:defaultValue="20"
+        android:min="0"
+        app:showSeekBarValue="true"
+        app:updatesContinuously="true"/>
+</PreferenceScreen>

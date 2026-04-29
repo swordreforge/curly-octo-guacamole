@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/stagger_divider"
+    android:paddingEnd="@dimen/stagger_divider">
+    <include
+        android:id="@+id/item_0"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/wallpaper_wallpaper_height"
+        android:layout_margin="@dimen/stagger_divider"
+        android:layout_weight="1"
+        layout="@layout/rc_video_wallpaper_staggered_item_category"/>
+    <include
+        android:id="@+id/item_1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/wallpaper_wallpaper_height"
+        android:layout_margin="@dimen/stagger_divider"
+        android:layout_weight="1"
+        layout="@layout/rc_video_wallpaper_staggered_item_category"/>
+</LinearLayout>

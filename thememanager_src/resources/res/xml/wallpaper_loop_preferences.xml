@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/wallpaper_loop_title">
+    <CheckBoxPreference
+        android:title="@string/wallpaper_loop_title_lock_walpaper"
+        android:key="lock_screen_trigger"
+        android:summary="@string/wallpaper_loop_desc_lock_walpaper"/>
+    <CheckBoxPreference
+        android:title="@string/wallpaper_loop_title_desk_wallpaper"
+        android:key="wallpaper_trigger"
+        android:summary="@string/wallpaper_loop_desc_desk_walpaper"/>
+    <Preference
+        android:title="@string/wallpaper_loop_more_options"
+        android:key="more_options"/>
+</PreferenceScreen>

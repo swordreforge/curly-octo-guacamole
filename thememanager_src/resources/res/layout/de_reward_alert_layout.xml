@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:textSize="@dimen/de_detail_reward_guide_size"
+        android:textColor="#d27200"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tv"
+        android:background="@drawable/de_reward_start_indicator"
+        android:layout_width="@dimen/de_detail_reward_guide_bg_width"
+        android:layout_height="wrap_content"
+        android:maxWidth="300dp"
+        android:text="@string/detail_reward_alert"
+        android:fontFamily="mipro-medium"/>
+</FrameLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:enabled="false"
+        android:textSize="@dimen/select_mode_warning_test_size"
+        android:textStyle="bold"
+        android:textColor="@color/select_mode_waring_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/select_mode_warning_margin_top"
+        android:layout_marginBottom="@dimen/select_mode_warning_margin_bottom"
+        android:text="@string/privacy_select_mode_desc"
+        android:layout_marginHorizontal="@dimen/select_mode_warning_margin_horizontal"
+        android:lineHeight="@dimen/select_mode_warning_text_line_high"/>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <Button
+        android:textSize="@dimen/widget_buy_button_text_size"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:id="@+id/buy"
+        android:layout_width="@dimen/widget_buy_button_width"
+        android:layout_height="@dimen/widget_buy_button_height"
+        style="@style/Widget.Button.Primary"/>
+</FrameLayout>

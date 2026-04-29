@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/wallpaper_staggered_divider_double"
+    android:paddingEnd="@dimen/wallpaper_staggered_divider_double">
+    <FrameLayout
+        android:id="@+id/ad_info_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/element_ad_banner_test_four_margin_top">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_gravity="end|top"
+            android:id="@+id/ad_close_btn"
+            android:layout_marginTop="@dimen/element_ad_banner_test_four_ad_close_btn_margin_top"
+            android:text="@string/accessibiliy_description_content_ad"
+            android:contentDescription="@string/close"
+            android:layout_marginEnd="@dimen/element_ad_banner_test_four_ad_close_btn_margin_end"
+            style="@style/Vertical_Ad_Text_Style"/>
+    </FrameLayout>
+    <Button
+        android:textSize="@dimen/element_ad_banner_test_four_download_button_text_size"
+        android:textColor="@color/de_element_ad_banner_test_ad_download_btn_text_color"
+        android:gravity="center"
+        android:id="@+id/download_button"
+        android:background="@drawable/de_ad_download_background_test"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/element_ad_banner_test_four_download_button_height"
+        android:layout_marginTop="@dimen/element_ad_banner_test_four_download_button_margin_top"
+        style="@style/adBottomDownloadBtn"/>
+</LinearLayout>

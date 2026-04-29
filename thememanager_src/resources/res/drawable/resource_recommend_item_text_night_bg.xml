@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/preview_night_bg"/>
+    <corners android:radius="6dp"/>
+    <size android:height="@dimen/search_hot_hint_height"/>
+    <padding
+        android:left="10dp"
+        android:top="7.3dp"
+        android:right="10dp"
+        android:bottom="7.3dp"/>
+</shape>

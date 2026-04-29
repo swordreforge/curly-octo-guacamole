@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/desk_preview_bg_img"
+        android:background="@color/personalize_lockscreen_desk_background_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <ImageView
+        android:id="@+id/desk_preview_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:textSize="@dimen/personalize_storage_permission_denied_text_size"
+        android:textColor="@color/personalize_storage_permission_denied_text_color"
+        android:layout_gravity="center"
+        android:id="@+id/permission_denied_text"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pad_fold_no_permission"/>
+</FrameLayout>

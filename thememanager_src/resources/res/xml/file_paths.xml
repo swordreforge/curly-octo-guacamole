@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path
+        name="share_images"
+        path="."/>
+    <external-cache-path
+        name="external_cache"
+        path="."/>
+    <external-files-path
+        name="maml.widget"
+        path="maml.widget"/>
+    <external-files-path
+        name="maml.right"
+        path="maml.right"/>
+    <files-path
+        name="online_wallpaper_image_cache_setting"
+        path="setting_wallpaperimg_cache"/>
+    <files-path
+        name="online_wallpaper_image_cache_images"
+        path="images"/>
+    <external-path
+        name="font"
+        path="/MIUI/theme/.data/content/fonts/"/>
+    <external-files-path
+        name="external-files-MIUI"
+        path="MIUI"/>
+</paths>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="wallpaper_settings_category_page_horizontal_padding">80px</dimen>
+    <dimen name="wallpaper_settings_category_page_thumbnail_gap">20px</dimen>
+    <dimen name="wallpaper_settings_no_history_padding_top">750px</dimen>
+</resources>

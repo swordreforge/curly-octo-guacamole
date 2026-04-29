@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:id="@+id/title"
+        android:paddingTop="@dimen/large_icon_title_padding_top"
+        android:paddingBottom="@dimen/large_icon_title_padding_bottom"
+        android:maxWidth="@dimen/three_group_title_max_width"
+        android:singleLine="true"
+        android:paddingStart="@dimen/large_icon_title_padding_start"
+        style="@style/ResourceBrowser.ResourceDescription.Vertical"/>
+</LinearLayout>

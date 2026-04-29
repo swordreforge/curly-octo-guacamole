@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white"/>
+    <corners
+        android:bottomLeftRadius="@dimen/round_corner_default"
+        android:bottomRightRadius="@dimen/round_corner_default"/>
+    <padding
+        android:left="@dimen/stagger_image_title_margin_left"
+        android:right="@dimen/home_page_recommendation_category_margin"/>
+</shape>

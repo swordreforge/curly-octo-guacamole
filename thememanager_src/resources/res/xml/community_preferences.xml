@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/transparent_wallpaper">
+    <CheckBoxPreference
+        android:title="@string/community_entrance_title"
+        android:key="clock_message_trigger"
+        android:defaultValue="true"/>
+    <PreferenceCategory>
+        <CheckBoxPreference
+            android:title="@string/community_community_message_trigger_title"
+            android:key="clock_community_message_trigger"
+            android:summary="@string/community_community_message_trigger_summary"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

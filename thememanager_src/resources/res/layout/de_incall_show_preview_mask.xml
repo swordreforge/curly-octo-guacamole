@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_gravity="top|center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/de_incall_show_avatar_margin_top"
+        android:src="@drawable/de_incall_show_preview_avatar"/>
+    <TextView
+        android:textSize="26.18sp"
+        android:textColor="@android:color/black"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/de_incall_show_phone_margin_top"
+        android:text="188 8888 8888"/>
+    <ImageView
+        android:layout_gravity="start|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/de_incall_show_phone_margin_bottom"
+        android:src="@drawable/de_incall_show_preview_hangup"
+        android:layout_marginStart="@dimen/de_incall_show_phone_horizontal_margin"/>
+    <ImageView
+        android:layout_gravity="end|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/de_incall_show_phone_margin_bottom"
+        android:src="@drawable/de_incall_show_preview_answer"
+        android:layout_marginEnd="@dimen/de_incall_show_phone_horizontal_margin"/>
+</merge>

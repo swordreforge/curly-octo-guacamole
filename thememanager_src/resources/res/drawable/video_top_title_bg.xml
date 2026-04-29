@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/video_wallpaper_recommend_category_round_corner_radius_title"/>
+    <solid android:color="#33000000"/>
+    <stroke android:color="@android:color/white"/>
+    <size android:height="16.7dp"/>
+</shape>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="@dimen/super_wallpaper_land_position_image_outer_width"
+    android:layout_height="@dimen/super_wallpaper_land_position_image_outer_width"
+    android:layout_marginRight="@dimen/super_wallpaper_land_position_margin_end">
+    <com.android.thememanager.widget.EdgeStrokeRounderContainer
+        android:layout_width="@dimen/super_wallpaper_land_position_image_inner_width_height"
+        android:layout_height="@dimen/super_wallpaper_land_position_image_inner_width_height"
+        android:layout_centerInParent="true">
+        <com.android.thememanager.widget.RoundCornerImageView
+            android:layout_gravity="center"
+            android:id="@+id/land_img"
+            android:layout_width="@dimen/super_wallpaper_land_position_image_inner_width_height"
+            android:layout_height="@dimen/super_wallpaper_land_position_image_inner_width_height"
+            android:scaleType="fitCenter"/>
+    </com.android.thememanager.widget.EdgeStrokeRounderContainer>
+    <ImageView
+        android:id="@+id/background"
+        android:background="@drawable/super_wallpaper_selected_land_rect"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

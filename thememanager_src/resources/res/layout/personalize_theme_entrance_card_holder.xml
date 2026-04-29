@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/image_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:radius="@dimen/pad_round_corner_default"
+        android:contentDescription="@string/personalize_theme_entrance"
+        app:layout_constraintDimensionRatio="@string/personalized_bottom_card_image_bias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:miuix_strokeColor="@color/wallpaper_view_holder_border_color_pad"
+        app:miuix_strokeWidth="@dimen/wallpaper_view_holder_stroke_width">
+        <ImageView
+            android:id="@+id/img_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/img_foreground"
+            android:background="@drawable/personalize_theme_entrance_fg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:textSize="@dimen/personalize_bottom_card_title_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/personalize_bottom_card_title_color"
+        android:id="@+id/ringtone_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/personalize_bottom_card_title_margin_top"
+        android:text="@string/personalize_theme_entrance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_container"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

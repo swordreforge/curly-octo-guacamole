@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/concentration_title"
+        style="@style/RecommendConcentrationTitle"/>
+    <TextView
+        android:id="@+id/concentration_subtitle"
+        android:visibility="gone"
+        android:layout_toEndOf="@+id/concentration_title"
+        style="@style/RecommendConcentrationSubTitle"/>
+    <com.android.thememanager.basemodule.views.ThemeTextView
+        android:id="@+id/concentration_more"
+        android:visibility="gone"
+        app:supportElder="true"
+        style="@style/RecommendConcentrationMore"/>
+    <TextView
+        android:textSize="@dimen/concentration_head_count_text_size"
+        android:textColor="#ff7c7c7c"
+        android:id="@+id/concentration_count"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/concentration_head_count_margin_end"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clock_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <include
+        android:id="@+id/clock_container_inner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_miui_clock_magazine_a"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

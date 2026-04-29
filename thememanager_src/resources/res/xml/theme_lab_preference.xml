@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="@string/lab">
+    <miuix.preference.TextPreference
+        android:title="@string/wallpaper_loop_title"
+        android:key="loop_wallpaper"
+        android:summary="@string/wallpaper_loop_desc_all_walpaper"/>
+</PreferenceScreen>

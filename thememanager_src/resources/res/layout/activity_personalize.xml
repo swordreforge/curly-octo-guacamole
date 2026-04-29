@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ViewStub
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/viewStub"
+        android:layout="@layout/stub_find_more"
+        android:inflatedId="@+id/find_more_theme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wallpaper_setting_find_more_button_height"
+        android:layout_marginHorizontal="@dimen/theme_and_icon_setting_find_more_button_margin_horizontal"/>
+</FrameLayout>

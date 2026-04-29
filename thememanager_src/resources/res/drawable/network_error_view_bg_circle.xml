@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/empty_view_bg_rabbit"/>
+    <size
+        android:height="118dp"
+        android:width="118dp"/>
+    <corners android:radius="59dp"/>
+</shape>

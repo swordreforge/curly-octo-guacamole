@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    android:background="@drawable/thumbnail_bg_pink"
+    android:paddingTop="129dp"
+    android:paddingBottom="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/itemview_horizontal_padding_from_screen"
+    android:paddingEnd="@dimen/itemview_horizontal_padding_from_screen">
+    <include
+        android:id="@+id/item1"
+        layout="@layout/rc_element_ringtone_subject_item"/>
+    <include layout="@layout/rc_horizontal_divider_dark"/>
+    <include
+        android:id="@+id/item2"
+        layout="@layout/rc_element_ringtone_subject_item"/>
+    <include layout="@layout/rc_horizontal_divider_dark"/>
+    <include
+        android:id="@+id/item3"
+        layout="@layout/rc_element_ringtone_subject_item"/>
+</LinearLayout>

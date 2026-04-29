@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wallpaper_classification_banner_item_height"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:textSize="@dimen/category_customize_subtitle_text_size"
+        android:textColor="#ffffff"
+        android:ellipsize="end"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/category_customize_subtitle_margin_top"
+        android:maxWidth="95dp"
+        android:singleLine="true"
+        android:fontFamily="mipro-medium"
+        android:layout_marginStart="@dimen/category_customize_subtitle_margin_start"/>
+</FrameLayout>

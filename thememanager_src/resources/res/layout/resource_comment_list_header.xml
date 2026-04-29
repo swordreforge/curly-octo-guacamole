@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:background="@color/divider_color"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginTop="@dimen/de_comment_divider_margin_top_bottom"
+        android:layout_marginBottom="@dimen/de_comment_divider_margin_top_bottom"
+        android:layout_marginStart="@dimen/de_comment_divider_margin"
+        android:layout_marginEnd="@dimen/de_comment_divider_margin"/>
+</LinearLayout>

@@ -1,0 +1,81 @@
+<MAMLDEMO extraResources="sw720-den320::0.667,sw1536-den320::0.933,sw1440-den640::1.222" extraScales="sw720-den320:0.667,sw1536-den320:0.933,sw1440-den640:1.222" frameRate="60" resDensity="440" scaleByDensity="true" screenWidth="1080">
+    <Var name="image_1_y_arr" const="true" type="number[]" values="300,180,100,70,49,51,51" />
+    <Var name="image_1_y_arr_ease" const="true" type="number[]" values="1,1,1,1,1,1,1" />
+    <Var name="image_1_y_arr_dur" const="true" type="number[]" values="1000,100,100,100,100,100,100" />
+    <Var name="image_1_y_arr_delay" const="true" type="number[]" values="0,0,0,0,0,0,0" />
+    <Var name="image_2_y_arr" const="true" type="number[]" values="300,249,249,249,249,249,249" />
+    <Var name="image_2_y_arr_ease" const="true" type="number[]" values="1,1,1,1,1,1,1" />
+    <Var name="image_2_y_arr_dur" const="true" type="number[]" values="1000,100,100,100,100,100,100" />
+    <Var name="image_2_y_arr_delay" const="true" type="number[]" values="0,0,0,0,0,0,0" />
+    <Var name="image_3_y_arr" const="true" type="number[]" values="300,100,10,100,50,85,75" />
+    <Var name="image_3_y_arr_ease" const="true" type="number[]" values="1,1,1,1,1,1,1" />
+    <Var name="image_3_y_arr_dur" const="true" type="number[]" values="1000,100,100,100,100,100,100" />
+    <Var name="image_3_y_arr_delay" const="true" type="number[]" values="0,0,0,0,0,0,0" />
+    <Var name="image_3_alpha_arr" const="true" type="number[]" values="0,255,255,255,255,255,255" />
+    <Var name="image_3_alpha_arr_ease" const="true" type="number[]" values="1,1,1,1,1,1,1" />
+    <Var name="image_3_alpha_arr_dur" const="true" type="number[]" values="1000,100,100,100,100,100,100" />
+    <Var name="image_3_alpha_arr_delay" const="true" type="number[]" values="0,0,0,0,0,0,0" />
+    <Var name="framequeue" type="number[]" values="1,2,3,4,5,6,-1" />
+    <Var name="frame_large_dur" type="number[]" values="1000,100,100,100,100,100,100" />
+    <FolmeState name="image_0_state" x="#view_width/2" w="#view_width" />
+    <FolmeState name="image_1_state" x="#view_width/2" y="#image_1_y_arr[#frame]" />
+    <FolmeState name="image_2_state" x="#view_width/2" y="#image_2_y_arr[#frame]" />
+    <FolmeState name="image_3_state" x="#view_width/2" y="#image_3_y_arr[#frame]" alpha="#image_3_alpha_arr[#frame]" />
+    <FolmeConfig name="image_0_config" delay="0" ease="1,0" />
+    <FolmeConfig name="image_1_config" delay="0" ease="1,0">
+        <Special delay="#image_1_y_arr_delay[#frame]" ease="#image_1_y_arr_ease[#frame],ifelse(#image_1_y_arr_ease[#frame]==-2,#image_1_y_arr_func0[#frame],#image_1_y_arr_dur[#frame]),ifelse(#image_1_y_arr_ease[#frame]==-2,#image_1_y_arr_func1[#frame],0)" property="'y'" />
+        <Special delay="#image_1_y_arr_delay[#frame]" ease="#image_1_y_arr_ease[#frame],ifelse(#image_1_y_arr_ease[#frame]==-2,#image_1_y_arr_func0[#frame],#image_1_y_arr_dur[#frame]),ifelse(#image_1_y_arr_ease[#frame]==-2,#image_1_y_arr_func1[#frame],0)" property="'y'" />
+    </FolmeConfig>
+    <FolmeConfig name="image_2_config" delay="0" ease="1,0">
+        <Special delay="#image_2_y_arr_delay[#frame]" ease="#image_2_y_arr_ease[#frame],ifelse(#image_2_y_arr_ease[#frame]==-2,#image_2_y_arr_func0[#frame],#image_2_y_arr_dur[#frame]),ifelse(#image_2_y_arr_ease[#frame]==-2,#image_2_y_arr_func1[#frame],0)" property="'y'" />
+        <Special delay="#image_2_y_arr_delay[#frame]" ease="#image_2_y_arr_ease[#frame],ifelse(#image_2_y_arr_ease[#frame]==-2,#image_2_y_arr_func0[#frame],#image_2_y_arr_dur[#frame]),ifelse(#image_2_y_arr_ease[#frame]==-2,#image_2_y_arr_func1[#frame],0)" property="'y'" />
+    </FolmeConfig>
+    <FolmeConfig name="image_3_config" delay="0" ease="1,0">
+        <Special delay="#image_3_y_arr_delay[#frame]" ease="#image_3_y_arr_ease[#frame],ifelse(#image_3_y_arr_ease[#frame]==-2,#image_3_y_arr_func0[#frame],#image_3_y_arr_dur[#frame]),ifelse(#image_3_y_arr_ease[#frame]==-2,#image_3_y_arr_func1[#frame],0)" property="'y'" />
+        <Special delay="#image_3_y_arr_delay[#frame]" ease="#image_3_y_arr_ease[#frame],ifelse(#image_3_y_arr_ease[#frame]==-2,#image_3_y_arr_func0[#frame],#image_3_y_arr_dur[#frame]),ifelse(#image_3_y_arr_ease[#frame]==-2,#image_3_y_arr_func1[#frame],0)" property="'y'" />
+        <Special delay="#image_3_alpha_arr_delay[#frame]" ease="#image_3_alpha_arr_ease[#frame],ifelse(#image_3_alpha_arr_ease[#frame]==-2,#image_3_alpha_arr_func0[#frame],#image_3_alpha_arr_dur[#frame]),ifelse(#image_3_alpha_arr_ease[#frame]==-2,#image_3_alpha_arr_func1[#frame],0)" property="'alpha'" />
+        <Special delay="#image_3_alpha_arr_delay[#frame]" ease="#image_3_alpha_arr_ease[#frame],ifelse(#image_3_alpha_arr_ease[#frame]==-2,#image_3_alpha_arr_func0[#frame],#image_3_alpha_arr_dur[#frame]),ifelse(#image_3_alpha_arr_ease[#frame]==-2,#image_3_alpha_arr_func1[#frame],0)" property="'alpha'" />
+    </FolmeConfig>
+    <Function name="folme_to_frame">
+        <FolmeCommand command="cancel" target="image_0" />
+        <FolmeCommand command="to" config="'image_0_config'" states="'image_0_state'" target="image_0" />
+        <FolmeCommand command="cancel" target="image_1" />
+        <FolmeCommand command="to" config="'image_1_config'" states="'image_1_state'" target="image_1" />
+        <FolmeCommand command="cancel" target="image_2" />
+        <FolmeCommand command="to" config="'image_2_config'" states="'image_2_state'" target="image_2" />
+        <FolmeCommand command="cancel" target="image_3" />
+        <FolmeCommand command="to" config="'image_3_config'" states="'image_3_state'" target="image_3" />
+    </Function>
+    <Var expression="#frame" threshold="1">
+        <Trigger>
+            <FunctionCommand target="folme_to_frame" />
+            <AnimationCommand command="play" target="frame_auto" />
+        </Trigger>
+    </Var>
+    <ExternalCommands>
+        <Trigger action="init">
+            <VariableCommand name="frame" expression="1" type="number" />
+        </Trigger>
+    </ExternalCommands>
+    <Var name="frame_auto">
+        <VariableAnimation initPause="false" loop="false">
+            <Item time="0" value="0" />
+            <Item dtime="#frame_large_dur[#frame]" value="1" />
+            <Triggers>
+                <Trigger action="end" condition="#framequeue[#frame]}=0**#frame{7">
+                    <VariableCommand name="frame" expression="#framequeue[#frame]" />
+                </Trigger>
+            </Triggers>
+        </VariableAnimation>
+    </Var>
+
+    <!-- <Rectangle y="#view_height" w="#view_width" h="90" fillColor="#ff00ff" alignV="bottom" /> -->
+
+    <Group>
+        <Rectangle x="#view_width/2" y="159" w="#view_width" h="#view_height" fillColor="#242424" align="center" cornerRadius="60" />
+
+        <Image name="image_1" x="#view_width/2" y="#image_1_y_arr[0]" w="378" h="128" src="assets/KMRCZd_km.webp" align="center" folmeMode="true" />
+        <Image name="image_2" x="#view_width/2" y="#image_2_y_arr[0]" w="140" src="assets/IFAzx4XqK.webp" align="center" folmeMode="true" />
+        <Image name="image_3" x="#view_width/2" y="#image_3_y_arr[0]" w="164" h="164" alpha="#image_3_alpha_arr[0]" src="assets/4Dn5YZmTM.webp" align="center" folmeMode="true" />
+    </Group>
+</MAMLDEMO>

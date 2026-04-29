@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.thememanager.detail.theme.view.widget.ResourceDetailPreview xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/preview_container"
+    android:clipToPadding="false"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/de_detail_preview_horizontal_padding"
+    android:paddingEnd="@dimen/de_detail_preview_horizontal_padding"/>

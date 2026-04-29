@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/itemview_triple_vertical_padding_from_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/thumbnail_fl"
+        android:radius="@dimen/round_corner_non_recommend_three_img_radius"
+        style="@style/SmoothLayoutDefault">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/display_triple_image_height"
+            android:scaleType="fitXY"/>
+        <include
+            android:layout_gravity="end|bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            layout="@layout/rc_resource_flag"/>
+        <include layout="@layout/ad_info_container"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:id="@android:id/title"
+        style="@style/ResourceBrowser.ResourceDescription.Vertical"/>
+    <com.android.thememanager.basemodule.views.DiscountPriceView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

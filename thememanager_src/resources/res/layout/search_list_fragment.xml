@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ViewStub
+        android:layout_gravity="bottom"
+        android:id="@+id/empty_view_stub"
+        android:layout="@layout/resource_list_piece_empty_view"
+        android:inflatedId="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <ViewStub
+        android:id="@+id/reload_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <include
+        android:gravity="center_vertical"
+        layout="@layout/v9_loading_progress"/>
+</FrameLayout>

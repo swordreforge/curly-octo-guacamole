@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/me_link_dialog_view_message_size"
+    android:textColor="@color/me_link_dialog_view_item_color"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/me_link_dialog_view_item_margin_top"
+    android:drawablePadding="@dimen/me_link_dialog_view_item_drawable_padding"
+    android:drawableStart="@drawable/me_link_item_dot"/>

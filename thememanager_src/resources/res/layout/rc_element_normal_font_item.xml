@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/recommend_font_card_list_height"
+    android:paddingStart="@dimen/recommend_font_card_list_margin_end"
+    android:paddingEnd="@dimen/recommend_font_card_list_margin_start">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/recommend_font_normal_image_margin_top"
+        android:layout_marginBottom="@dimen/recommend_font_normal_image_margin_bottom"
+        android:layout_marginStart="@dimen/recommend_font_normal_image_margin_start"
+        android:layout_marginEnd="@dimen/recommend_font_normal_image_margin_end"/>
+    <com.android.thememanager.basemodule.views.DiscountPriceView
+        android:layout_gravity="end|center_vertical"
+        android:id="@+id/price"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ViewStub
+        android:layout_gravity="start|center_vertical"
+        android:id="@+id/rank_count"
+        android:layout="@layout/rc_element_rank_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</FrameLayout>

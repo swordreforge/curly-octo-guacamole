@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="@dimen/wallpaper_setting_online_wallpaper_refresh_button_width_height"
+    android:width="@dimen/wallpaper_setting_online_wallpaper_refresh_button_width_height"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="@color/wallpaper_setting_refresh_color"
+        android:pathData="M73.391,53.063C74.711,53.235 75.932,52.305 75.982,50.975C76.176,45.806 74.823,40.676 72.07,36.255C68.889,31.149 64.037,27.303 58.34,25.374C52.643,23.444 46.452,23.55 40.824,25.673C35.196,27.796 30.478,31.805 27.474,37.016C24.47,42.228 23.366,48.319 24.35,54.254C25.334,60.188 28.346,65.597 32.871,69.56C37.396,73.523 43.156,75.794 49.168,75.987C54.374,76.153 59.491,74.752 63.867,71.993C64.992,71.284 65.185,69.761 64.374,68.706C63.564,67.651 62.057,67.466 60.917,68.152C57.438,70.244 53.414,71.302 49.322,71.171C44.424,71.014 39.732,69.164 36.045,65.935C32.359,62.707 29.905,58.3 29.104,53.465C28.302,48.631 29.201,43.668 31.649,39.422C34.096,35.176 37.939,31.911 42.525,30.181C47.11,28.452 52.153,28.366 56.794,29.938C61.436,31.51 65.389,34.642 67.979,38.802C70.144,42.277 71.246,46.289 71.179,50.348C71.157,51.679 72.072,52.89 73.391,53.063Z"
+        android:strokeAlpha="0.8"
+        android:fillAlpha="0.8"/>
+    <path
+        android:fillColor="@color/wallpaper_setting_refresh_color"
+        android:pathData="M81.5,48L73.5,56L65.5,48"
+        android:strokeColor="@color/wallpaper_setting_refresh_color"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeAlpha="0.8"
+        android:fillAlpha="0.8"/>
+</vector>

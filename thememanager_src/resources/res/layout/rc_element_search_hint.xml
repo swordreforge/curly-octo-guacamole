@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/hot_layout"
+    android:background="@color/cards_bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/default_horizontal_offset_from_screen"
+    android:paddingEnd="@dimen/default_horizontal_offset_from_screen">
+    <TextView
+        android:textSize="@dimen/search_recommend_header_text_size"
+        android:textColor="@color/recommend_resource_search_header_text_color"
+        android:paddingTop="@dimen/rc_search_header_text_padding_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_hint_header_text"
+        android:fontFamily="mipro-medium"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/hot_hint"
+        android:paddingTop="@dimen/rc_search_hot_hint_padding_top"
+        android:paddingBottom="@dimen/rc_search_hot_hint_padding_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.android.thememanager.recommend.view.RecommendSearchHotOrderLayout
+            android:id="@+id/order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</LinearLayout>

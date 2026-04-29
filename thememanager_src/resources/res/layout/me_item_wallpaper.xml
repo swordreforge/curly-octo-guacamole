@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="@dimen/me_itemview_triple_vertical_padding_from_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:id="@+id/thumbnail_fl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            style="@style/me_ThreeGridItemThumbnailView"/>
+        <TextView
+            android:id="@+id/incompatible"
+            android:text="@string/resource_is_off_shelf"
+            style="@style/me_IncompatibleTextView"/>
+    </FrameLayout>
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/checkbox_margin"
+        android:layout_alignBottom="@+id/thumbnail_fl"
+        android:layout_alignParentEnd="true"/>
+    <TextView
+        android:id="@+id/favorited_time"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@+id/thumbnail_fl"
+        android:layout_alignParentEnd="true"
+        style="@style/ResourceBrowser.ResourceDescription.SubDescription"/>
+</RelativeLayout>

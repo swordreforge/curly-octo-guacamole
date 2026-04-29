@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="0.3dp"
+        android:color="@color/tag_ui_text_color"/>
+    <corners android:radius="3.3dp"/>
+    <padding
+        android:left="@dimen/tagui_left_right_gap"
+        android:top="@dimen/tagui_top_bottom_gap"
+        android:right="@dimen/tagui_left_right_gap"
+        android:bottom="@dimen/tagui_top_bottom_gap"/>
+</shape>

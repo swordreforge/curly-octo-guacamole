@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/reward_rank_list_footer_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/de_detail_reward_footer_alert_margin"
+        android:layout_marginBottom="@dimen/de_detail_reward_footer_alert_margin"
+        android:text="@string/detail_reward_user_limited_to_display"/>
+    <View
+        android:id="@+id/reward_rank_list_footer_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/de_detail_reward_footer_placeholder_height"/>
+</FrameLayout>

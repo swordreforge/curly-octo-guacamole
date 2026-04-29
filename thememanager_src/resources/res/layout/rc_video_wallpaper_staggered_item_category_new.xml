@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:screenReaderFocusable="true">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/image_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SmoothLayoutDefault">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/StaggerItemBottomContainer">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/StaggerItemTitle"/>
+        <TextView
+            android:id="@+id/designer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/StaggerItemSubTitle"/>
+        <com.android.thememanager.recommend.view.widget.TagUIContainer
+            android:orientation="horizontal"
+            android:id="@+id/tag_ui_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tagui_margin_top"
+            app:leftAndRightSpace="10dp"/>
+    </LinearLayout>
+</LinearLayout>

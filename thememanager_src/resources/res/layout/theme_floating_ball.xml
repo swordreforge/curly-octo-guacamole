@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:visibility="invisible"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/floating_window_close_btn_slide"
+        android:layout_height="@dimen/floating_window_close_btn_slide"
+        android:src="@drawable/floating_window_close"
+        android:contentDescription="@string/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/content"
+        android:layout_width="@dimen/floating_window_ball_slide"
+        android:layout_height="@dimen/floating_window_ball_slide"
+        android:layout_marginTop="@dimen/floating_window_ball_margin_top"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/close"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

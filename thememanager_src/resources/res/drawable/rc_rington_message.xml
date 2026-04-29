@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="16dp"
+    android:width="16dp"
+    android:autoMirrored="true"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="@color/rington_message_color"
+        android:pathData="M11.1111,7.1111L36.8889,7.1111C39.3435,7.1111 41.3333,9.101 41.3333,11.5556L41.3333,30.2561C41.3333,32.7107 39.3435,34.7005 36.8889,34.7005L14.3233,34.7005L14.3233,34.7005L9.7262,39.4835C9.0458,40.1913 7.9204,40.2136 7.2125,39.5333C6.8638,39.1981 6.6667,38.7352 6.6667,38.2515L6.6667,11.5556C6.6667,9.101 8.6565,7.1111 11.1111,7.1111Z"
+        android:strokeColor="#00000000"
+        android:strokeWidth="1"/>
+</vector>

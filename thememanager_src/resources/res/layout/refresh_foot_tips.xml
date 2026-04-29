@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:layout_gravity="bottom"
+    android:paddingBottom="@dimen/nav_view_bottom_container"
+    android:layout_width="match_parent"
+    android:layout_height="96dp">
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        android:visibility="gone"
+        style="@style/V9LoadingProgressBar"/>
+    <TextView
+        android:id="@+id/tips"
+        style="@style/V9LoadingProgressBarTips"/>
+    <Button
+        android:textSize="12sp"
+        android:textColor="@color/item_foot_tips_color"
+        android:id="@+id/refresh"
+        android:background="@drawable/recycler_foot_retry_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/card_retry"/>
+</LinearLayout>

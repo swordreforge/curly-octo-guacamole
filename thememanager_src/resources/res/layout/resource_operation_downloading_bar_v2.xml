@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ProgressBar
+        android:id="@+id/downloadingProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/Widget.BottomBarButton.ProgressBar"/>
+    <TextView
+        android:textSize="@dimen/miuix_appcompat_secondary_text_size"
+        android:textColor="@color/resource_detail_op_btn_normal"
+        android:gravity="center"
+        android:id="@+id/downloadingProgressTitle"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</FrameLayout>

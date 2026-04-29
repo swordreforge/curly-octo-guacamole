@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/display_rank_image_width"
+    android:layout_height="wrap_content">
+    <miuix.smooth.SmoothFrameLayout2
+        android:id="@+id/thumbnail_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:radius="@dimen/round_corner_recommend_three_img_radius"
+        style="@style/SmoothLayoutDefault">
+        <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/display_rank_image_width"
+            android:layout_height="@dimen/display_rank_image_height"
+            android:scaleType="centerCrop"/>
+    </miuix.smooth.SmoothFrameLayout2>
+    <TextView
+        android:ellipsize="end"
+        android:id="@android:id/title"
+        android:layout_marginTop="@dimen/category_rank_theme_image_title_margin_top"
+        android:maxWidth="@dimen/category_rank_theme_image_title_max_width"
+        android:singleLine="true"
+        android:layout_below="@+id/thumbnail_container"
+        style="@style/CategoryImageTitleStyle"/>
+</RelativeLayout>

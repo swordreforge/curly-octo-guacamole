@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.android.thememanager.recommend.view.widget.ConvenientBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_banner_height"
+        app:duration="4000"
+        app:indicatorMarginBottom="6.7dp"
+        app:indicatorOrientation="center"
+        app:indicatorPadding="2dp"
+        app:indicatorResourceId="@drawable/top_banner_indicator_selector"
+        app:isLoop="true"/>
+</FrameLayout>

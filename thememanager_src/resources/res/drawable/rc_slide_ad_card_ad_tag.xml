@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="11dp"
+    android:width="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="11">
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0.117,5.5C0.117,2.524 2.472,0.117 5.371,0.117H18.629C21.528,0.117 23.883,2.524 23.883,5.5C23.883,8.476 21.528,10.883 18.629,10.883H5.371C2.472,10.883 0.117,8.476 0.117,5.5Z"
+        android:strokeColor="@color/rc_slide_ad_card_ad_tag_color"
+        android:strokeWidth="0.234"/>
+</vector>

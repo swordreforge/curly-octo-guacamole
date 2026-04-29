@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/provision_btn_bg_p"/>
+            <size
+                android:height="@dimen/provision_oper_btn_size"
+                android:width="@dimen/provision_oper_btn_size"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/provision_btn_bg_n"/>
+            <size
+                android:height="@dimen/provision_oper_btn_size"
+                android:width="@dimen/provision_oper_btn_size"/>
+        </shape>
+    </item>
+</selector>

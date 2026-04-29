@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/large_icon_handler_bg"/>
+    <corners android:radius="2.75dp"/>
+    <size
+        android:height="3.67dp"
+        android:width="40.33dp"/>
+</shape>

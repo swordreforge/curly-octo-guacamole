@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/item_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.recyclerview.widget.RecyclerView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sub_comment_bar"/>
+    <com.android.thememanager.comment.view.widget.SubCommentBar
+        android:id="@+id/sub_comment_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sub_comment_bar_height"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

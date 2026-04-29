@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:textSize="@dimen/theme_settings_online_title_text_size"
+    android:id="@+id/detail_recommend_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="2dp"
+    android:text="@string/present_online_themes"
+    android:fontFamily="mipro-medium"
+    android:layout_marginStart="@dimen/personalize_recommend_title_margin_start"/>

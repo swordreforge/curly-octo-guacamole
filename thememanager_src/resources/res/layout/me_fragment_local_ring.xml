@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <miuix.springback.view.SpringBackLayout
+        android:id="@+id/recycle_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scrollableView="@+id/local_resource_rv">
+        <miuix.recyclerview.widget.RecyclerView
+            android:id="@+id/local_resource_rv"
+            android:paddingBottom="@dimen/me_local_rv_padding_bottom"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/ring_list_margin_horizontal"
+            android:paddingEnd="@dimen/ring_list_margin_horizontal"/>
+    </miuix.springback.view.SpringBackLayout>
+    <miuix.miuixbasewidget.widget.FloatingActionButton
+        android:layout_gravity="end|bottom"
+        android:id="@+id/add_fab"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:src="@drawable/miuix_appcompat_action_button_main_new"
+        android:contentDescription="@string/accessibiliy_description_content_add_resource"
+        android:layout_marginEnd="@dimen/fab_margin_end"
+        app:fabColor="@color/me_local_ring_add_fab_color"
+        app:fabShadowEnabled="true"/>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:id="@+id/importProgressBar"
+        android:background="@drawable/loading_view_bg"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <miuix.androidbasewidget.widget.ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/me_settings_font_head_padding_start">
+    <com.android.thememanager.basemodule.imageloader.NinePatchImageView
+        android:layout_gravity="start"
+        android:id="@+id/thumbnail"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/me_settings_font_head_img_height"
+        android:layout_marginEnd="@dimen/card_font_thunmnail_padding_horizontal"/>
+    <ImageView
+        android:layout_gravity="end|center_vertical"
+        android:id="@+id/center_flag"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rc_flag_using"
+        android:layout_marginEnd="@dimen/me_settings_font_head_tag_icon_margin_bottom"/>
+</FrameLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="action_icon_delete">@drawable/miuix_action_icon_delete_dark</drawable>
+    <drawable name="icon_new_hide">@drawable/icon_new_hide_dark</drawable>
+    <drawable name="icon_new_restore">@drawable/icon_new_restore_dark</drawable>
+    <drawable name="large_icon_action_bar_back_icon">@drawable/miuix_appcompat_action_bar_back_dark</drawable>
+    <drawable name="me_account_settings">@drawable/miuix_action_icon_settings_dark</drawable>
+    <drawable name="miuix_appcompat_action_bar_navigator_switch">@drawable/miuix_action_icon_navigator_switch_dark</drawable>
+    <drawable name="miuix_appcompat_action_mode_title_button_cancel">@drawable/miuix_action_icon_cancel_dark</drawable>
+    <drawable name="miuix_appcompat_action_mode_title_button_confirm">@drawable/miuix_action_icon_immersion_confirm_dark</drawable>
+    <drawable name="miuix_appcompat_action_mode_title_button_delete">@drawable/miuix_action_icon_immersion_delete_dark</drawable>
+    <drawable name="miuix_appcompat_action_mode_title_button_deselect_all">@drawable/miuix_action_icon_deselect_all_dark</drawable>
+    <drawable name="miuix_appcompat_action_mode_title_button_select_all">@drawable/miuix_action_icon_select_all_dark</drawable>
+    <drawable name="miuix_appcompat_list_item_fg_dropdown_popup">@drawable/miuix_appcompat_list_item_fg_dropdown_popup_dark</drawable>
+    <drawable name="negative_button_background">@drawable/miuix_appcompat_dialog_default_btn_bg_dark</drawable>
+    <drawable name="recommend_action_bar_back_icon">@drawable/miuix_action_icon_back_dark</drawable>
+    <drawable name="recommend_action_bar_search_icon">@drawable/miuix_appcompat_action_icon_search_dark</drawable>
+</resources>
